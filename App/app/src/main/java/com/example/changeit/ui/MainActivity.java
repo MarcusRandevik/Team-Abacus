@@ -1,7 +1,8 @@
-package com.example.changeit;
+package com.example.changeit.ui;
 
 import android.os.Bundle;
 
+import com.example.changeit.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
