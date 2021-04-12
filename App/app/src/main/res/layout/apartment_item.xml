@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="apartment"
+            type="com.example.changeit.model.Apartment" />
+        <variable
+            name="callback"
+            type="com.example.changeit.ui.home.ApartmentClickCallback" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="100dp"
+        android:onClick="@{() -> callback.onClick(apartment)}"
+        android:background="@color/cardview_dark_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/apartment_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/rent_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/apartment_image"
+                app:layout_constraintTop_toBottomOf="@id/apartment_image"
+                android:text="@{@string/apartment_list_rent(apartment.rent)}"/>
+
+            <TextView
+                android:id="@+id/rooms_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/rent_text"
+                app:layout_constraintTop_toBottomOf="@id/apartment_image"
+                android:text="@{@string/apartment_list_rooms(apartment.rooms)}"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
