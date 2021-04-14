@@ -20,7 +20,7 @@ public class UserHandler {
     }
 
     public void createUser(String name, String email, String phoneNumber, String password){
-       if( checkDuplicates(name, email, phoneNumber)== false) {
+       if( checkDuplicates(email, phoneNumber)== false) {
            User newUser = new User(name, email, phoneNumber, password);
            addUser(newUser);
        }
@@ -32,9 +32,32 @@ public class UserHandler {
         allUsers.add(newUser);
     }
 
-    public boolean checkDuplicates(String name, String email, String phoneNumber){
-       //fixa imorgon TODO 
-        return true;
+    public boolean checkDuplicates(String email, String phoneNumber){
+
+        for (User user: allUsers) {
+
+            if(user.getEmail().equals(email) || user.getPhoneNumber().equals(phoneNumber)) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public List<User> getAllUsers(){
+        return allUsers;
+    }
+
+
+    // kan användas vid inloggning, när användaren har skrivit in sin email
+    public User getUserByEmail(String email) {
+
+        for (User u : allUsers ) {
+            if(email.equals(u.getEmail())) {
+                return u;
+            }
+        }
+        return null;
     }
 
 }
