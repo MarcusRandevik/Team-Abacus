@@ -21,4 +21,7 @@ public class User {
 
 
     //setters,getters, ändra namn osv.... TODO
+
+    // testar att säga hej :) 
+
 }
