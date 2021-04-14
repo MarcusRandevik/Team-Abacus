@@ -12,18 +12,24 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+            app:destination="@id/navigation_favorites" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.changeit.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.changeit.ui.favorites.FavoritesFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorites" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.changeit.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_messages"
+        android:name="com.example.changeit.ui.messages.MessagesFragment"
+        android:label="@string/title_messages"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.changeit.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
