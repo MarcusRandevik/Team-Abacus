@@ -1,0 +1,36 @@
+What do I want to learn or understand better?
+	
+	During this sprint I felt more comfortable with working close to a product owner and client and feel like I now understand how we should continue the collaboration in a smooth way. Prioritizing user stories went well with input from the product owner and the client, and it gave meaningful discussions.
+	Also, I feel like our user stories sticks to be estimated around 1 working day, which is an improvement from my earlier work with user stories.  
+	So what I stated last week about what I want to learn better is getting there.
+
+	During this sprint I got reminded about that I feel pretty uncomfortable using git, so thats definitly something that I want to learn to understand better during the project. My plan to achieve this is to write down the situations with git that I find difficult over time and how to solve them.
+	This would make me feel more confident next time the situation occur since I know that I only can follow the steps I have written down.
+	I feel inspired by Lisa in the group, who has different to-do lists about different features on git. So I plan to ask her for help and write down lists in my own words so I definitely get a grip around it. 
+
+How can I help someone else, or the entire team, to learn something new?
+	
+	Under this section I have previously reflected on that I believe a friendly group environment encourages learning. So during this sprint I have made sure to listen to group members questions, and that every one get possibility to speak and ask, and meet them with respect and positivity.
+	I feel like this has worked well, and feel like the other has treated me with the same approach. 
+
+	I also mentioned structure to encourage learning in the previous reflection, because it reduces stress and gives opportunities to focus on learning and not only just getting a task done.
+	I feel like this works well, but could be better. This sprint, we planned working sessions for the group during the sprint, which I find can be a little unnecessarily stressful since it's difficult to get together everyone with short foresight, which makes it difficult to make everyone involved to share learnings.
+	My plan to improve the structure to the next sprint, is to ask the team members if we could set up possible meeting times in the beginning of the week, so it is easier avoid getting clashes with a short time to solve them, and to make the meetings more valuable. 
+
+What is my contribution towards the team’s use of Scrum?
+
+	In agreement to last weeks reflection, we have now distributed different responsiblities and added them in the social contract. This week I have continued being an active team member. 
+	I have made sure to keep Trello updated with what is going on, since it is not a routine for everyone just yet. 
+	
+	During this weekly sprint review I suggested to let each participant speek their mind about their week around the Niki-Niko KPI, and to make this a routine on fridays. This to make sure that we do not miss out someones feelings and to make sure to take care of each others well being in the project. We decided to fullfill this. 
+	My plan is also to look at the Niko-Niko KPI every day henceforth to make sure to be able to act right away if I can see that someone does not feel well. 
+
+What is my contribution towards the team’s deliveries?
+
+	I were involved during all our sessions and discussed, wrote and came with idéas. Me, Lisa and Noa decided to code together this week since we wanted to make sure that everyone understand, and we don't feel so comfortable coding alone. We assigned the same user story and decided to screen share during the work, and alternate who did the writing each session to make sure that everyone feelt involved.
+	This sprint, we began with me writing the code and the next session Lisa did. So I will make sure that Noa gets to write code next sprint so he do not feel left out. Though, I feel like everyone really appreciated to programme together since it gives possiblity to ask questions and discuss the best solutions.
+	I shared an old repo from a previous project that I have participated in to give Lisa and Noa inspiration, and we could based on this draw conclusions to plan our tasks. We could finish the tasks that we had assigned for the sprint.
+	
+	To keep up the good work I will suggest to keep on programme in pairs since I found it fun and encouraging!
+ 
+	
