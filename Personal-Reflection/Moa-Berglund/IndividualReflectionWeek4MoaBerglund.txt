@@ -27,8 +27,8 @@ What is my contribution towards the team’s use of Scrum?
 
 What is my contribution towards the team’s deliveries?
 
-	I were involved during all our sessions and discussed, wrote and came with idéas. Me, Lisa and Noa decided to code together this week since we wanted to make sure that everyone understand, and we don't feel so comfortable coding alone. We assigned the same user story and decided to screen share during the work, and alternate who did the writing each session to make sure that everyone feelt involved.
-	This sprint, we began with me writing the code and the next session Lisa did. So I will make sure that Noa gets to write code next sprint so he do not feel left out. Though, I feel like everyone really appreciated to programme together since it gives possiblity to ask questions and discuss the best solutions.
+	I were involved during all our sessions and discussed, wrote and came with idéas. Me, Lisa and Noa decided to code together this week since we want to make sure that everyone understand, and we don't feel so comfortable coding alone. We assigned the same user story and decided to screen share during the work, and alternate who did the writing each session to make sure that everyone felt involved.
+	This sprint, we began with me writing the code and the next session Lisa did. So I will make sure that Noa gets to write code next sprint so he do not feel left out in the programming. Though, I feel like everyone really appreciated to programme together since it gives possiblity to ask questions and discuss the best solutions.
 	I shared an old repo from a previous project that I have participated in to give Lisa and Noa inspiration, and we could based on this draw conclusions to plan our tasks. We could finish the tasks that we had assigned for the sprint.
 	
 	To keep up the good work I will suggest to keep on programme in pairs since I found it fun and encouraging!
