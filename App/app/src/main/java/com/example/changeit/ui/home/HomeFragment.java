@@ -40,6 +40,10 @@ public class HomeFragment extends Fragment {
             toast.show();
         });
 
+        fragmentHomeBinding.floatingActionButton.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToListFilterFragment());
+        });
+
         fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
         return fragmentHomeBinding.getRoot();
     }

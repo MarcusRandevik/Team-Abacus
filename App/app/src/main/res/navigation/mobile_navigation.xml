@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_favorites" />
+        <action
+            android:id="@+id/action_navigation_home_to_listFilterFragment"
+            app:destination="@id/navigation_filter" />
     </fragment>
 
     <fragment
@@ -32,4 +35,9 @@
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <dialog
+        android:id="@+id/navigation_filter"
+        android:name="com.example.changeit.ui.home.ListFilterFragment"
+        android:label="ListFilterFragment"
+        tools:layout="@layout/fragment_filter"/>
 </navigation>
