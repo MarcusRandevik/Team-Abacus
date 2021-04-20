@@ -36,8 +36,11 @@ public class HomeFragment extends Fragment {
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         apartmentAdapter = new ApartmentAdapter(apartment -> {
-            Toast toast = Toast.makeText(getContext(), "Du öppnade lägenhet nr: " + apartment.getId(), Toast.LENGTH_SHORT);
-            toast.show();
+          //  Toast toast = Toast.makeText(getContext(), "Du öppnade lägenhet nr: " + apartment.getId(), Toast.LENGTH_SHORT);
+            //toast.show(); // visa dena nya vyn R.id nya vyn?
+            fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
+
+
         });
 
         fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
