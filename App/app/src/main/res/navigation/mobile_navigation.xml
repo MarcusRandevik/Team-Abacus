@@ -36,9 +36,14 @@
             android:id="@+id/action_navigation_profile_to_ad"
             app:destination="@id/ad" />
     </fragment>
+
     <fragment
         android:id="@+id/ad"
         android:name="com.example.changeit.ui.ad.AdFragment"
-        android:label="fragment_ad"
-        tools:layout="@layout/fragment_ad" />
+        android:label="CreateAd"
+        tools:layout="@layout/fragment_ad" >
+        <action
+            android:id="@+id/action_ad_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
 </navigation>

@@ -16,6 +16,7 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.example.changeit.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class ProfileFragment extends Fragment {
@@ -35,7 +36,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        Button button = root.findViewById(R.id.profilebutton);
+        FloatingActionButton button = root.findViewById(R.id.profilebutton);
         button.setOnClickListener(new View.OnClickListener() {
 
             /**

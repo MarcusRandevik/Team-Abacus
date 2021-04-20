@@ -1,14 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ad.AdFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ad.AdFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="751dp">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="302dp"
+            android:layout_height="230dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/apartment_example"
+            app:layout_constraintBottom_toTopOf="@+id/roomsOffered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/roomsOffered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="Rooms"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/sqmOffered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/sqmOffered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoText="false"
+            android:ems="10"
+            android:hint="Area (sqm)"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.268"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.483" />
+
+        <EditText
+            android:id="@+id/rentOffered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Rent (SEK)"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sqmOffered" />
+
+        <TextView
+            android:id="@+id/wifiTextView"
+            android:layout_width="126dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="12dp"
+            android:text="Wifi included"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionOffered"
+            app:layout_constraintVertical_bias="0.063" />
+
+        <TextView
+            android:id="@+id/petsTextView"
+            android:layout_width="126dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="56dp"
+            android:text="Pets allowed"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wifiTextView"
+            app:layout_constraintVertical_bias="0.115" />
+
+        <TextView
+            android:id="@+id/electricityTextView"
+            android:layout_width="126dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="56dp"
+            android:text="Electricity included"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/petsTextView"
+            app:layout_constraintVertical_bias="0.181" />
+
+        <TextView
+            android:id="@+id/balconyTextView"
+            android:layout_width="126dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="56dp"
+            android:text="Balcony"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/electricityTextView"
+            app:layout_constraintVertical_bias="0.18" />
+
+        <EditText
+            android:id="@+id/descriptionOffered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Add a description"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rentOffered"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ToggleButton
+            android:id="@+id/wifiToggleButton"
+            android:layout_width="58dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="164dp"
+            android:text="ToggleButton"
+            android:textOff="NO"
+            android:textOn="YES"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionOffered"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ToggleButton
+            android:id="@+id/petsToggleButton"
+            android:layout_width="58dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="ToggleButton"
+            android:textOff="NO"
+            android:textOn="YES"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionOffered"
+            app:layout_constraintVertical_bias="0.238" />
+
+        <ToggleButton
+            android:id="@+id/electricityToggleButton"
+            android:layout_width="58dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="ToggleButton"
+            android:textOff="NO"
+            android:textOn="YES"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionOffered"
+            app:layout_constraintVertical_bias="0.483" />
+
+        <ToggleButton
+            android:id="@+id/balconyToggleButton"
+            android:layout_width="58dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="ToggleButton"
+            android:textOff="NO"
+            android:textOn="YES"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionOffered"
+            app:layout_constraintVertical_bias="0.722" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Apartment"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.025" />
+
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.947" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+</ScrollView>
