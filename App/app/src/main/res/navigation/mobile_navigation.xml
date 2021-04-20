@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_favorites" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_detailedApartment"
+            app:destination="@id/navigation_detailedApartment" />
     </fragment>
 
     <fragment
@@ -32,4 +35,9 @@
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_detailedApartment"
+        android:name="com.example.changeit.ui.home.DetailedApartmentFragment"
+        android:label="detailed_apartment_fragment"
+        tools:layout="@layout/detailed_apartment" />
 </navigation>
