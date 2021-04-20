@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -31,5 +31,14 @@
         android:id="@+id/navigation_profile"
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_ad"
+            app:destination="@id/ad" />
+    </fragment>
+    <fragment
+        android:id="@+id/ad"
+        android:name="com.example.changeit.ui.ad.AdFragment"
+        android:label="fragment_ad"
+        tools:layout="@layout/fragment_ad" />
 </navigation>
