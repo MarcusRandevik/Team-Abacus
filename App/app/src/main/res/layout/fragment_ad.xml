@@ -12,14 +12,13 @@
     tools:context=".ui.ad.AdFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
-
         android:layout_width="match_parent"
         android:layout_height="751dp">
 
 
+
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/apartmentImage"
             android:layout_width="302dp"
             android:layout_height="230dp"
             android:layout_marginBottom="8dp"
@@ -30,6 +29,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
+
+
 
         <EditText
             android:id="@+id/roomsOffered"
@@ -43,6 +44,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent" />
+
+
 
         <EditText
             android:id="@+id/sqmOffered"
@@ -225,6 +228,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.947" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
