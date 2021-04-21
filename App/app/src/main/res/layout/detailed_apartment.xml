@@ -26,6 +26,8 @@
                     android:layout_width="75dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="15dp"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textSqmLookingFor" />
@@ -35,6 +37,8 @@
                     android:layout_width="75dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="15dp"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textViewSqmLookingFor"
                     app:layout_constraintTop_toBottomOf="@+id/textRentLookingFor" />
@@ -44,6 +48,8 @@
                     android:layout_width="75dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textViewRent"
                     app:layout_constraintTop_toBottomOf="@+id/textRent" />
@@ -59,7 +65,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
-                <!-- android:src="@drawable/apartment_example" en exempel bild om det behövs-->
 
                 <TextView
                     android:id="@+id/textViewOwner"
@@ -115,6 +120,10 @@
                     android:layout_width="75dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="15dp"
+                    android:layout_marginBottom="80dp"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textViewSqmLookingFor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textRoomLookingFor" />
@@ -124,6 +133,8 @@
                     android:layout_width="75dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textSqm" />
@@ -181,6 +192,8 @@
                     android:layout_width="75dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    android:textSize="36sp"
                     app:layout_constraintEnd_toStartOf="@+id/textViewRent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textRoom" />

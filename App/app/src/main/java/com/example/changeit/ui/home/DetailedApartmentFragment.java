@@ -3,6 +3,7 @@ package com.example.changeit.ui.home;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,11 +32,11 @@ public class DetailedApartmentFragment extends Fragment {
         mViewModel =
                 new ViewModelProvider(this).get(DetailedApartmentViewModel.class);
         View root = inflater.inflate(R.layout.detailed_apartment, container, false);
-        //under är en påbörjad lösning men fungerar ej
-/*
-        final ImageView imageview = root.findViewById(R.id.apartment_image_detailed); //denna är inte med i observe
-        imageview.setImageDrawable(mViewModel.getImage().getDrawable());
-*/
+
+        final ImageView imageview = root.findViewById(R.id.apartment_image_detailed); //ska denna vara observed?
+        Drawable res = getResources().getDrawable(mViewModel.getImage());
+        imageview.setImageDrawable(res);
+
 
        final TextView textViewOwner = root.findViewById(R.id.textViewOwner);
         mViewModel.getTextOwner().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -69,8 +70,33 @@ public class DetailedApartmentFragment extends Fragment {
             }
         });
 
+        final TextView textViewLookingForSqm = root.findViewById(R.id.textViewSqmLookingFor);
+        mViewModel.getLookingForTextSqm().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textViewLookingForSqm.setText(s);
+            }
+        });
+
+        final TextView textViewLookingForRoom = root.findViewById(R.id.textViewRoomLookingFor);
+        mViewModel.getLookingForTextRoom().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textViewLookingForRoom.setText(s);
+            }
+        });
+
+        final TextView textViewLookingForRent = root.findViewById(R.id.textViewRentLookingFor);
+        mViewModel.getLookingForTextRent().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textViewLookingForRent.setText(s);
+            }
+        });
+
         return root;
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -13,7 +13,7 @@ public class DetailedApartmentViewModel extends ViewModel {
     private MutableLiveData<String> mTextRent, mTextSqm, mTextRoom, mTextOwner, mTextRoomLookingFor,
             mTextSqmLookingFor, mTextRentLookingFor;
 
-    private ImageView detailedApartmentView;
+    private int detailedApartmentView;
 
     public DetailedApartmentViewModel() { // Tänkte skicka in Apartments
         mTextRent = new MutableLiveData<>();
@@ -32,31 +32,38 @@ public class DetailedApartmentViewModel extends ViewModel {
         mTextRentLookingFor = new MutableLiveData<>();
         mTextRentLookingFor.setValue("R");
         mTextRoomLookingFor = new MutableLiveData<>();
-        mTextRoomLookingFor.setValue("R");
+        mTextRoomLookingFor.setValue("S");
         mTextSqmLookingFor = new MutableLiveData<>();
         mTextSqmLookingFor.setValue("R");
 
 
 
 
-        //detailedApartmentView.setImageResource(R.drawable.apartment_example); //påbörjad lösning men fungerar ej
+        detailedApartmentView= R.drawable.apartment_example; // hårdkodad bild nu
     }
 
     public LiveData<String> getTextRoom() {
         return mTextRoom;
     }
     public  LiveData<String> getTextOwner(){ return mTextOwner;}
-
-
+    public LiveData<String> getTextSqm() {
+        return mTextSqm;
+    }
     public LiveData<String> getTextRent() {
         return mTextRent;
     }
 
-   public LiveData<String> getTextSqm() {
-        return mTextSqm;
+    public LiveData<String> getLookingForTextRent() {
+        return mTextRentLookingFor;
+    }
+    public LiveData<String> getLookingForTextRoom() {
+        return mTextRoomLookingFor;
+    }
+    public LiveData<String> getLookingForTextSqm() {
+        return mTextSqmLookingFor;
     }
 
-    public ImageView getImage(){
+    public int getImage(){
         return detailedApartmentView;
     }
 }
