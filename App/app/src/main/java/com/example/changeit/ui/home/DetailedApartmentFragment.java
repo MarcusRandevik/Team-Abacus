@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.changeit.R;
@@ -30,6 +31,12 @@ public class DetailedApartmentFragment extends Fragment {
         mViewModel =
                 new ViewModelProvider(this).get(DetailedApartmentViewModel.class);
         View root = inflater.inflate(R.layout.detailed_apartment, container, false);
+
+
+        final ImageView imageview = root.findViewById(R.id.apartment_image_detailed);
+        imageview.setImageDrawable(mViewModel.getImage().getDrawable());
+
+
         final TextView textView = root.findViewById(R.id.textViewTest);
         mViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
