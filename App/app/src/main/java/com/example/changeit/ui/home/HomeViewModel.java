@@ -25,7 +25,6 @@ public class HomeViewModel extends AndroidViewModel {
 
     private MutableLiveData<Integer> maxRooms = new MutableLiveData<>(5);
     private LiveData<List<Apartment>> apartments;
-    private MutableLiveData<List<Apartment>> dbApartments;
 
     private AppRepository repository;
 
@@ -48,17 +47,6 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
     public void setMaxRooms(int maxRooms) {
-        Log.i("majs", "ändrade värde");
         this.maxRooms.setValue(maxRooms);
-    }
-
-
-    private List<Apartment> test(int i) {
-        if (dbApartments.getValue() == null) {
-            return Arrays.asList(new Apartment(1, 232, 4));
-        }
-        return dbApartments.getValue().stream()
-                .filter(apartment -> apartment.getRooms() <= i)
-                .collect(Collectors.toList());
     }
 }
