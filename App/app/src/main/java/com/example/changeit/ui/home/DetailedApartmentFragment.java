@@ -31,11 +31,19 @@ public class DetailedApartmentFragment extends Fragment {
         mViewModel =
                 new ViewModelProvider(this).get(DetailedApartmentViewModel.class);
         View root = inflater.inflate(R.layout.detailed_apartment, container, false);
-
-
+        //under är en påbörjad lösning men fungerar ej
+/*
         final ImageView imageview = root.findViewById(R.id.apartment_image_detailed); //denna är inte med i observe
         imageview.setImageDrawable(mViewModel.getImage().getDrawable());
+*/
 
+       final TextView textViewOwner = root.findViewById(R.id.textViewOwner);
+        mViewModel.getTextOwner().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textViewOwner.setText(s+"'s apartment");
+            }
+        });
 
         final TextView textViewRooms = root.findViewById(R.id.textViewRooms);
         mViewModel.getTextRoom().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -52,15 +60,6 @@ public class DetailedApartmentFragment extends Fragment {
                 textViewSqm.setText(s);
             }
         });
-
-        final TextView textViewOwner = root.findViewById(R.id.textViewOwner);
-        mViewModel.getTextOwner().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textViewOwner.setText(s+"'s apartment");
-            }
-        });
-
 
         final TextView textViewRent = root.findViewById(R.id.textViewRent);
         mViewModel.getTextRent().observe(getViewLifecycleOwner(), new Observer<String>() {

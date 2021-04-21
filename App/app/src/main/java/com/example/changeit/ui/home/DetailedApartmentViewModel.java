@@ -10,19 +10,23 @@ import com.example.changeit.R;
 import com.example.changeit.model.Apartment;
 
 public class DetailedApartmentViewModel extends ViewModel {
-    private MutableLiveData<String> mTextRoom, mTextSqm, mTextRent, mTextOwner, mTextRoomLookingFor, mTextSqmLookingFor, mTextRentLookingFor;
+    private MutableLiveData<String> mTextRent, mTextSqm, mTextRoom, mTextOwner, mTextRoomLookingFor,
+            mTextSqmLookingFor, mTextRentLookingFor;
 
     private ImageView detailedApartmentView;
 
-    public DetailedApartmentViewModel(Apartment apartment) {
+    public DetailedApartmentViewModel() { // Tänkte skicka in Apartments
         mTextRent = new MutableLiveData<>();
-        mTextRent.setValue(Integer.toString(apartment.getRent()));
-        mTextRoom = new MutableLiveData<>();
-        mTextRoom.setValue(Integer.toString(apartment.getRooms()));
+        mTextRent.setValue(Integer.toString(3));
+
         mTextSqm = new MutableLiveData<>();
-        mTextSqm.setValue(Integer.toString(apartment.getSqm()));
+        mTextSqm.setValue(Integer.toString(3));
+
+        mTextRoom = new MutableLiveData<>();
+        mTextRoom.setValue(Integer.toString(3));
+
         mTextOwner = new MutableLiveData<>();
-        mTextOwner.setValue(apartment.getOwner()+"'s apartment");
+        mTextOwner.setValue("Lisa");
 
         //dessa tre ska fixas när vi gör "skapa annons (söker)"
         mTextRentLookingFor = new MutableLiveData<>();
@@ -34,18 +38,21 @@ public class DetailedApartmentViewModel extends ViewModel {
 
 
 
-        detailedApartmentView.setImageResource(R.drawable.apartment_example); //ska ej vara exemplet föralltid
+
+        //detailedApartmentView.setImageResource(R.drawable.apartment_example); //påbörjad lösning men fungerar ej
     }
 
     public LiveData<String> getTextRoom() {
         return mTextRoom;
     }
     public  LiveData<String> getTextOwner(){ return mTextOwner;}
+
+
     public LiveData<String> getTextRent() {
         return mTextRent;
     }
 
-    public LiveData<String> getTextSqm() {
+   public LiveData<String> getTextSqm() {
         return mTextSqm;
     }
 

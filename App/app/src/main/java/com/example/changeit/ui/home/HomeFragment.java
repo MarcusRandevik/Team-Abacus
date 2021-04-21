@@ -36,9 +36,10 @@ public class HomeFragment extends Fragment {
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         apartmentAdapter = new ApartmentAdapter(apartment -> {
-          Navigation.findNavController(fragmentHomeBinding.getRoot()).navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment());
+         // if(getArguments() != null){
 
-
+            Navigation.findNavController(fragmentHomeBinding.getRoot())
+                  .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment());
         });
 
         fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);

@@ -11,26 +11,24 @@ public class Apartment {
     private int id;
     private int rent;
     private int rooms;
-    private int sqm;
-    private String owner;
+    //private int sqm;
+    //private String owner;
 
-    public Apartment(int id, int rent, int rooms, int sqm, String owner) {
+    public Apartment(int id, int rent, int rooms) {
         this.id = id;
         this.rent = rent;
         this.rooms = rooms;
-        this.sqm=sqm;
-        this.owner=owner;
     }
 
     public int getId() {
         return id;
     }
 
-    public int getSqm(){ return sqm;}
+    //public int getSqm(){ return sqm;}
 
-    public String getOwner(){return owner;}
+    //public String getOwner(){return owner;}
 
-    public void setSqm(int sqm){ this.sqm=sqm;}
+    //public void setSqm(int sqm){ this.sqm=sqm;}
 
     public void setId(int id) {
         this.id = id;
@@ -51,6 +49,7 @@ public class Apartment {
     public void setRooms(int rooms) {
         this.rooms = rooms;
     }
+
 
     @Override
     public String toString() {

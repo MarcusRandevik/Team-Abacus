@@ -38,6 +38,14 @@
     <fragment
         android:id="@+id/navigation_detailedApartment"
         android:name="com.example.changeit.ui.home.DetailedApartmentFragment"
-        android:label="detailed_apartment_fragment"
-        tools:layout="@layout/detailed_apartment" />
+        android:label="@string/title_detailed_apartment"
+        tools:layout="@layout/detailed_apartment">
+       <!-- <argument
+            android:name="apartment"
+            app:argType="com.example.changeit.model.Apartment"/>-->
+    </fragment>
+
+
+
+
 </navigation>
