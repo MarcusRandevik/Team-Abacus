@@ -13,4 +13,7 @@
     <string name="detailed_apartment_owner"> Owner </string>
     <string name="detailed_apartment_lookingFor"> I am looking for</string>
     <string name="apartment_image_description"> Apartment image </string>
+    <string name="hard_coded_sqm"> R </string>
+    <string name="hard_coded_Owner"> Lisas lägenhet </string>
+
 </resources>

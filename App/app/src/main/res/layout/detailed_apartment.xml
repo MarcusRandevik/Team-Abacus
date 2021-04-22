@@ -5,10 +5,10 @@
 
     <data>
         <variable
-            name="apartment"
+            name="ownerApartment"
             type="com.example.changeit.model.Apartment" />
         <variable
-            name="myAppartment"
+            name="ownerLookingForApartment"
             type="com.example.changeit.model.Apartment" />
     </data>
 
@@ -39,6 +39,7 @@
                         android:layout_marginTop="15dp"
                         android:textAlignment="center"
                         android:textSize="36sp"
+                        android:text="@string/hard_coded_sqm"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textSqmLookingFor" />
@@ -50,22 +51,24 @@
                         android:layout_marginTop="15dp"
                         android:textAlignment="center"
                         android:textSize="36sp"
-                        android:text="@{String.valueOf(apartment.rent)}"
+                        android:text="@{String.valueOf(ownerLookingForApartment.rent)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textViewSqmLookingFor"
                         app:layout_constraintTop_toBottomOf="@+id/textRentLookingFor" />
 
+
                     <TextView
-                        android:id="@+id/textViewSqm"
+                        android:id="@+id/textViewRent"
                         android:layout_width="75dp"
                         android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@{String.valueOf(ownerApartment.rent)}"
                         android:textAlignment="center"
                         android:textSize="36sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textViewRent"
+                        app:layout_constraintHorizontal_bias="0.505"
+                        app:layout_constraintStart_toEndOf="@+id/textViewSqm"
                         app:layout_constraintTop_toBottomOf="@+id/textRent" />
-
 
                     <ImageView
                         android:id="@+id/apartment_image_detailed"
@@ -80,11 +83,11 @@
 
                     <TextView
                         android:id="@+id/textViewOwner"
-                        android:text=""
                         android:layout_width="356dp"
                         android:layout_height="39dp"
                         android:layout_marginTop="10dp"
                         android:textSize="30sp"
+                        android:text="@string/hard_coded_Owner"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/apartment_image_detailed" />
@@ -135,18 +138,20 @@
                         android:layout_marginBottom="80dp"
                         android:textAlignment="center"
                         android:textSize="36sp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.rooms)}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textViewSqmLookingFor"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textRoomLookingFor" />
 
                     <TextView
-                        android:id="@+id/textViewRent"
+                        android:id="@+id/textViewSqm"
                         android:layout_width="75dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
                         android:textAlignment="center"
                         android:textSize="36sp"
+                        android:text="@string/hard_coded_sqm"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textSqm" />
@@ -160,7 +165,7 @@
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewRent" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
 
                     <TextView
                         android:id="@+id/textRoom"
@@ -206,8 +211,8 @@
                         android:layout_marginTop="8dp"
                         android:textAlignment="center"
                         android:textSize="36sp"
-                        android:text="@{String.valueOf(apartment.rooms)}"
-                        app:layout_constraintEnd_toStartOf="@+id/textViewRent"
+                        android:text="@{String.valueOf(ownerApartment.rooms)}"
+                        app:layout_constraintEnd_toStartOf="@+id/textViewSqm"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textRoom" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

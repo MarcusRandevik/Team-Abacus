@@ -1,10 +1,6 @@
 package com.example.changeit.ui.home;
 
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,16 +10,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.changeit.R;
 import com.example.changeit.databinding.DetailedApartmentBinding;
 import com.example.changeit.model.Apartment;
-
+/**
+ * Represents the view that shows detailed information about an apartment
+ *   @author Izabell Arvidsson, Marcus Randevik, Moa Berglund, Amanda Styff
+ *   @since 2021-04-20
+ *
+ */
 public class DetailedApartmentFragment extends Fragment {
-
-    private DetailedApartmentViewModel mViewModel;
 
     public static DetailedApartmentFragment newInstance() {
         return new DetailedApartmentFragment();
@@ -38,8 +35,8 @@ public class DetailedApartmentFragment extends Fragment {
         // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
         DetailedApartmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
 
-        binding.setApartment(apartment);
-        binding.setMyAppartment(apartment);
+        binding.setOwnerApartment(apartment);
+        binding.setOwnerLookingForApartment(apartment);
         binding.apartmentImageDetailed.setImageResource(R.drawable.apartment_example);
 
         return binding.getRoot();
@@ -49,7 +46,6 @@ public class DetailedApartmentFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(DetailedApartmentViewModel.class);
         // TODO: Use the ViewModel
     }
 
