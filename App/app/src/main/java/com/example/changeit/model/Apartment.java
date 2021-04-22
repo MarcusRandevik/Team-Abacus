@@ -3,14 +3,18 @@ package com.example.changeit.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Objects;
 
+
 @Entity(tableName = "apartments")
-public class Apartment {
+public class Apartment implements Serializable {
     @PrimaryKey
     private int id;
     private int rent;
     private int rooms;
+    //private int sqm;
+    //private String owner;
 
     public Apartment(int id, int rent, int rooms) {
         this.id = id;
@@ -21,6 +25,12 @@ public class Apartment {
     public int getId() {
         return id;
     }
+
+    //public int getSqm(){ return sqm;}
+
+    //public String getOwner(){return owner;}
+
+    //public void setSqm(int sqm){ this.sqm=sqm;}
 
     public void setId(int id) {
         this.id = id;
@@ -41,6 +51,7 @@ public class Apartment {
     public void setRooms(int rooms) {
         this.rooms = rooms;
     }
+
 
     @Override
     public String toString() {
