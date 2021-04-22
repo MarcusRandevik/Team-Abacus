@@ -6,4 +6,5 @@
     <string name="title_profile">Profile</string>
     <string name="apartment_list_rent">Rent: %d</string>
     <string name="apartment_list_rooms">Rooms: %d</string>
+    <string name="filter_rent">Max number of rooms</string>
 </resources>
