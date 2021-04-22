@@ -36,8 +36,9 @@ public class HomeFragment extends Fragment {
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         apartmentAdapter = new ApartmentAdapter(apartment -> {
-            Toast toast = Toast.makeText(getContext(), "Du öppnade lägenhet nr: " + apartment.getId(), Toast.LENGTH_SHORT);
-            toast.show();
+
+            Navigation.findNavController(fragmentHomeBinding.getRoot())
+                  .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(apartment));
         });
 
         fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
