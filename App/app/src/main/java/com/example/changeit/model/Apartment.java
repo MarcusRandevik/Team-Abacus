@@ -3,10 +3,12 @@ package com.example.changeit.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Objects;
 
+
 @Entity(tableName = "apartments")
-public class Apartment {
+public class Apartment implements Serializable {
     @PrimaryKey
     private int id;
     private int rent;
