@@ -31,4 +31,9 @@ public class AppRepository {
     public LiveData<List<Apartment>> getApartments(int maxRooms) {
         return appDatabase.apartmentDao().getAllApartments(maxRooms);
     }
+
+    public void addAppartment(Apartment apartment) {
+        appDatabase.apartmentDao().insert(apartment);
+    }
+
 }

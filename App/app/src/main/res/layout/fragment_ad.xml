@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--Viewmodel variabel som kan användas i hela filen-->
+        <variable
+            name="viewModel"
+            type="com.example.changeit.ui.ad.AdViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.ad.AdFragment">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/apartmentImage"
+                    android:layout_width="302dp"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/apartment_example"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+                <EditText
+                    android:id="@+id/roomsOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="Rooms"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.283"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/apartmentImage" />
+
+                <EditText
+                    android:id="@+id/sqmOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:autoText="false"
+                    android:ems="10"
+                    android:hint="Area (sqm)"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.283"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roomsOffered" />
+
+                <EditText
+                    android:id="@+id/rentOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="Rent (SEK)"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.278"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sqmOffered" />
+
+                <TextView
+                    android:id="@+id/wifiTextView"
+                    android:layout_width="126dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Wifi included"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.196"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionOffered" />
+
+                <TextView
+                    android:id="@+id/petsTextView"
+                    android:layout_width="126dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Pets allowed"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.196"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wifiTextView" />
+
+                <TextView
+                    android:id="@+id/electricityTextView"
+                    android:layout_width="126dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Electricity included"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.196"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/petsTextView" />
+
+                <TextView
+                    android:id="@+id/balconyTextView"
+                    android:layout_width="125dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Balcony"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.199"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/electricityTextView" />
+
+                <!--Binda texten till viewmodels description-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Add a description"
+                    android:inputType="textMultiLine"
+                    android:text="@={viewModel.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.278"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rentOffered" />
+
+                <ToggleButton
+                    android:id="@+id/wifiToggleButton"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="20dp"
+                    android:text="ToggleButton"
+                    android:textOff="NO"
+                    android:textOn="YES"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.61"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionOffered" />
+
+                <ToggleButton
+                    android:id="@+id/petsToggleButton"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="68dp"
+                    android:text="ToggleButton"
+                    android:textOff="NO"
+                    android:textOn="YES"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.61"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionOffered" />
+
+                <ToggleButton
+                    android:id="@+id/electricityToggleButton"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="8dp"
+                    android:text="ToggleButton"
+                    android:textOff="NO"
+                    android:textOn="YES"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.61"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/petsToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/balconyToggleButton"
+                    android:layout_width="50dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="6dp"
+                    android:text="ToggleButton"
+                    android:textOff="NO"
+                    android:textOn="YES"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.61"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/electricityToggleButton" />
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Your Apartment"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/continueButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Continue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.956"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+    </ScrollView>
+</layout>

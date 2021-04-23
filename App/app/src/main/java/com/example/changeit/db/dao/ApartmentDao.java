@@ -18,4 +18,7 @@ public interface ApartmentDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Apartment> apartments);
+
+    @Insert()
+    void insert(Apartment apartment);
 }
