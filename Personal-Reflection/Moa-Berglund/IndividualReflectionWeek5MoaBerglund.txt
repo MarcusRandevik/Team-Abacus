@@ -18,13 +18,13 @@ How can I help someone else, or the entire team, to learn something new?
 
 	Last sprint I made a plan to improve the structure, which I did not acutally deliver. I forgot it, and did instead another act aiming to plan better; I told the others at which times I could participate the upcoming sprint, and based on this, me and Amanda made a pair-programming team for the week.
 	I actually believe that this was maybe an even better solution than my plan from the first place, since it is difficult to find times to get together seven persons with different scheduels several times a week.
-	My new soulution, made me less stressed since I knew that me and Amanada would only mainly need to depend on each other for just this user story, but the more that could/would participate the better! 
+	My new soulution, made me less stressed since I knew that me and Amanda would only mainly need to depend on each other for just this user story, but the more that could/would participate the better! 
 	And we still have three times a week that is fixed for the whole group, and now after the second programming sprint I believe that this is enough to maintain involvement for everyone.
 	So my plan for next sprint is to plan who I will pair-programme with based on our individual scheduels to be able to share my knowledge with him or her.
 
 What is my contribution towards the team’s use of Scrum?
 
-	Again this week, I have made sure to keep Trello updated. My plan for next sprint is to remind the other members to move their user story cards instead, so they will get this routine as well.
+	Again this week, I have made sure to keep Trello updated. My plan for next sprint is to remind the other members to move their user story cards instead, so everyone will get this routine as well.
 	
 	In agreement to last weeks reflection, I have kept an eye on the Niko-Niko KPI everyday to make sure to be able to act right away if someone does not seem to feel well. Happily, there were no unwanted emojis this sprint. 
 	I will keep on with this to make sure that the working environment is comfortable for everyone.
@@ -38,6 +38,8 @@ What is my contribution towards the team’s deliveries?
 	
 	Unfortunately I could not manage to participate in our sprint review meeting this time. Me and the product owner had clashes in our schedules and could not find a time where we both could participate, and we concluded that it was of priority that the product owner could participate.
 	So this week I did participate in the team reflection by reeding it afterwards, stating that the outcome was accurate, and wrote some additions. I also made a quick brief about my feelings about the sprint before I had to go. 
+	
+	I also borrowed an old andorid phone from my partner to keep during the project, since many in the group have trouble with running the simulator (including me). This made it much easier to test the code. 
 
 	To keep up the good work I will suggest to keep on programme in pairs since I find it fun, encouraging and it gives much learning outcomes! And I will make sure to participate in next weeks team review.
  
