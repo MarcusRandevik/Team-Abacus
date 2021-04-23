@@ -13,8 +13,8 @@ import java.util.List;
 @Dao
 public interface ApartmentDao {
 
-    @Query("SELECT * FROM apartments")
-    LiveData<List<Apartment>> getAllApartments();
+    @Query("SELECT * FROM apartments WHERE rooms <= :maxRooms")
+    LiveData<List<Apartment>> getAllApartments(int maxRooms);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Apartment> apartments);

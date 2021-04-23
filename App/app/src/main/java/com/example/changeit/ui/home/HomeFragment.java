@@ -20,6 +20,7 @@ import androidx.navigation.Navigation;
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentHomeBinding;
 import com.example.changeit.model.Apartment;
+import com.google.android.material.transition.MaterialFadeThrough;
 
 public class HomeFragment extends Fragment {
 
@@ -32,15 +33,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+                new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         apartmentAdapter = new ApartmentAdapter(apartment -> {
-            Toast toast = Toast.makeText(getContext(), "Du öppnade lägenhet nr: " + apartment.getId(), Toast.LENGTH_SHORT);
-            toast.show();
+
+            Navigation.findNavController(fragmentHomeBinding.getRoot())
+                  .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(apartment));
+        });
+
+        fragmentHomeBinding.floatingActionButton.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToListFilterFragment());
         });
 
         fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
+
         return fragmentHomeBinding.getRoot();
     }
 
