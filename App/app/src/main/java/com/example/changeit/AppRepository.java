@@ -28,7 +28,7 @@ public class AppRepository {
         return instance;
     }
 
-    public LiveData<List<Apartment>> getApartments() {
-        return appDatabase.apartmentDao().getAllApartments();
+    public LiveData<List<Apartment>> getApartments(int maxRooms) {
+        return appDatabase.apartmentDao().getAllApartments(maxRooms);
     }
 }

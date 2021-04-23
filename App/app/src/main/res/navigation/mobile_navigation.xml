@@ -21,7 +21,9 @@
                 app:argType="com.example.changeit.model.Apartment"
                 app:nullable="true"/>
         </action>
-
+        <action
+            android:id="@+id/action_navigation_home_to_listFilterFragment"
+            app:destination="@id/navigation_filter" />
     </fragment>
 
     <fragment
@@ -51,8 +53,9 @@
             app:argType="com.example.changeit.model.Apartment"
             app:nullable="true" />
     </fragment>
-
-
-
-
+    <dialog
+        android:id="@+id/navigation_filter"
+        android:name="com.example.changeit.ui.home.ListFilterFragment"
+        android:label="ListFilterFragment"
+        tools:layout="@layout/fragment_filter"/>
 </navigation>
