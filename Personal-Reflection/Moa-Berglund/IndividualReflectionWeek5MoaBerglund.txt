@@ -1,0 +1,44 @@
+What do I want to learn or understand better?
+	
+	This sprint I felt a little setback about the goal I stated the first week, time estimating user stories to around 1-2 days. The user story that me and Amanda assigned this week took us more time than this, with help from both Izabell and Marcus.
+	Time estimation is something I believe that we will learn better by doing, since we will get better understanding of how much time different tasks takes by experience different tasks.
+	But for my personal development, I believe that I need to learn to "let some things go", and not interpret user storys to wide, since I tend to do more than what is not just necessary for the user story, which of course makes the estimated time optimistic.
+	So my plan to better stick to schedule is to begin with the necessary parts, and due to time add on extras, to reduces stress about not being done with the necessary editions.
+
+	Last sprint I stated that I felt uncomfortable using git, and today much of that feeling is gone. Since I pair-programmed much with Izabell this sprint, she showed me how to navigate the common git functions through andorid studio. I found this very intuitive and now have equpment to solve some git situations by my own.
+	I forgot to ask Lisa about git bash todo-lists, but I feel like that can now come by time, since I do not feel that to be urgent anymore.
+	My plan to keep up the git management is to keep hang in there and make sure to ask questions to the team and expose myself to new git situations.
+
+	This sprint was the first time I coded xml in andorid studios, which I found both fun and a bit tricky. So this is something that I want to learn better, to be more effective and to build up personal a "solution bank" associated with this.
+	My plan for this is to keep on struggling with it and not avoid it because it is difficult in the beginning, and definitely ask Marcus more questions since he seem to have a good understandning of this, which he happily shares with the team. 
+
+How can I help someone else, or the entire team, to learn something new?
+	
+	I am still on with the friendly group environment to encourage questions and learnings, and feel like it is still working fine from all parts and I will do my best to maintain this.  
+
+	Last sprint I made a plan to improve the structure, which I did not acutally deliver. I forgot it, and did instead another act aiming to plan better; I told the others at which times I could participate the upcoming sprint, and based on this, me and Amanda made a pair-programming team for the week.
+	I actually believe that this was maybe an even better solution than my plan from the first place, since it is difficult to find times to get together seven persons with different scheduels several times a week.
+	My new soulution, made me less stressed since I knew that me and Amanada would only mainly need to depend on each other for just this user story, but the more that could/would participate the better! 
+	And we still have three times a week that is fixed for the whole group, and now after the second programming sprint I believe that this is enough to maintain involvement for everyone.
+	So my plan for next sprint is to plan who I will pair-programme with based on our individual scheduels to be able to share my knowledge with him or her.
+
+What is my contribution towards the team’s use of Scrum?
+
+	Again this week, I have made sure to keep Trello updated. My plan for next sprint is to remind the other members to move their user story cards instead, so they will get this routine as well.
+	
+	In agreement to last weeks reflection, I have kept an eye on the Niko-Niko KPI everyday to make sure to be able to act right away if someone does not seem to feel well. Happily, there were no unwanted emojis this sprint. 
+	I will keep on with this to make sure that the working environment is comfortable for everyone.
+
+What is my contribution towards the team’s deliveries?
+	
+	This week me, Amanda and much help from Izabell finished the user story "Se annons". We did complete it in the apartment-detail-branch, and it was merged by the end of the sprint to main. 
+	We screen shared during the work, and alternate who did the writing each session. Unfortunately Amanda has trouble with the development environment and could not write code this week, but participated in the meetings. I tried to help her, but we could not find a way. 
+	She will try to clone the project again and I will make sure to ask next meeting if it worked, otherwise we will have to work on new soultions. 
+	When we encountred trouble in the code, I helped by searching on the internet for ideas and were an active memeber in discussions.
+	
+	Unfortunately I could not manage to participate in our sprint review meeting this time. Me and the product owner had clashes in our schedules and could not find a time where we both could participate, and we concluded that it was of priority that the product owner could participate.
+	So this week I did participate in the team reflection by reeding it afterwards, stating that the outcome was accurate, and wrote some additions. I also made a quick brief about my feelings about the sprint before I had to go. 
+
+	To keep up the good work I will suggest to keep on programme in pairs since I find it fun, encouraging and it gives much learning outcomes! And I will make sure to participate in next weeks team review.
+ 
+	
