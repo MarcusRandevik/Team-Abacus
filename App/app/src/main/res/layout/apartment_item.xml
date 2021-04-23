@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        android:paddingTop="8dp"
         android:minHeight="100dp"
         android:onClick="@{() -> callback.onClick(apartment)}"
         android:background="@color/cardview_dark_background">

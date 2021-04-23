@@ -42,7 +42,11 @@
         android:id="@+id/navigation_profile"
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_ad"
+            app:destination="@id/ad" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_detailedApartment"
         android:name="com.example.changeit.ui.home.DetailedApartmentFragment"
@@ -57,12 +61,8 @@
         android:id="@+id/navigation_filter"
         android:name="com.example.changeit.ui.home.ListFilterFragment"
         android:label="ListFilterFragment"
-        tools:layout="@layout/fragment_filter"/>
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_navigation_profile_to_ad"
-            app:destination="@id/ad" />
-    </fragment>
+        tools:layout="@layout/fragment_filter">
+    </dialog>
 
     <fragment
         android:id="@+id/ad"
