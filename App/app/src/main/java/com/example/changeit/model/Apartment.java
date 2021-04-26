@@ -15,12 +15,13 @@ public class Apartment implements Serializable {
     private int rooms;
     //private int sqm;
     //private String owner;
-    public boolean balcony=false;
+    public boolean balcony = true;
 
     public Apartment(int id, int rent, int rooms) {
         this.id = id;
         this.rent = rent;
         this.rooms = rooms;
+       // this.balcony = true;
     }
 
     public int getId() {
@@ -32,6 +33,8 @@ public class Apartment implements Serializable {
     //public String getOwner(){return owner;}
 
     //public void setSqm(int sqm){ this.sqm=sqm;}
+
+    public boolean getBalcony(){return balcony;}
 
     public void setId(int id) {
         this.id = id;
@@ -57,6 +60,15 @@ public class Apartment implements Serializable {
     @Override
     public String toString() {
         return "Apartment " + id + ", with " + rooms + " rooms and a rent of " + rent + "kr";
+    }
+
+
+    public String balconyIncluded() {
+        if(getBalcony()){
+            return "Yes!";
+        } else {
+            return "No! :(";
+        }
     }
 
     @Override

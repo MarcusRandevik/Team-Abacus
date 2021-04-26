@@ -238,7 +238,7 @@
                         android:layout_marginBottom="56dp"
                         app:layout_constraintBottom_toTopOf="@+id/textLookingFor"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:text="@{String.valueOf(ownerApartment.balcony)}"
+                        android:text="@{String.valueOf(ownerApartment.balconyIncluded())}"
                         app:layout_constraintHorizontal_bias="0.203"
                         app:layout_constraintStart_toEndOf="@+id/textBalcony"
                         app:layout_constraintTop_toBottomOf="@+id/textViewSqm"
