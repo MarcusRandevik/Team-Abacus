@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="Autofill">
+<!--Vad innebär autofill?-->
 
 <ScrollView
 android:layout_width="match_parent"
@@ -25,20 +27,22 @@ tools:context=".ui.ad.CreateAdP2">
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:ems="10"
-            android:hint="Rooms"
+            android:hint="@string/Rooms_In_Ad"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleCreateAdP2TextView" />
 
+        <!--Varför är autoText överstryken? android:autoText="false" behövs denna i nedre EditText?-->
+
         <EditText
             android:id="@+id/sqmWanted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:autoText="false"
+
             android:ems="10"
-            android:hint="Area (sqm)"
+            android:hint="@string/Sqm_In_Ad"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -50,7 +54,7 @@ tools:context=".ui.ad.CreateAdP2">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Maximum Rent (SEK)"
+            android:hint="@string/Maximum_Rent"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -61,8 +65,8 @@ tools:context=".ui.ad.CreateAdP2">
             android:id="@+id/petsTextViewWanted"
             android:layout_width="126dp"
             android:layout_height="20dp"
-            android:layout_marginTop="32dp"
-            android:text="Pets allowed"
+            android:layout_marginTop="35dp"
+            android:text="@string/Pets_In_Ad"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.35"
@@ -73,8 +77,8 @@ tools:context=".ui.ad.CreateAdP2">
             android:id="@+id/electricityTextViewWanted"
             android:layout_width="126dp"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Electricity included"
+            android:layout_marginTop="35dp"
+            android:text="@string/Electricity_In_Ad"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.35"
@@ -85,8 +89,8 @@ tools:context=".ui.ad.CreateAdP2">
             android:id="@+id/balconyTextViewWanted"
             android:layout_width="125dp"
             android:layout_height="18dp"
-            android:layout_marginTop="28dp"
-            android:text="Balcony"
+            android:layout_marginTop="35dp"
+            android:text="@string/Balcony_In_Ad"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.353"
@@ -98,7 +102,7 @@ tools:context=".ui.ad.CreateAdP2">
             android:layout_width="126dp"
             android:layout_height="20dp"
             android:layout_marginTop="50dp"
-            android:text="Wifi included"
+            android:text="@string/Wifi_In_Ad"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.35"
@@ -113,7 +117,7 @@ tools:context=".ui.ad.CreateAdP2">
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
-            android:hint="Add a description"
+            android:hint="@string/Description"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -126,7 +130,7 @@ tools:context=".ui.ad.CreateAdP2">
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
-            android:hint="Wanted Area (North, West, South, East)"
+            android:hint="@string/Wanted_Area"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -137,52 +141,56 @@ tools:context=".ui.ad.CreateAdP2">
             android:id="@+id/petsToggleButtonWanted"
             android:layout_width="50dp"
             android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:text="ToggleButton"
-            android:textOff="NO"
-            android:textOn="YES"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="60dp"
+            android:text="@string/Toggle_button"
+            android:textOff="@string/Toggle_button_No"
+            android:textOn="@string/Toggle_button_Yes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@+id/petsTextViewWanted"
             app:layout_constraintTop_toBottomOf="@+id/wifiToggleButtonWanted" />
 
         <ToggleButton
             android:id="@+id/electricityToggleButtonWanted"
             android:layout_width="50dp"
             android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:text="ToggleButton"
-            android:textOff="NO"
-            android:textOn="YES"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="60dp"
+            android:text="@string/Toggle_button"
+            android:textOff="@string/Toggle_button_No"
+            android:textOn="@string/Toggle_button_Yes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@+id/electricityTextViewWanted"
             app:layout_constraintTop_toBottomOf="@+id/petsToggleButtonWanted" />
 
         <ToggleButton
             android:id="@+id/balconyToggleButtonWanted"
             android:layout_width="50dp"
             android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:text="ToggleButton"
-            android:textOff="NO"
-            android:textOn="YES"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="60dp"
+            android:text="@string/Toggle_button"
+            android:textOff="@string/Toggle_button_No"
+            android:textOn="@string/Toggle_button_Yes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@+id/balconyTextViewWanted"
             app:layout_constraintTop_toBottomOf="@+id/electricityToggleButtonWanted" />
 
         <ToggleButton
             android:id="@+id/wifiToggleButtonWanted"
             android:layout_width="50dp"
             android:layout_height="36dp"
-            android:layout_marginTop="48dp"
-            android:text="ToggleButton"
-            android:textOff="NO"
-            android:textOn="YES"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/Toggle_button"
+            android:textOff="@string/Toggle_button_No"
+            android:textOn="@string/Toggle_button_Yes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toEndOf="@+id/wifiTextViewWanted"
             app:layout_constraintTop_toBottomOf="@+id/areaWanted" />
 
         <TextView
@@ -190,7 +198,7 @@ tools:context=".ui.ad.CreateAdP2">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="What I'm Looking For"
+            android:text="@string/Im_Looking_For"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -201,8 +209,8 @@ tools:context=".ui.ad.CreateAdP2">
             android:id="@+id/publishButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="128dp"
-            android:text="Publish Ad"
+            android:layout_marginBottom="120dp"
+            android:text="@string/Publish_Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -213,3 +221,4 @@ tools:context=".ui.ad.CreateAdP2">
 
 </ScrollView>
 </layout>
+
