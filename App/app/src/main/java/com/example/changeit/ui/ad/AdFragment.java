@@ -7,17 +7,21 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentAdBinding;
 import com.example.changeit.model.Apartment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class AdFragment extends Fragment {
@@ -41,12 +45,29 @@ public class AdFragment extends Fragment {
         //Lägg till viewmodel i fragment_ad.xml
         binding.setViewModel(adViewModel);
 
+       /* Button button = binding.continueButton.findViewById(R.id.continueButton);
+        //.findViewById(R.id.continueButton) Behövs detta eller fungerar det över?
+        button.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * Navigates to the createAdP2 fragment when a user clicks on the button on the profile page.
+             * @param v
+
+            @Override
+            public void onClick(View v) {
+                NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
+                Navigation.findNavController(v).navigate(action);
+            }
+        });*/
+
         // Lägga en onclick listener på continue
         binding.continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("waow", "hej");
                 Log.i("waow", adViewModel.getDescription().getValue());
+                NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
+                Navigation.findNavController(v).navigate(action);
             }
         });
 
