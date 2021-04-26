@@ -149,9 +149,9 @@
                         android:layout_width="75dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
+                        android:text="@string/hard_coded_sqm"
                         android:textAlignment="center"
                         android:textSize="36sp"
-                        android:text="@string/hard_coded_sqm"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textSqm" />
@@ -209,12 +209,40 @@
                         android:layout_width="75dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="8dp"
+                        android:text="@{String.valueOf(ownerApartment.rooms)}"
                         android:textAlignment="center"
                         android:textSize="36sp"
-                        android:text="@{String.valueOf(ownerApartment.rooms)}"
                         app:layout_constraintEnd_toStartOf="@+id/textViewSqm"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textRoom" />
+
+                    <TextView
+                        android:id="@+id/textBalcony"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="54dp"
+                        android:text="@string/detailed_apartment_balcony"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/textLookingFor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.099"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewRooms" />
+
+                    <TextView
+                        android:id="@+id/textViewBalcony"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="56dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textLookingFor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@{String.valueOf(ownerApartment.balcony)}"
+                        app:layout_constraintHorizontal_bias="0.203"
+                        app:layout_constraintStart_toEndOf="@+id/textBalcony"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSqm"
+                        app:layout_constraintVertical_bias="1.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </FrameLayout>
         </ScrollView>

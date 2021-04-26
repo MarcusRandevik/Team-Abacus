@@ -15,6 +15,7 @@ public class Apartment implements Serializable {
     private int rooms;
     //private int sqm;
     //private String owner;
+    public boolean balcony=false;
 
     public Apartment(int id, int rent, int rooms) {
         this.id = id;
