@@ -14,6 +14,9 @@ import android.view.ViewGroup;
 import com.example.changeit.R;
 import com.example.changeit.databinding.DetailedApartmentBinding;
 import com.example.changeit.model.Apartment;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
 /**
  * Represents the view that shows detailed information about an apartment
  *   @author Izabell Arvidsson, Marcus Randevik, Moa Berglund, Amanda Styff
@@ -39,6 +42,10 @@ public class DetailedApartmentFragment extends Fragment {
         binding.setOwnerLookingForApartment(apartment);
 
         binding.detailedApartmentImageViewpager.setAdapter(new ApartmentImageViewAdapter());
+        TabLayoutMediator mediator = new TabLayoutMediator(binding.imageTab, binding.detailedApartmentImageViewpager, true, (tab, position) -> {
+            // We don't need to do anything, just need to link viewpager with tablayout
+        });
+        mediator.attach();
 
         return binding.getRoot();
     }
