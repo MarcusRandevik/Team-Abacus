@@ -15,12 +15,13 @@ public class Apartment implements Serializable {
     private int rooms;
     //private int sqm;
     //private String owner;
-    public boolean balcony = true;
+    public boolean balcony;
 
     public Apartment(int id, int rent, int rooms) {
         this.id = id;
         this.rent = rent;
         this.rooms = rooms;
+        this.balcony = true;
        // this.balcony = true;
     }
 
@@ -64,10 +65,10 @@ public class Apartment implements Serializable {
 
 
     public String balconyIncluded() {
-        if(getBalcony()){
-            return "Yes!";
+        if(balcony){
+            return "Yes";
         } else {
-            return "No! :(";
+            return "No";
         }
     }
 
