@@ -45,6 +45,7 @@ public class AdFragment extends Fragment {
         //Lägg till viewmodel i fragment_ad.xml
         binding.setViewModel(adViewModel);
 
+
        /* Button button = binding.continueButton.findViewById(R.id.continueButton);
         //.findViewById(R.id.continueButton) Behövs detta eller fungerar det över?
         button.setOnClickListener(new View.OnClickListener() {

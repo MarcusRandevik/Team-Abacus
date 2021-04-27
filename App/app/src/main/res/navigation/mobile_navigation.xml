@@ -67,7 +67,7 @@
     <fragment
         android:id="@+id/ad"
         android:name="com.example.changeit.ui.ad.AdFragment"
-        android:label="CreateAd"
+        android:label="@string/Create_Ad"
         tools:layout="@layout/fragment_ad" >
         <action
             android:id="@+id/action_ad_to_navigation_profile"
@@ -79,7 +79,7 @@
     <fragment
         android:id="@+id/createAdP2Fragment"
         android:name="com.example.changeit.ui.ad.CreateAdP2Fragment"
-        android:label="create_ad_p2_fragment"
+        android:label="@string/Create_Ad"
         tools:layout="@layout/create_ad_p2_fragment" >
         <action
             android:id="@+id/action_createAdP2Fragment_to_ad"

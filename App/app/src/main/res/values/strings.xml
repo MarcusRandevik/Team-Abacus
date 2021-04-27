@@ -14,7 +14,7 @@
     <string name="detailed_apartment_lookingFor"> I am looking for</string>
     <string name="apartment_image_description"> Apartment image </string>
     <string name="hard_coded_sqm"> R </string>
-    <string name="hard_coded_Owner"> Lisas lägenhet </string>
+    <string name="hard_coded_Owner"> Lisas lägenhet </string> <!--Glöm inte denna!!-->
     <string name="filter_rent">Max number of rooms</string>
     <string name="Im_Looking_For">What Im Looking For</string>
     <string name="Toggle_button_Yes">YES</string>
@@ -22,6 +22,7 @@
     <string name="Toggle_button">Toggle Button</string>
     <string name="Rooms_In_Ad">Rooms</string>
     <string name="Sqm_In_Ad">Area (sqm)</string>
+    <string name="RentOffered"> Rent (SEK)</string>
     <string name="Maximum_Rent">Maximum Rent (SEK)</string>
     <string name="Description">Add a description</string>
     <string name="Wanted_Area">Wanted Area (North, West, South, East)</string>
@@ -30,6 +31,9 @@
     <string name="Electricity_In_Ad">Electricity included</string>
     <string name="Balcony_In_Ad">Balcony</string>
     <string name="Publish_Button">Publish Ad</string>
+    <string name="Continue_Button">Continue</string>
+    <string name="Your_Apartment">Your apartment</string>
+    <string name="Create_Ad">Create Ad</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
