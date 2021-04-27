@@ -16,24 +16,32 @@ public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentIma
     @NonNull
     @Override
     public ApartmentImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        return new ApartmentImageViewHolder(new ApartmentImageView(LayoutInflater.from(parent.getContext()), parent));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ApartmentImageViewHolder holder, int position) {
-
+        holder.bind(position);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 3;
     }
 
-    public class ApartmentImageViewHolder extends RecyclerView.ViewHolder {
+    protected class ApartmentImageViewHolder extends RecyclerView.ViewHolder {
+
+        private ApartmentImageView view;
 
         public ApartmentImageViewHolder(ApartmentImageView view) {
             super(view.view);
+            this.view = view;
         }
+
+        protected void bind(int position) {
+            view.bind(position);
+        }
+
     }
 
     private class ApartmentImageView {
@@ -46,7 +54,16 @@ public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentIma
         }
 
         protected void bind(int number) {
-
+            switch (number) {
+                case 0:     imageView.setImageResource(R.drawable.apartment_example);
+                            break;
+                case 1:     imageView.setImageResource(R.drawable.apartment_example_2);
+                            break;
+                case 2:     imageView.setImageResource(R.drawable.apartment_example_3);
+                            break;
+                default:    imageView.setImageResource(R.drawable.apartment_example_3);
+                            break;
+            }
         }
     }
 

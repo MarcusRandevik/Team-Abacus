@@ -37,7 +37,8 @@ public class DetailedApartmentFragment extends Fragment {
 
         binding.setOwnerApartment(apartment);
         binding.setOwnerLookingForApartment(apartment);
-        binding.apartmentImageDetailed.setImageResource(R.drawable.apartment_example);
+
+        binding.detailedApartmentImageViewpager.setAdapter(new ApartmentImageViewAdapter());
 
         return binding.getRoot();
     }
