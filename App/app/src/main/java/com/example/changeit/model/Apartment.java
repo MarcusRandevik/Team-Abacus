@@ -14,7 +14,7 @@ public class Apartment implements Serializable {
     private int rent;
     private int rooms;
     private int sqm;
-  //  private String owner;
+    private String address;
     private boolean balcony;
     private boolean wifi;
     private boolean pets;
@@ -26,7 +26,7 @@ public class Apartment implements Serializable {
         this.rooms = rooms;
         this.balcony = true;
         this.sqm=40;
-       // this.owner="Lisa";
+        this.address="Åke Falcks gata";
         this.wifi=true;
         this.pets=false;
         this.electricity=false;
@@ -63,11 +63,11 @@ public class Apartment implements Serializable {
 
     public int getSqm(){ return sqm;}
 
-  /*  public String getOwner(){return owner;}
+    public String getAddress(){return address;}
 
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }*/
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public void setSqm(int sqm){ this.sqm=sqm;}
 
