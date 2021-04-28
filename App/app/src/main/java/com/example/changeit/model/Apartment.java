@@ -19,6 +19,7 @@ public class Apartment implements Serializable {
     private boolean wifi;
     private boolean pets;
     private boolean electricity;
+    private String description;
 
     public Apartment(int id, int rent, int rooms) {
         this.id = id;
@@ -27,9 +28,10 @@ public class Apartment implements Serializable {
         this.balcony = true;
         this.sqm=40;
         this.address="Åke Falcks gata";
-        this.wifi=true;
-        this.pets=false;
+        this.wifi = true;
+        this.pets = false;
         this.electricity=false;
+        this.description = "Stor balkong! En lägenhet som ligger nära en sjö och en skog.";
     }
 
     public int getId() {
@@ -97,6 +99,13 @@ public class Apartment implements Serializable {
         this.rooms = rooms;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     @Override
     public String toString() {
