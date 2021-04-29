@@ -11,5 +11,6 @@
     <color name="SGSblue_lighter"> #1464f6</color>
     <color name="SGSorange"> #ff6624</color>
     <color name="SGSorange_lighter"> #ff7043</color>
+    <color name="Grey">#c3c3c3 </color>
 
 </resources>
