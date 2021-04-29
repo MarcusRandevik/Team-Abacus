@@ -99,12 +99,11 @@
                         android:id="@+id/textViewAddress"
                         android:layout_width="356dp"
                         android:layout_height="39dp"
-                        android:layout_marginTop="10dp"
                         android:text="@{String.valueOf(ownerApartment.address)}"
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/detailed_apartment_image_viewpager" />
+                        app:layout_constraintTop_toBottomOf="@+id/image_tab" />
 
                     <TextView
                         android:id="@+id/textSqmLookingFor"
