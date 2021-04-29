@@ -22,12 +22,9 @@ public class CreateAdP2ViewModel extends AndroidViewModel {
     public CreateAdP2ViewModel(@NonNull Application application,
                                @NonNull SavedStateHandle savedStateHandle) {
         super(application);
-
         repository = ((ChangeItApp) application).getRepository();
-
         description = new MutableLiveData<>();
         description.setValue("This is adPart2 fragment");
-
     }
 
     public MutableLiveData<String> getDescription() {

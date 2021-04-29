@@ -15,7 +15,9 @@ public class DataGenerator {
         Random random = new Random();
 
         for (int i = 0; i < size; i++) {
-            apartments.add(new Apartment(i, 4000 + i, 1 + random.nextInt(5)));
+            apartments.add(new Apartment(i, 4000 + i, 1 + random.nextInt(5), 5000,
+                    3, 5, "DescriptionOffered",
+                    "DescriptionWanted", 4));
         }
 
         return apartments;

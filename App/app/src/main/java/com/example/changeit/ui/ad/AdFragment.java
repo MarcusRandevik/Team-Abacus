@@ -40,33 +40,18 @@ public class AdFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_ad, container, false);
 
         // Få en ny viewmodel som är vid "liv" så länge som detta fragment
-        adViewModel = new ViewModelProvider(this).get(AdViewModel.class);
+        adViewModel = new ViewModelProvider(requireActivity()).get(AdViewModel.class);
 
         //Lägg till viewmodel i fragment_ad.xml
         binding.setViewModel(adViewModel);
 
-
-       /* Button button = binding.continueButton.findViewById(R.id.continueButton);
-        //.findViewById(R.id.continueButton) Behövs detta eller fungerar det över?
-        button.setOnClickListener(new View.OnClickListener() {
-
-            /**
-             * Navigates to the createAdP2 fragment when a user clicks on the button on the profile page.
-             * @param v
-
-            @Override
-            public void onClick(View v) {
-                NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
-                Navigation.findNavController(v).navigate(action);
-            }
-        });*/
 
         // Lägga en onclick listener på continue
         binding.continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("waow", "hej");
-                Log.i("waow", adViewModel.getDescription().getValue());
+                Log.i("waow", adViewModel.getDescriptionOffered().getValue());
                 NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
                 Navigation.findNavController(v).navigate(action);
             }
