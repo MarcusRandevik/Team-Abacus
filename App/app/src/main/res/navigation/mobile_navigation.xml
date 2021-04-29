@@ -17,8 +17,8 @@
             android:id="@+id/action_navigation_home_to_navigation_detailedApartment"
             app:destination="@id/navigation_detailedApartment">
             <argument
-                android:name="apartment"
-                app:argType="com.example.changeit.model.Apartment"
+                android:name="advertisement"
+                app:argType="com.example.changeit.model.Advertisement"
                 app:nullable="true"/>
         </action>
         <action
@@ -45,7 +45,7 @@
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_navigation_profile_to_ad"
-            app:destination="@id/ad" />
+            app:destination="@id/advertisement" />
     </fragment>
     <fragment
         android:id="@+id/navigation_detailedApartment"
@@ -53,8 +53,8 @@
         android:label="@string/title_detailed_apartment"
         tools:layout="@layout/detailed_apartment">
         <argument
-            android:name="apartment"
-            app:argType="com.example.changeit.model.Apartment"
+            android:name="advertisement"
+            app:argType="com.example.changeit.model.Advertisement"
             app:nullable="true" />
     </fragment>
     <dialog
@@ -65,8 +65,8 @@
     </dialog>
 
     <fragment
-        android:id="@+id/ad"
-        android:name="com.example.changeit.ui.ad.AdFragment"
+        android:id="@+id/advertisement"
+        android:name="com.example.changeit.ui.advertisement.AdFragment"
         android:label="CreateAd"
         tools:layout="@layout/fragment_ad" >
         <action

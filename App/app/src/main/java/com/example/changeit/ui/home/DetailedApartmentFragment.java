@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.changeit.R;
 import com.example.changeit.databinding.DetailedApartmentBinding;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -33,13 +34,12 @@ public class DetailedApartmentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Apartment apartment = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getApartment();
+        Advertisement advertisement = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getAdvertisement();
 
         // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
         DetailedApartmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
 
-        binding.setOwnerApartment(apartment);
-        binding.setOwnerLookingForApartment(apartment);
+        binding.setAdvertisement(advertisement);
 
         binding.detailedApartmentImageViewpager.setAdapter(new ApartmentImageViewAdapter());
         TabLayoutMediator mediator = new TabLayoutMediator(binding.imageTab, binding.detailedApartmentImageViewpager, true, (tab, position) -> {
