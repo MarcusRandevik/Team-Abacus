@@ -13,24 +13,71 @@ public class Apartment implements Serializable {
     private int id;
     private int rent;
     private int rooms;
-    //private int sqm;
-    //private String owner;
+    private int sqm;
+    private String address;
+    private boolean balcony;
+    private boolean wifi;
+    private boolean pets;
+    private boolean electricity;
+    private String description;
 
     public Apartment(int id, int rent, int rooms) {
         this.id = id;
         this.rent = rent;
         this.rooms = rooms;
+        this.balcony = true;
+        this.sqm=40;
+        this.address="Åke Falcks gata";
+        this.wifi = true;
+        this.pets = false;
+        this.electricity=false;
+        this.description = "Stor balkong! En lägenhet som ligger nära en sjö och en skog.";
     }
 
     public int getId() {
         return id;
     }
 
-    //public int getSqm(){ return sqm;}
 
-    //public String getOwner(){return owner;}
+    public boolean getWifi() {
+        return wifi;
+    }
 
-    //public void setSqm(int sqm){ this.sqm=sqm;}
+    public void setWifi(boolean wifi) {
+        this.wifi = wifi;
+    }
+
+    public boolean getPets() {
+        return pets;
+    }
+
+    public void setPets(boolean pets) {
+        this.pets = pets;
+    }
+
+    public boolean getElectricity() {
+        return electricity;
+    }
+
+    public void setElectricity(boolean electricity) {
+        this.electricity = electricity;
+    }
+
+    public int getSqm(){ return sqm;}
+
+    public String getAddress(){return address;}
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setSqm(int sqm){ this.sqm=sqm;}
+
+    public boolean getBalcony(){return balcony;}
+
+    public void setBalcony(boolean balcony) {
+        this.balcony = balcony;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -52,10 +99,30 @@ public class Apartment implements Serializable {
         this.rooms = rooms;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     @Override
     public String toString() {
         return "Apartment " + id + ", with " + rooms + " rooms and a rent of " + rent + "kr";
+    }
+
+    /**
+     * states if a specifik specifikation is fulfilled in a apartment
+     * @param specifikation the specifik specifikation
+     * @return yes or no if it is fulfilled
+     */
+    public String isIncluded(boolean specifikation) {
+        if(specifikation){
+            return "Yes";
+        } else {
+            return "No";
+        }
     }
 
     @Override

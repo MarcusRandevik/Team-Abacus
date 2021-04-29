@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textElectricityLooking"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -57,113 +58,114 @@
 
                     <TextView
                         android:id="@+id/textViewSqmLookingFor"
-                        android:layout_width="75dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.sqm)}"
                         android:textAlignment="center"
-                        android:textSize="36sp"
-                        android:text="@string/hard_coded_sqm"
+                        android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textSqmLookingFor" />
 
+
                     <TextView
                         android:id="@+id/textViewRentLookingFor"
-                        android:layout_width="75dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="15dp"
-                        android:textAlignment="center"
-                        android:textSize="36sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="@{String.valueOf(ownerLookingForApartment.rent)}"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.637"
                         app:layout_constraintStart_toEndOf="@+id/textViewSqmLookingFor"
                         app:layout_constraintTop_toBottomOf="@+id/textRentLookingFor" />
 
-
                     <TextView
                         android:id="@+id/textViewRent"
-                        android:layout_width="75dp"
-                        android:layout_height="80dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@{String.valueOf(ownerApartment.rent)}"
                         android:textAlignment="center"
-                        android:textSize="36sp"
+                        android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.505"
+                        app:layout_constraintHorizontal_bias="0.642"
                         app:layout_constraintStart_toEndOf="@+id/textViewSqm"
                         app:layout_constraintTop_toBottomOf="@+id/textRent" />
 
                     <TextView
-                        android:id="@+id/textViewOwner"
+                        android:id="@+id/textViewAddress"
                         android:layout_width="356dp"
                         android:layout_height="39dp"
-                        android:layout_marginTop="30dp"
+                        android:text="@{String.valueOf(ownerApartment.address)}"
                         android:textSize="30sp"
-                        android:text="@string/hard_coded_Owner"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/detailed_apartment_image_viewpager" />
+                        app:layout_constraintTop_toBottomOf="@+id/image_tab" />
 
                     <TextView
                         android:id="@+id/textSqmLookingFor"
                         android:layout_width="80dp"
-                        android:layout_height="38dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:layout_weight="100"
                         android:text="@string/detailed_apartment_sqm"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textLookingFor" />
 
                     <TextView
                         android:id="@+id/textRoomLookingFor"
                         android:layout_width="80dp"
-                        android:layout_height="38dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:layout_weight="100"
                         android:text="@string/detailed_apartment_rooms"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toStartOf="@+id/textSqmLookingFor"
+                        app:layout_constraintHorizontal_bias="0.376"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textLookingFor" />
 
                     <TextView
                         android:id="@+id/textRentLookingFor"
                         android:layout_width="80dp"
-                        android:layout_height="38dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text="@string/detailed_apartment_rent"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textSqmLookingFor"
                         app:layout_constraintTop_toBottomOf="@+id/textLookingFor" />
 
                     <TextView
                         android:id="@+id/textViewRoomLookingFor"
-                        android:layout_width="75dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="80dp"
-                        android:textAlignment="center"
-                        android:textSize="36sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="@{String.valueOf(ownerLookingForApartment.rooms)}"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
                         app:layout_constraintEnd_toStartOf="@+id/textViewSqmLookingFor"
+                        app:layout_constraintHorizontal_bias="0.379"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textRoomLookingFor" />
 
                     <TextView
                         android:id="@+id/textViewSqm"
-                        android:layout_width="75dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{String.valueOf(ownerApartment.sqm)}"
                         android:textAlignment="center"
-                        android:textSize="36sp"
-                        android:text="@string/hard_coded_sqm"
+                        android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textSqm" />
@@ -172,12 +174,13 @@
                         android:id="@+id/textLookingFor"
                         android:layout_width="339dp"
                         android:layout_height="39dp"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="15dp"
                         android:text="@string/detailed_apartment_lookingFor"
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.416"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
                     <TextView
                         android:id="@+id/textRoom"
@@ -186,10 +189,10 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/detailed_apartment_rooms"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toStartOf="@+id/textSqm"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewOwner" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
 
                     <TextView
                         android:id="@+id/textRent"
@@ -198,10 +201,10 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/detailed_apartment_rent"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textSqm"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewOwner" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
 
                     <TextView
                         android:id="@+id/textSqm"
@@ -211,22 +214,231 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/detailed_apartment_sqm"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewOwner" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
 
                     <TextView
                         android:id="@+id/textViewRooms"
-                        android:layout_width="75dp"
-                        android:layout_height="80dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textAlignment="center"
-                        android:textSize="36sp"
                         android:text="@{String.valueOf(ownerApartment.rooms)}"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
                         app:layout_constraintEnd_toStartOf="@+id/textViewSqm"
+                        app:layout_constraintHorizontal_bias="0.379"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textRoom" />
+
+                    <TextView
+                        android:id="@+id/textBalcony"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/detailed_apartment_balcony"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.136"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewRooms" />
+
+                    <TextView
+                        android:id="@+id/textViewBalcony"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.balcony))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
+
+                    <TextView
+                        android:id="@+id/textWifi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/detailed_apartment_wifi"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.122"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textBalcony" />
+
+                    <TextView
+                        android:id="@+id/textViewWifi"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.wifi))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewBalcony" />
+
+                    <TextView
+                        android:id="@+id/textPets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/detailed_apartment_pets"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.122"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textWifi" />
+
+                    <TextView
+                        android:id="@+id/textViewPets"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.pets))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewWifi" />
+
+                    <TextView
+                        android:id="@+id/textElectricity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/detailed_apartment_electricity"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPets" />
+
+                    <TextView
+                        android:id="@+id/textViewElectricity"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.electricity))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewPets" />
+
+                    <TextView
+                        android:id="@+id/textBalconyLooking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/detailed_apartment_balcony_looking"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.151"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewRoomLookingFor" />
+
+                    <TextView
+                        android:id="@+id/textWifiLooking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/detailed_apartment_wifi_looking"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.135"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textBalconyLooking" />
+
+                    <TextView
+                        android:id="@+id/textPetsLooking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/detailed_apartment_pets_looking"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.135"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textWifiLooking" />
+
+                    <TextView
+                        android:id="@+id/textElectricityLook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/detailed_apartment_electricity_looking"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPetsLooking" />
+
+                    <TextView
+                        android:id="@+id/textViewBalconyLooking"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.balcony))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSqmLookingFor" />
+
+                    <TextView
+                        android:id="@+id/textViewWifiLooking"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.wifi))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewBalconyLooking" />
+
+                    <TextView
+                        android:id="@+id/textViewPetsLooking"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.pets))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewWifiLooking" />
+
+                    <TextView
+                        android:id="@+id/textViewElectricityLooking"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.electricity))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewPetsLooking" />
+
+                    <TextView
+                        android:id="@+id/textViewDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="35dp"
+                        android:text="@{String.valueOf(ownerApartment.description)}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textElectricity" />
+
+                    <TextView
+                        android:id="@+id/textViewDescriptionLooking"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="35dp"
+                        android:text="@{String.valueOf(ownerLookingForApartment.description)}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textElectricityLook" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </FrameLayout>
         </ScrollView>
