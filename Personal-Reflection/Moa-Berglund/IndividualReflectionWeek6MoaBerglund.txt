@@ -1,0 +1,41 @@
+What do I want to learn or understand better?
+	
+	I'm glad that I reflected upon "let some things go" last week, because I had this in mind this sprint and it made me less stressed.
+	I made sure to begin with tasks from the right end, which resulted in a fun and encouraging end of the sprint where we could do extras.
+	I also thought about the optimistic time estimation last sprint during this scrum poker. This week, me, Lisa and Kerstin programmed together and we were able to finish even earlier than expected.
+	As mentioned last week, learning time estimation is under progress! 
+	
+	I feel that xml-coding is starting to clear up and this sprint I realised that I actually learned much xml last sprint since this sprint did not feel so "syntax difficult" as last did.
+	My plan is to keep on experimenting with xml!
+
+	This sprint was the first time I experienced coding with a database. Of course, this now feels tricky. Hopefully it will losen up as it did with xml by working with it.  
+
+How can I help someone else, or the entire team, to learn something new?
+	
+	Since Kerstin and Lisa did not programme with me last sprint, and since our user story this sprint kept building upon what we did last week, I could explain for them in detail how we handled xml last sprint.
+	
+	I made sure to be observant for questions, and tried my best to help my team mates as far as I could with my own knowledge, but also by doing research.
+	I find that the whole group is good at this, since we handle questions in a peaceful and with kind manner.
+	I plan to keep up with this nice environment!
+	
+	I also feel that we have reached a good flow for planning meetings based on our user story-groups, maintaining structure paves the way for learning, 
+
+What is my contribution towards the team’s use of Scrum?
+
+	Trello and Niko-Niko has a good flow now and we remind each other when needed. 
+	
+	This sprint we encountered some problems with merge conflicts since we had coded in the same places a bit. So for next sprint, I believe we have to be more clear about the partitions. 
+	I participated in our discussions about how to best solve the merge conflicts.
+
+	I participated by asking relevant questions during the meeting with our client.	
+
+
+What is my contribution towards the team’s deliveries?
+	
+	This week me, Lisa and Kerstin pair-programmed and finished the user story "Se annons". We did complete it in the detailedapartment_ver2-branch.
+	Since this required less than we thought, we also finished the user story "Lägenhetsbeskrivning".
+	I plan to keep up with being an active team member, who communicate how the work is going during each sprint so the team is on track with the deliveries.
+
+	I participated during the team review and were involved in discussions that resulted in the team reflection.
+ 
+	
