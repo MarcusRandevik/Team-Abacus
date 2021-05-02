@@ -54,7 +54,7 @@ public class CreateAdP2Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AsyncTask.execute(() -> {
-                   // mViewModel.saveApartment();
+                   mViewModel.saveApartment();
 
                 });
                 Toast toast = Toast.makeText(getContext(),"Apartment saved", Toast.LENGTH_SHORT);

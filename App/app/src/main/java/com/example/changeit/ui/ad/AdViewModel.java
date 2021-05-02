@@ -11,13 +11,14 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
 import java.util.Random;
 
 public class AdViewModel extends AndroidViewModel {
 
-        private MutableLiveData<String> description;
+        private MutableLiveData<String> descriptionOffered;
         private MutableLiveData<String> descriptionWanted;
         private MutableLiveData<Boolean> valid;
         private MutableLiveData<String> rentOffered;
@@ -34,7 +35,7 @@ public class AdViewModel extends AndroidViewModel {
     public AdViewModel(@NonNull Application application,
                            @NonNull SavedStateHandle savedStateHandle) {
             super(application);
-            description = new MutableLiveData<>();
+            descriptionOffered = new MutableLiveData<>();
             descriptionWanted = new MutableLiveData<>();
             rentOffered = new MutableLiveData<>();
             roomsOffered = new MutableLiveData<>();
@@ -70,12 +71,12 @@ public class AdViewModel extends AndroidViewModel {
         this.rentOffered = rentOffered;
     }
 
-    public MutableLiveData<String> getDescription() {
-        return description;
+    public MutableLiveData<String> getDescriptionOffered() {
+        return descriptionOffered;
     }
 
     public void setDescriptionOffered(MutableLiveData<String> description) {
-        this.description = description;
+        this.descriptionOffered = description;
     }
 
     public MutableLiveData<String> getRoomsWanted() {
@@ -112,17 +113,12 @@ public class AdViewModel extends AndroidViewModel {
 
     //Listan krånglar (?)
 
-    /*public void saveApartment(){
-        repository.addAppartment(new Apartment( new Random().nextInt(),
-                Integer.parseInt(getRentOffered().getValue()),
-                Integer.parseInt(getRoomsOffered().getValue()),
-                Integer.parseInt(getRentWanted().getValue()),
-                Integer.parseInt(getSqmWanted().getValue()),
-                Integer.parseInt(getSqmOffered().getValue()),
-                getDescriptionOffered().getValue(),
-                getDescriptionWanted().getValue(),
-                Integer.parseInt(getRentWanted().getValue()))); //Ej rum över 10
+    public void saveApartment(){
+        repository.addAdvertisement(new Advertisement( new Random().nextInt(),
+                        new Apartment( Integer.parseInt(getRentOffered().getValue()),
+                        Integer.parseInt(getRoomsOffered().getValue())),
+                        Integer.parseInt(getRentWanted().getValue()),
+                        Integer.parseInt(getRoomsWanted().getValue()),
+                        Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
     }
-
-     */
 }
