@@ -34,11 +34,6 @@ public class CreateAdP2Fragment extends Fragment {
 
     private AdViewModel mViewModel;
 
-   /* public static CreateAdP2Fragment newInstance() {
-        return new CreateAdP2Fragment();
-    }
-
-    */
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -59,7 +54,7 @@ public class CreateAdP2Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AsyncTask.execute(() -> {
-                    mViewModel.saveApartment();
+                   // mViewModel.saveApartment();
 
                 });
                 Toast toast = Toast.makeText(getContext(),"Apartment saved", Toast.LENGTH_SHORT);

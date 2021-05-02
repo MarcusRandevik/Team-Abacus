@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class AdViewModel extends AndroidViewModel {
 
-        private MutableLiveData<String> descriptionOffered;
+        private MutableLiveData<String> description;
         private MutableLiveData<String> descriptionWanted;
         private MutableLiveData<Boolean> valid;
         private MutableLiveData<String> rentOffered;
@@ -34,7 +34,7 @@ public class AdViewModel extends AndroidViewModel {
     public AdViewModel(@NonNull Application application,
                            @NonNull SavedStateHandle savedStateHandle) {
             super(application);
-            descriptionOffered = new MutableLiveData<>();
+            description = new MutableLiveData<>();
             descriptionWanted = new MutableLiveData<>();
             rentOffered = new MutableLiveData<>();
             roomsOffered = new MutableLiveData<>();
@@ -70,12 +70,12 @@ public class AdViewModel extends AndroidViewModel {
         this.rentOffered = rentOffered;
     }
 
-    public MutableLiveData<String> getDescriptionOffered() {
-        return descriptionOffered;
+    public MutableLiveData<String> getDescription() {
+        return description;
     }
 
     public void setDescriptionOffered(MutableLiveData<String> description) {
-        this.descriptionOffered = description;
+        this.description = description;
     }
 
     public MutableLiveData<String> getRoomsWanted() {
@@ -112,7 +112,7 @@ public class AdViewModel extends AndroidViewModel {
 
     //Listan krånglar (?)
 
-    public void saveApartment(){
+    /*public void saveApartment(){
         repository.addAppartment(new Apartment( new Random().nextInt(),
                 Integer.parseInt(getRentOffered().getValue()),
                 Integer.parseInt(getRoomsOffered().getValue()),
@@ -123,4 +123,6 @@ public class AdViewModel extends AndroidViewModel {
                 getDescriptionWanted().getValue(),
                 Integer.parseInt(getRentWanted().getValue()))); //Ej rum över 10
     }
+
+     */
 }

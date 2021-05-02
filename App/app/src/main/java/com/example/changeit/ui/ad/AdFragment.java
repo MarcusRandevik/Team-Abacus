@@ -51,7 +51,7 @@ public class AdFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.i("waow", "hej");
-                Log.i("waow", adViewModel.getDescriptionOffered().getValue());
+                Log.i("waow", adViewModel.getDescription().getValue());
                 NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
                 Navigation.findNavController(v).navigate(action);
             }
