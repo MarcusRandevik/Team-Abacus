@@ -6,19 +6,20 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
 import java.util.List;
 
 @Dao
-public interface ApartmentDao {
+public interface AdvertisementsDao {
 
-    @Query("SELECT * FROM apartments WHERE rooms <= :maxRooms")
-    LiveData<List<Apartment>> getAllApartments(int maxRooms);
+    @Query("SELECT * FROM advertisements WHERE rooms <= :maxRooms")
+    LiveData<List<Advertisement>> getAllApartments(int maxRooms);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(List<Apartment> apartments);
+    void insertAll(List<Advertisement> Advertisement);
 
     @Insert()
-    void insert(Apartment apartment);
+    void insert(Advertisement advertisement);
 }

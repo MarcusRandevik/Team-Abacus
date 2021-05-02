@@ -9,19 +9,20 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.changeit.AppExecutors;
-import com.example.changeit.db.dao.ApartmentDao;
+import com.example.changeit.db.dao.AdvertisementsDao;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
 import java.util.List;
 
-@Database(entities = Apartment.class, version = 1)
+@Database(entities = Advertisement.class, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;
 
     private static final String DATABASE_NAME = "change-it-db";
 
-    public abstract ApartmentDao apartmentDao();
+    public abstract AdvertisementsDao advertisementsDao();
 
     public static AppDatabase getInstance(final Context context, final AppExecutors executors) {
         if (appDatabase == null) {
@@ -43,10 +44,10 @@ public abstract class AppDatabase extends RoomDatabase {
                         executors.diskIO().execute(() -> {
                             AppDatabase appDatabase = AppDatabase.getInstance(applicationContext, executors);
 
-                            List<Apartment> apartments = DataGenerator.generateApartments();
+                            List<Advertisement> advertisements = DataGenerator.generateApartments();
 
                             appDatabase.runInTransaction(() -> {
-                                appDatabase.apartmentDao().insertAll(apartments);
+                                appDatabase.advertisementsDao().insertAll(advertisements);
                             });
                         });
                     }

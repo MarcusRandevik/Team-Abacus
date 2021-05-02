@@ -4,11 +4,11 @@
 
     <data>
         <variable
-            name="apartment"
-            type="com.example.changeit.model.Apartment" />
+            name="advertisement"
+            type="com.example.changeit.model.Advertisement" />
         <variable
             name="callback"
-            type="com.example.changeit.ui.home.ApartmentClickCallback" />
+            type="com.example.changeit.ui.home.AdvertisementClickCallback" />
     </data>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:layout_marginTop="16dp"
         android:paddingTop="8dp"
         android:minHeight="100dp"
-        android:onClick="@{() -> callback.onClick(apartment)}"
+        android:onClick="@{() -> callback.onClick(advertisement)}"
         android:background="@color/cardview_dark_background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,7 +41,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@id/apartment_image"
                 app:layout_constraintTop_toBottomOf="@id/apartment_image"
-                android:text="@{@string/apartment_list_rent(apartment.rentOffered)}"/>
+                android:text="@{@string/apartment_list_rent(advertisement.apartment.rent)}"/>
 
             <TextView
                 android:id="@+id/rooms_text"
@@ -51,7 +51,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toEndOf="@id/rent_text"
                 app:layout_constraintTop_toBottomOf="@id/apartment_image"
-                android:text="@{@string/apartment_list_rooms(apartment.roomsOffered)}"/>
+                android:text="@{@string/apartment_list_rooms(advertisement.apartment.rooms)}"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.changeit;
 import androidx.lifecycle.LiveData;
 
 import com.example.changeit.db.AppDatabase;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
 import java.util.List;
@@ -28,12 +29,12 @@ public class AppRepository {
         return instance;
     }
 
-    public LiveData<List<Apartment>> getApartments(int maxRooms) {
-        return appDatabase.apartmentDao().getAllApartments(maxRooms);
+    public LiveData<List<Advertisement>> getAdvertisements(int maxRooms) {
+        return appDatabase.advertisementsDao().getAllApartments(maxRooms);
     }
 
-    public void addAppartment(Apartment apartment) {
-        appDatabase.apartmentDao().insert(apartment);
+    public void addAdvertisement(Advertisement advertisement) {
+        appDatabase.advertisementsDao().insert(advertisement);
     }
 
 }
