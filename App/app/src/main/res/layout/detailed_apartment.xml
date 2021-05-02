@@ -5,11 +5,8 @@
 
     <data>
         <variable
-            name="ownerApartment"
-            type="com.example.changeit.model.Apartment" />
-        <variable
-            name="ownerLookingForApartment"
-            type="com.example.changeit.model.Apartment" />
+            name="advertisement"
+            type="com.example.changeit.model.Advertisement" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.sqm)}"
+                        android:text="@{String.valueOf(advertisement.seekingSqm)}"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +71,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.rent)}"
+                        android:text="@{String.valueOf(advertisement.seekingRent)}"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{String.valueOf(ownerApartment.rent)}"
+                        android:text="@{String.valueOf(advertisement.apartment.rent)}"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +96,7 @@
                         android:id="@+id/textViewAddress"
                         android:layout_width="356dp"
                         android:layout_height="39dp"
-                        android:text="@{String.valueOf(ownerApartment.address)}"
+                        android:text="@{advertisement.apartment.address}"
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +147,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.rooms)}"
+                        android:text="@{String.valueOf(advertisement.seekingRoom)}"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toStartOf="@+id/textViewSqmLookingFor"
@@ -163,7 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{String.valueOf(ownerApartment.sqm)}"
+                        android:text="@{String.valueOf(advertisement.apartment.sqm)}"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -224,7 +221,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{String.valueOf(ownerApartment.rooms)}"
+                        android:text="@{String.valueOf(advertisement.apartment.rooms)}"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toStartOf="@+id/textViewSqm"
@@ -250,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="16dp"
-                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.balcony))}"
+                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.balcony)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
@@ -273,7 +270,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.wifi))}"
+                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.wifi)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewBalcony" />
@@ -296,7 +293,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.pets))}"
+                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.pets)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewWifi" />
@@ -319,7 +316,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{String.valueOf(ownerApartment.isIncluded(ownerApartment.electricity))}"
+                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.electricity)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewPets" />
@@ -378,7 +375,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="16dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.balcony))}"
+                        android:text="Yes"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewSqmLookingFor" />
@@ -389,7 +386,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.wifi))}"
+                        android:text="No"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewBalconyLooking" />
@@ -400,7 +397,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.pets))}"
+                        android:text="No"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewWifiLooking" />
@@ -411,7 +408,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.isIncluded(ownerLookingForApartment.electricity))}"
+                        android:text="Yes"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewPetsLooking" />
@@ -423,7 +420,7 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="35dp"
-                        android:text="@{String.valueOf(ownerApartment.description)}"
+                        android:text="@{advertisement.apartment.description}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textElectricity" />
@@ -435,7 +432,7 @@
                         android:layout_marginStart="35dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="35dp"
-                        android:text="@{String.valueOf(ownerLookingForApartment.description)}"
+                        android:text="Looking"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textElectricityLook" />

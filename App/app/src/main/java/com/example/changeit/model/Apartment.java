@@ -1,16 +1,9 @@
 package com.example.changeit.model;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-
-@Entity(tableName = "apartments")
 public class Apartment implements Serializable {
-    @PrimaryKey
-    private int id;
     private int rent;
     private int rooms;
     private int sqm;
@@ -21,8 +14,7 @@ public class Apartment implements Serializable {
     private boolean electricity;
     private String description;
 
-    public Apartment(int id, int rent, int rooms) {
-        this.id = id;
+    public Apartment(int rent, int rooms) {
         this.rent = rent;
         this.rooms = rooms;
         this.balcony = true;
@@ -32,10 +24,6 @@ public class Apartment implements Serializable {
         this.pets = false;
         this.electricity=false;
         this.description = "Stor balkong! En lägenhet som ligger nära en sjö och en skog.";
-    }
-
-    public int getId() {
-        return id;
     }
 
 
@@ -79,10 +67,6 @@ public class Apartment implements Serializable {
         this.balcony = balcony;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getRent() {
         return rent;
     }
@@ -109,7 +93,7 @@ public class Apartment implements Serializable {
 
     @Override
     public String toString() {
-        return "Apartment " + id + ", with " + rooms + " rooms and a rent of " + rent + "kr";
+        return "Apartment with " + rooms + " rooms and a rent of " + rent + "kr";
     }
 
     /**
@@ -130,14 +114,19 @@ public class Apartment implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Apartment apartment = (Apartment) o;
-        return id == apartment.id &&
-                rent == apartment.rent &&
-                rooms == apartment.rooms;
+        return rent == apartment.rent &&
+                rooms == apartment.rooms &&
+                sqm == apartment.sqm &&
+                balcony == apartment.balcony &&
+                wifi == apartment.wifi &&
+                pets == apartment.pets &&
+                electricity == apartment.electricity &&
+                Objects.equals(address, apartment.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, rent, rooms);
+        return Objects.hash(rent, rooms, sqm, address, balcony, wifi, pets, electricity);
     }
 }
 
