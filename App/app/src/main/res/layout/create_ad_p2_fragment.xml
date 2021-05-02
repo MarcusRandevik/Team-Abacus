@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="Autofill">
+<!--Vad innebär autofill?-->
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.changeit.ui.ad.AdViewModel" />
+    </data>
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.ad.CreateAdP2">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+
+            <EditText
+                android:id="@+id/roomsWanted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:hint="@string/rooms_label"
+                android:inputType="number"
+                android:text="@={viewModel.roomsWanted}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCreateAdP2TextView" />
+
+            <!--Varför är autoText överstryken? android:autoText="false" behövs denna i nedre EditText?-->
+
+            <EditText
+                android:id="@+id/sqmWanted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:ems="10"
+                android:hint="@string/sqm_label"
+                android:inputType="number"
+                android:text="@={viewModel.sqmWanted}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/roomsWanted" />
+
+            <EditText
+                android:id="@+id/rentWanted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/Maximum_Rent"
+                android:inputType="number"
+                android:text="@={viewModel.rentWanted}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sqmWanted" />
+
+            <TextView
+                android:id="@+id/petsTextViewWanted"
+                android:layout_width="126dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/detailed_apartment_pets"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wifiTextViewWanted" />
+
+            <TextView
+                android:id="@+id/electricityTextViewWanted"
+                android:layout_width="126dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/detailed_apartment_electricity"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/petsTextViewWanted" />
+
+            <TextView
+                android:id="@+id/balconyTextViewWanted"
+                android:layout_width="125dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/detailed_apartment_balcony"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.353"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/electricityTextViewWanted" />
+
+            <TextView
+                android:id="@+id/wifiTextViewWanted"
+                android:layout_width="126dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/detailed_apartment_wifi"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/areaWanted" />
+
+            <!--Binda texten till viewmodels description-->
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionWanted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/Description"
+                android:inputType="textMultiLine"
+                android:text="@={viewModel.descriptionWanted}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rentWanted" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/areaWanted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/Wanted_Area"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionWanted" />
+
+            <ToggleButton
+                android:id="@+id/petsToggleButtonWanted"
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="60dp"
+                android:text="@string/Toggle_button"
+                android:textOff="@string/No"
+                android:textOn="@string/Yes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toEndOf="@+id/petsTextViewWanted"
+                app:layout_constraintTop_toBottomOf="@+id/wifiToggleButtonWanted" />
+
+            <ToggleButton
+                android:id="@+id/electricityToggleButtonWanted"
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="60dp"
+                android:text="@string/Toggle_button"
+                android:textOff="@string/No"
+                android:textOn="@string/Yes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toEndOf="@+id/electricityTextViewWanted"
+                app:layout_constraintTop_toBottomOf="@+id/petsToggleButtonWanted" />
+
+            <ToggleButton
+                android:id="@+id/balconyToggleButtonWanted"
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="60dp"
+                android:text="@string/Toggle_button"
+                android:textOff="@string/No"
+                android:textOn="@string/Yes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toEndOf="@+id/balconyTextViewWanted"
+                app:layout_constraintTop_toBottomOf="@+id/electricityToggleButtonWanted" />
+
+            <ToggleButton
+                android:id="@+id/wifiToggleButtonWanted"
+                android:layout_width="50dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="50dp"
+                android:text="@string/Toggle_button"
+                android:textOff="@string/No"
+                android:textOn="@string/Yes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toEndOf="@+id/wifiTextViewWanted"
+                app:layout_constraintTop_toBottomOf="@+id/areaWanted" />
+
+            <TextView
+                android:id="@+id/titleCreateAdP2TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/detailed_apartment_lookingFor"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/publishButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Publish_Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.899"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/balconyToggleButtonWanted" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    </ScrollView>
+    </layout>
+
