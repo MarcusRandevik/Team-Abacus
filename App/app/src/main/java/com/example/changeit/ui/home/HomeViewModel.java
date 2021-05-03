@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.Transformations;
@@ -16,9 +17,16 @@ import com.example.changeit.model.Apartment;
 
 import java.util.List;
 
+/**
+ * Java doc
+ */
+
 public class HomeViewModel extends AndroidViewModel {
 
     private MutableLiveData<Integer> maxRooms = new MutableLiveData<>(5);
+    private MutableLiveData<Integer> maxRent = new MutableLiveData<>(5000);
+    private MutableLiveData<Integer> maxSqm = new MutableLiveData<>(45);
+
     private LiveData<List<Advertisement>> advertisements;
 
     private AppRepository repository;
@@ -26,6 +34,12 @@ public class HomeViewModel extends AndroidViewModel {
     public HomeViewModel(@NonNull Application application,
                          @NonNull SavedStateHandle savedStateHandle) {
         super(application);
+
+        /*
+        MediatorLiveData liveDataMerger = new MediatorLiveData<>();
+        liveDataMerger.addSource(maxRooms, value -> liveDataMerger.setValue(value));
+        liveDataMerger.addSource(maxRent, value -> liveDataMerger.setValue(value));
+         */
 
         repository = ((ChangeItApp) application).getRepository();
 
@@ -44,4 +58,22 @@ public class HomeViewModel extends AndroidViewModel {
     public void setMaxRooms(int maxRooms) {
         this.maxRooms.setValue(maxRooms);
     }
+
+    public Integer getMaxRent() {
+        return maxRent.getValue();
+    }
+
+    public void setMaxRent(int maxRent) {
+        this.maxRent.setValue(maxRent);
+    }
+
+    public Integer getMaxSqm() {
+        return maxSqm.getValue();
+    }
+
+    public void setMaxSqm(int maxSqm) {
+        this.maxSqm.setValue(maxSqm);
+    }
+
+
 }
