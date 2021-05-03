@@ -14,6 +14,7 @@ import com.example.changeit.ChangeItApp;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
+import java.util.List;
 import java.util.Random;
 
 public class AdViewModel extends AndroidViewModel {
@@ -27,6 +28,7 @@ public class AdViewModel extends AndroidViewModel {
         private MutableLiveData<String> sqmWanted;
         private MutableLiveData<String> sqmOffered;
         private MutableLiveData<String> roomsWanted;
+        private MutableLiveData<List<String>> pictures;
 
         private AppRepository repository;
 
@@ -44,6 +46,7 @@ public class AdViewModel extends AndroidViewModel {
             rentWanted = new MutableLiveData<>();
             sqmWanted = new MutableLiveData<>();
             roomsWanted = new MutableLiveData<>();
+            pictures = new MutableLiveData<>();
             repository = ((ChangeItApp) application).getRepository();
         }
 
