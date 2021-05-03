@@ -17,7 +17,7 @@ public class DataConverter {
         }
 
         return uris.stream()
-                .map(uri -> uri.toString())
+                .map(Uri::toString)
                 .collect(Collectors.joining(","));
     }
 
@@ -26,8 +26,8 @@ public class DataConverter {
             return null;
         }
 
-        return Arrays.asList(urisString.split(",")).stream()
-                .map(s -> Uri.parse(s))
+        return Arrays.stream(urisString.split(","))
+                .map(Uri::parse)
                 .collect(Collectors.toList());
     }
 
