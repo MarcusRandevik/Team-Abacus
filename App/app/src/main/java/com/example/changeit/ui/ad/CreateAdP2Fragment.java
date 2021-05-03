@@ -51,14 +51,23 @@ public class CreateAdP2Fragment extends Fragment {
              * Publish the newly created apartment.
              * @param v
              */
+
             @Override
             public void onClick(View v) {
-                AsyncTask.execute(() -> {
-                   mViewModel.saveApartment();
+                if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
+                        mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
+                        mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
+                    Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                }else {
+                    AsyncTask.execute(() -> {
+                        mViewModel.saveApartment();
 
-                });
-                Toast toast = Toast.makeText(getContext(),"Apartment saved", Toast.LENGTH_SHORT);
-                toast.show();
+                    });
+                    Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 

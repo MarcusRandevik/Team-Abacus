@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
@@ -52,12 +53,25 @@ public class AdFragment extends Fragment {
         binding.continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("waow", "hej");
-                Log.i("waow", adViewModel.getDescriptionOffered().getValue());
-                NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
-                Navigation.findNavController(v).navigate(action);
+                if(adViewModel.getDescriptionOffered().getValue() == null ||
+                        adViewModel.getRentOffered().getValue() == null ||
+                        adViewModel.getRoomsOffered().getValue() == null ||
+                     adViewModel.getSqmOffered().getValue() == null)
+                        {
+                    Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+
+                }else {
+                    NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
+                    Navigation.findNavController(v).navigate(action);
+                }
             }
         });
+
+                //
+        // Log.i("waow", "hej");
+        // Log.i("waow", adViewModel.getDescriptionOffered().getValue());
 
         return binding.getRoot();
     }
