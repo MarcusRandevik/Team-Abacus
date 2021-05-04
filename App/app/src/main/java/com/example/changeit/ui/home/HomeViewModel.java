@@ -7,11 +7,13 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.Transformations;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
+import com.example.changeit.db.FilterValues;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
@@ -28,6 +30,7 @@ public class HomeViewModel extends AndroidViewModel {
     private MutableLiveData<Integer> maxSqm = new MutableLiveData<>(45);
 
     private LiveData<List<Advertisement>> advertisements;
+    private CustomLiveData filter = new CustomLiveData(maxRooms);
 
     private AppRepository repository;
 
@@ -43,7 +46,7 @@ public class HomeViewModel extends AndroidViewModel {
 
         repository = ((ChangeItApp) application).getRepository();
 
-        advertisements = Transformations.switchMap(maxRooms, integer -> repository.getAdvertisements(integer));
+        advertisements = Transformations.switchMap(filter, filterValues -> repository.getAdvertisements(filterValues));
 
     }
 
@@ -76,4 +79,15 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
 
+
+    class CustomLiveData extends MediatorLiveData<FilterValues> {
+        public CustomLiveData(LiveData<Integer> rooms) {
+            addSource(rooms, new Observer<Integer>() {
+                @Override
+                public void onChanged(Integer integer) {
+                    setValue(new FilterValues(integer, 1, 1));
+                }
+            });
+        }
+    }
 }
