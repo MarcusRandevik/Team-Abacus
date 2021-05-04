@@ -7,6 +7,7 @@
     <string name="title_detailed_apartment">Apartment Details</string>
     <string name="apartment_list_rent">Rent: %d</string>
     <string name="apartment_list_rooms">Rooms: %d</string>
+    <string name="apartment_list_sqm">Sqm: %d</string>
     <string name="rooms_label"> Rooms </string>
     <string name="sqm_label"> Area (sqm) </string>
     <string name="rent_label"> Rent (SEK) </string>
