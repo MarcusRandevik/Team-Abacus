@@ -65,8 +65,9 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
 
     @Override
     public void onBindViewHolder(@NonNull ApartmentViewHolder holder, int position) {
-        holder.binding.setAdvertisement(advertisements.get(position));
-        holder.binding.apartmentImage.setImageResource(R.drawable.apartment_example);
+        Advertisement advertisement = advertisements.get(position);
+        holder.binding.setAdvertisement(advertisement);
+        holder.binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
         holder.binding.executePendingBindings();
     }
 

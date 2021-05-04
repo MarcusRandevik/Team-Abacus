@@ -4,10 +4,8 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
-import androidx.lifecycle.ViewModel;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
@@ -125,7 +123,7 @@ public class AdViewModel extends AndroidViewModel {
         repository.addAdvertisement(new Advertisement( new Random().nextInt(),
                         new Apartment( Integer.parseInt(getRentOffered().getValue()),
                         Integer.parseInt(getRoomsOffered().getValue())),
-                        Integer.parseInt(getRentWanted().getValue()),
+                null, Integer.parseInt(getRentWanted().getValue()),
                         Integer.parseInt(getRoomsWanted().getValue()),
                         Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
     }

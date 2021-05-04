@@ -21,7 +21,8 @@ public class DataConverter {
                 .collect(Collectors.joining(","));
     }
 
-    @TypeConverter List<Uri> toUriList(String urisString) {
+    @TypeConverter
+    public List<Uri> toUriList(String urisString) {
         if (urisString == null) {
             return null;
         }

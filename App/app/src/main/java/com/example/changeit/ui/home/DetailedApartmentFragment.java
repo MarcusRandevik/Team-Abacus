@@ -41,20 +41,13 @@ public class DetailedApartmentFragment extends Fragment {
 
         binding.setAdvertisement(advertisement);
 
-        binding.detailedApartmentImageViewpager.setAdapter(new ApartmentImageViewAdapter());
+        binding.detailedApartmentImageViewpager.setAdapter(new ApartmentImageViewAdapter(advertisement.getPictures()));
         TabLayoutMediator mediator = new TabLayoutMediator(binding.imageTab, binding.detailedApartmentImageViewpager, true, (tab, position) -> {
             // We don't need to do anything, just need to link viewpager with tablayout
         });
         mediator.attach();
 
         return binding.getRoot();
-    }
-
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        // TODO: Use the ViewModel
     }
 
 }
