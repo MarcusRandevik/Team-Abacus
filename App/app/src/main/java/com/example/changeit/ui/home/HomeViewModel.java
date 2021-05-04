@@ -30,19 +30,13 @@ public class HomeViewModel extends AndroidViewModel {
     private MutableLiveData<Integer> maxSqm = new MutableLiveData<>(45);
 
     private LiveData<List<Advertisement>> advertisements;
-    private CustomLiveData filter = new CustomLiveData(maxRooms);
+    private CustomLiveData filter = new CustomLiveData(maxRooms, maxRent, maxSqm);
 
     private AppRepository repository;
 
     public HomeViewModel(@NonNull Application application,
                          @NonNull SavedStateHandle savedStateHandle) {
         super(application);
-
-        /*
-        MediatorLiveData liveDataMerger = new MediatorLiveData<>();
-        liveDataMerger.addSource(maxRooms, value -> liveDataMerger.setValue(value));
-        liveDataMerger.addSource(maxRent, value -> liveDataMerger.setValue(value));
-         */
 
         repository = ((ChangeItApp) application).getRepository();
 
@@ -81,11 +75,23 @@ public class HomeViewModel extends AndroidViewModel {
 
 
     class CustomLiveData extends MediatorLiveData<FilterValues> {
-        public CustomLiveData(LiveData<Integer> rooms) {
-            addSource(rooms, new Observer<Integer>() {
+        public CustomLiveData(LiveData<Integer> maxRooms, LiveData<Integer> maxRent, LiveData<Integer> maxSqm) {
+            addSource(maxRooms, new Observer<Integer>() {
                 @Override
-                public void onChanged(Integer integer) {
-                    setValue(new FilterValues(integer, 1, 1));
+                public void onChanged(Integer newMaxRooms) {
+                    setValue(new FilterValues(newMaxRooms, maxRent.getValue(), maxSqm.getValue()));
+                }
+            });
+            addSource(maxRent, new Observer<Integer>() {
+                @Override
+                public void onChanged(Integer newMaxRent) {
+                    setValue(new FilterValues(maxRooms.getValue(), newMaxRent, maxSqm.getValue()));
+                }
+            });
+            addSource(maxSqm, new Observer<Integer>() {
+                @Override
+                public void onChanged(Integer newMaxSqm) {
+                    setValue(new FilterValues(maxRooms.getValue(), maxRent.getValue(), newMaxSqm));
                 }
             });
         }
