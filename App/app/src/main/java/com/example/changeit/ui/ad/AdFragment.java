@@ -56,15 +56,27 @@ public class AdFragment extends Fragment {
         binding.setViewModel(adViewModel);
 
 
-
-        // Lägga en onclick listener på continue
-        binding.continueButton.setOnClickListener(new View.OnClickListener() {
+        /**
+         * Checks if all the required fields are filled out. If not, a message will appear
+         * asking the user to fill in all fields. If everything is filled out the user will be taken
+         * to the next part of create ad.
+         * @param v -
+         */
+         binding.continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("waow", "hej");
-                Log.i("waow", adViewModel.getDescriptionOffered().getValue());
-                NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
-                Navigation.findNavController(v).navigate(action);
+                if(adViewModel.getDescriptionOffered().getValue() == null || adViewModel.getDescriptionOffered().getValue().equals("")  ||
+                        adViewModel.getRentOffered().getValue() == null  || adViewModel.getRentOffered().getValue().equals("") ||
+                adViewModel.getRoomsOffered().getValue() == null || adViewModel.getRoomsOffered().getValue().equals("") ||
+                adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals(""))
+                        {
+                    Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                }else {
+                    NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
+                    Navigation.findNavController(v).navigate(action);
+                }
             }
         });
 

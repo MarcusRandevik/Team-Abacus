@@ -116,6 +116,11 @@ public class AdViewModel extends AndroidViewModel {
 
     //Listan krånglar (?)
 
+    /**
+     * saveApartment() saves all specifics that are filled in when creating an ad and add the apartment
+     * to the list of apartments.
+     */
+
     public void saveApartment(){
         repository.addAdvertisement(new Advertisement( new Random().nextInt(),
                         new Apartment( Integer.parseInt(getRentOffered().getValue()),
