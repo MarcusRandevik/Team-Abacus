@@ -48,7 +48,9 @@ public class CreateAdP2Fragment extends Fragment {
         publishButton.setOnClickListener(new View.OnClickListener(){
 
             /**
-             * Publish the newly created apartment.
+             * Checks if all the required fields are filled out. If not, a message will appear
+             * asking the user to fill in all fields. If everything is filled out the ad is saved and added to the
+             * list of apartments
              * @param v
              */
 
@@ -70,7 +72,6 @@ public class CreateAdP2Fragment extends Fragment {
                 }
             }
         });
-
 
         return binding.getRoot();
     }
