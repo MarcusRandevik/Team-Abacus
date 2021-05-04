@@ -21,6 +21,8 @@
     <string name="No">No</string>
     <string name="Toggle_button">Toggle Button</string>
     <string name="Maximum_Rent">Maximum Rent (SEK)</string>
+    <string name="maximum_sqm">Maximum Area (Sqm)</string>
+    <string name="maximum_rooms">Maximum Rooms</string>
     <string name="Description">Add a description</string>
     <string name="Wanted_Area">Wanted Area (North, West, South, East)</string>
     <string name="Publish_Button">Publish Ad</string>
