@@ -169,18 +169,6 @@
                         app:layout_constraintTop_toBottomOf="@+id/textSqm" />
 
                     <TextView
-                        android:id="@+id/textLookingFor"
-                        android:layout_width="339dp"
-                        android:layout_height="39dp"
-                        android:layout_marginTop="15dp"
-                        android:text="@string/detailed_apartment_lookingFor"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.416"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
-
-                    <TextView
                         android:id="@+id/textRoom"
                         android:layout_width="86dp"
                         android:layout_height="wrap_content"
@@ -326,7 +314,7 @@
                         android:id="@+id/textBalconyLooking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/detailed_apartment_balcony"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -375,9 +363,10 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="1dp"
                         android:text="@string/Yes"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.501"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewSqmLookingFor" />
 
@@ -415,6 +404,17 @@
                         app:layout_constraintTop_toBottomOf="@+id/textViewPetsLooking" />
 
                     <TextView
+                        android:id="@+id/textLookingFor"
+                        android:layout_width="339dp"
+                        android:layout_height="39dp"
+                        android:layout_marginTop="49dp"
+                        android:text="@string/detailed_apartment_lookingFor"
+                        android:textSize="30sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textElectricity" />
+                    <!--
+                    <TextView
                         android:id="@+id/textViewDescription"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -437,9 +437,32 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textElectricityLook" />
+                        -->
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </FrameLayout>
         </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <Button
+                android:id="@+id/contactbutton"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="200dp"
+                android:background="@color/SGSblue"
+                android:text="@string/Contact_the_owner"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="-16dp" />
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

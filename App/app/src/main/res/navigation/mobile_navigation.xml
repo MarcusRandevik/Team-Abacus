@@ -56,6 +56,9 @@
             android:name="advertisement"
             app:argType="com.example.changeit.model.Advertisement"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_detailedApartment_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
     </fragment>
     <dialog
         android:id="@+id/navigation_filter"

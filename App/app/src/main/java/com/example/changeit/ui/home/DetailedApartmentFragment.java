@@ -6,7 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import com.example.changeit.R;
 import com.example.changeit.databinding.DetailedApartmentBinding;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.ui.ad.AdFragmentDirections;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -46,7 +50,13 @@ public class DetailedApartmentFragment extends Fragment {
             // We don't need to do anything, just need to link viewpager with tablayout
         });
         mediator.attach();
-
+        binding.contactbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = DetailedApartmentFragmentDirections.actionNavigationDetailedApartmentToNavigationMessages();
+                Navigation.findNavController(v).navigate(action);
+            }
+        });
         return binding.getRoot();
     }
 
