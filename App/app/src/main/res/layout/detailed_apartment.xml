@@ -351,6 +351,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
+                        android:paddingBottom="100dp"
                         android:text="@string/detailed_apartment_electricity"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
