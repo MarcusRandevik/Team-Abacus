@@ -17,11 +17,7 @@ import androidx.navigation.Navigation;
 
 import com.example.changeit.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-/**
- * logic for the profile view
- * @author Izabell Arvidsson, Amanda Styff, Kerstin Wadman
- * @since 2021-04-13
- */
+
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
