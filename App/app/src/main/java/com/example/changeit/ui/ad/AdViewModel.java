@@ -31,6 +31,11 @@ public class AdViewModel extends AndroidViewModel {
     private MutableLiveData<Boolean> wifiOffered;
     private MutableLiveData<Boolean> electricityOffered;
     private MutableLiveData<Boolean> petsOffered;
+    /**
+     * The address of the offered apartment.
+     */
+
+    private MutableLiveData<String> addressOffered;
 
     private AppRepository repository;
 
@@ -52,8 +57,17 @@ public class AdViewModel extends AndroidViewModel {
         wifiOffered = new MutableLiveData<>(false);
         electricityOffered = new MutableLiveData<>(false);
         petsOffered = new MutableLiveData<>(false);
+        addressOffered = new MutableLiveData<>();
 
 
+    }
+
+    public MutableLiveData<String> getAddressOffered() {
+        return addressOffered;
+    }
+
+    public void setAddressOffered(MutableLiveData<String> addressOffered) {
+        this.addressOffered = addressOffered;
     }
 
     public MutableLiveData<String> getSqmOffered() {
@@ -167,7 +181,8 @@ public class AdViewModel extends AndroidViewModel {
                         getWifiOffered().getValue(),
                         getPetsOffered().getValue(),
                         getBalconyOffered().getValue(),
-                        getElectricityOffered().getValue(), getDescriptionOffered().getValue()),
+                        getElectricityOffered().getValue(), getDescriptionOffered().getValue(),
+                        getAddressOffered().getValue()),
                         Integer.parseInt(getRentWanted().getValue()),
                         Integer.parseInt(getRoomsWanted().getValue()),
                         Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10

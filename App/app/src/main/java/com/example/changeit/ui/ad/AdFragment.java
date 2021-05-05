@@ -34,6 +34,17 @@ public class AdFragment extends Fragment {
 
     private AdViewModel adViewModel;
 
+    /**
+     * OnCreateView
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     * The onClick method checks if all the required fields are filled out. If not, a message will appear
+     * asking the user to fill in all fields. If everything is filled out the user will be taken
+     * to the next part of create ad.
+     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,20 +59,14 @@ public class AdFragment extends Fragment {
         //Lägg till viewmodel i fragment_ad.xml
         binding.setViewModel(adViewModel);
 
-
-        /**
-         * Checks if all the required fields are filled out. If not, a message will appear
-         * asking the user to fill in all fields. If everything is filled out the user will be taken
-         * to the next part of create ad.
-         * @param v -
-         */
-         binding.continueButton.setOnClickListener(new View.OnClickListener() {
+        binding.continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(adViewModel.getDescriptionOffered().getValue() == null || adViewModel.getDescriptionOffered().getValue().equals("")  ||
                         adViewModel.getRentOffered().getValue() == null  || adViewModel.getRentOffered().getValue().equals("") ||
                 adViewModel.getRoomsOffered().getValue() == null || adViewModel.getRoomsOffered().getValue().equals("") ||
-                adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals(""))
+                adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals("") ||
+                adViewModel.getAddressOffered().getValue() == null || adViewModel.getAddressOffered().equals(""))
                         {
                     Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
                             Toast.LENGTH_SHORT);
@@ -72,11 +77,6 @@ public class AdFragment extends Fragment {
                 }
             }
         });
-
-                //
-        // Log.i("waow", "hej");
-        // Log.i("waow", adViewModel.getDescriptionOffered().getValue());
-
         return binding.getRoot();
     }
 }

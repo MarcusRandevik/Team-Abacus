@@ -14,12 +14,13 @@ public class Apartment implements Serializable {
     private boolean electricity;
     private String description;
 
-    public Apartment(int rent, int rooms, int sqm, boolean wifi, boolean pets, boolean balcony, boolean electricity, String description) {
+    public Apartment(int rent, int rooms, int sqm, boolean wifi, boolean pets, boolean balcony, boolean electricity,
+                     String description, String address) {
         this.rent = rent;
         this.rooms = rooms;
         this.balcony = balcony;
         this.sqm = sqm;
-        this.address = "Åke Falcks gata";
+        this.address = address;
         this.wifi = wifi;
         this.pets = pets;
         this.electricity = electricity;
