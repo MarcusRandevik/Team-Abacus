@@ -19,7 +19,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 /**
- * Represents the view that shows detailed information about an apartment
+ * Represents the view that shows detailed information about an advertisement
  *   @author Izabell Arvidsson, Marcus Randevik, Moa Berglund, Amanda Styff
  *   @since 2021-04-20
  *
@@ -30,6 +30,13 @@ public class DetailedApartmentFragment extends Fragment {
         return new DetailedApartmentFragment();
     }
 
+    /**
+     * sets the advertisement to show detailed information about to the one that is sent from the home page list
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {

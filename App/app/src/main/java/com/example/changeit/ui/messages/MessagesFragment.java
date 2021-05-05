@@ -14,10 +14,22 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.changeit.R;
 
+/**
+ * logic for the message view
+ * @author Marcus Randevik, Moa Berglund, Izabell Arvidsson
+ * @since 2021-03-22
+ */
 public class MessagesFragment extends Fragment {
 
     private MessagesViewModel messagesViewModel;
 
+    /**
+     * Sets the user to chat with to the user that is sent from the detailed apartment view (button contact owner)
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         messagesViewModel =

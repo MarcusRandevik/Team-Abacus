@@ -13,7 +13,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.changeit.R;
-
+/**
+ * logic for the favorite view
+ * @author Marcus Randevik
+ * @since 2021-03-22
+ */
 public class FavoritesFragment extends Fragment {
 
     private FavoritesViewModel favoritesViewModel;
