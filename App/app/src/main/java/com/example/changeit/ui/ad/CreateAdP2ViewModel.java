@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 
+// TODO - remove this class?
 public class CreateAdP2ViewModel extends AndroidViewModel {
     private MutableLiveData<String> description;
     private MutableLiveData<Boolean> valid;
