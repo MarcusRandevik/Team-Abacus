@@ -33,6 +33,10 @@
     <string name="Your_Apartment">Your apartment</string>
     <string name="Create_Ad">Create Ad</string>
     <string name="Contact_the_owner">Contact the owner</string>
+    <string name="my_profile">My Profile</string>
+    <string name="hint_name">name</string>
+    <string name="hint_number">phonenumber</string>
+    <string name="hint_mail">mail</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
