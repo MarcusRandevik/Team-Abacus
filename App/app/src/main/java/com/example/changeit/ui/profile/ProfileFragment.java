@@ -23,12 +23,22 @@ import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
 import com.example.changeit.ui.messages.MessagesFragmentArgs;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-
+/**
+ * logic for the message view
+ * @author Izabell Arvidsson, Amanda Styff, Kerstin Wadman, Moa Berglund, Lisa Samuelsson
+ * @since 2021-04-13
+ */
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
 
+    /**
+     * Sets the inlogged user to be the one to be shown in the profile view
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         FragmentProfileBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
