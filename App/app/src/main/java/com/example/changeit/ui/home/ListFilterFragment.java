@@ -18,7 +18,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.slider.Slider;
 
 /**
- * Skriv javadoc!!
+ * @author Noa Tholén, Lisa Samuelsson, Marcus Randevik, Amanda Styff, Izabell Arvidsson
+ * @since 2020-04-04
+ *
+ * A 
+ *
  */
 public class ListFilterFragment extends BottomSheetDialogFragment {
 
