@@ -36,8 +36,12 @@
         android:id="@+id/navigation_messages"
         android:name="com.example.changeit.ui.messages.MessagesFragment"
         android:label="@string/title_messages"
-        tools:layout="@layout/fragment_messages" />
-
+        tools:layout="@layout/fragment_messages" >
+    <argument
+        android:name="user"
+        app:argType="com.example.changeit.model.User"
+        app:nullable="true"/>
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.changeit.ui.profile.ProfileFragment"
@@ -56,6 +60,14 @@
             android:name="advertisement"
             app:argType="com.example.changeit.model.Advertisement"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_detailedApartment_to_navigation_messages"
+            app:destination="@id/navigation_messages">
+            <argument
+                android:name="user"
+                app:argType="com.example.changeit.model.User"
+                app:nullable="true"/>
+        </action>
     </fragment>
     <dialog
         android:id="@+id/navigation_filter"

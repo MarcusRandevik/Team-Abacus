@@ -13,6 +13,7 @@ import java.util.List;
 public class UserHandler {
     private static UserHandler single_instance=null;
     private List<User> allUsers; //final?
+    private User currentUser;
 
     /**
      * should not be able to create more than one userhandler (singleton)
@@ -43,6 +44,14 @@ public class UserHandler {
        else{
            //inte ok att skapa användare TODO
        }
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 
     /**
