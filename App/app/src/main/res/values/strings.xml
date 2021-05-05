@@ -12,7 +12,9 @@
     <string name="rent_label"> Rent (SEK) </string>
     <string name="detailed_apartment_lookingFor"> I am looking for</string>
     <string name="apartment_image_description"> Apartment image </string>
-    <string name="filter_rent">Max number of rooms</string>
+    <string name="filter_room">Max number of rooms</string>
+    <string name="filter_rent">Max rent</string>
+    <string name="filter_sqm">Max sqm</string>
     <string name="detailed_apartment_balcony"> Balcony included </string>
     <string name="detailed_apartment_wifi"> Wifi included </string>
     <string name="detailed_apartment_pets"> Pets allowed </string>

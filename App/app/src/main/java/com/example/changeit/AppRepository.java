@@ -3,6 +3,7 @@ package com.example.changeit;
 import androidx.lifecycle.LiveData;
 
 import com.example.changeit.db.AppDatabase;
+import com.example.changeit.db.FilterValues;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 
@@ -29,8 +30,8 @@ public class AppRepository {
         return instance;
     }
 
-    public LiveData<List<Advertisement>> getAdvertisements(int maxRooms) {
-        return appDatabase.advertisementsDao().getAllApartments(maxRooms);
+    public LiveData<List<Advertisement>> getAdvertisements(FilterValues values) {
+        return appDatabase.advertisementsDao().getAllApartments(values.getRooms(), values.getRent(), values.getSqm());
     }
 
     public void addAdvertisement(Advertisement advertisement) {
