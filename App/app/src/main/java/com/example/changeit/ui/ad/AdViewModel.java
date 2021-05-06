@@ -1,6 +1,7 @@
 package com.example.changeit.ui.ad;
 
 import android.app.Application;
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -17,36 +18,36 @@ import java.util.Random;
 
 public class AdViewModel extends AndroidViewModel {
 
-        private MutableLiveData<String> descriptionOffered;
-        private MutableLiveData<String> descriptionWanted;
-        private MutableLiveData<Boolean> valid;
-        private MutableLiveData<String> rentOffered;
-        private MutableLiveData<String> roomsOffered;
-        private MutableLiveData<String> rentWanted;
-        private MutableLiveData<String> sqmWanted;
-        private MutableLiveData<String> sqmOffered;
-        private MutableLiveData<String> roomsWanted;
-        private MutableLiveData<List<String>> pictures;
+    private MutableLiveData<String> descriptionOffered;
+    private MutableLiveData<String> descriptionWanted;
+    private MutableLiveData<Boolean> valid;
+    private MutableLiveData<String> rentOffered;
+    private MutableLiveData<String> roomsOffered;
+    private MutableLiveData<String> rentWanted;
+    private MutableLiveData<String> sqmWanted;
+    private MutableLiveData<String> sqmOffered;
+    private MutableLiveData<String> roomsWanted;
+    private MutableLiveData<List<Uri>> pictures;
 
-        private AppRepository repository;
+    private AppRepository repository;
 
 
 
     public AdViewModel(@NonNull Application application,
-                           @NonNull SavedStateHandle savedStateHandle) {
-            super(application);
-            descriptionOffered = new MutableLiveData<>();
-            descriptionWanted = new MutableLiveData<>();
-            rentOffered = new MutableLiveData<>();
-            roomsOffered = new MutableLiveData<>();
-            sqmOffered = new MutableLiveData<>();
+                       @NonNull SavedStateHandle savedStateHandle) {
+        super(application);
+        descriptionOffered = new MutableLiveData<>();
+        descriptionWanted = new MutableLiveData<>();
+        rentOffered = new MutableLiveData<>();
+        roomsOffered = new MutableLiveData<>();
+        sqmOffered = new MutableLiveData<>();
 
-            rentWanted = new MutableLiveData<>();
-            sqmWanted = new MutableLiveData<>();
-            roomsWanted = new MutableLiveData<>();
-            pictures = new MutableLiveData<>();
-            repository = ((ChangeItApp) application).getRepository();
-        }
+        rentWanted = new MutableLiveData<>();
+        sqmWanted = new MutableLiveData<>();
+        roomsWanted = new MutableLiveData<>();
+        pictures = new MutableLiveData<>();
+        repository = ((ChangeItApp) application).getRepository();
+    }
 
     public MutableLiveData<String> getSqmOffered() {
         return sqmOffered;
@@ -112,6 +113,10 @@ public class AdViewModel extends AndroidViewModel {
         this.sqmWanted = sqmWanted;
     }
 
+    public void setPictures(List<Uri> pictures) {
+        this.pictures.setValue(pictures);
+    }
+
     //Listan krånglar (?)
 
     /**
@@ -120,11 +125,13 @@ public class AdViewModel extends AndroidViewModel {
      */
 
     public void saveApartment(){
+
         repository.addAdvertisement(new Advertisement( new Random().nextInt(),
-                        new Apartment( Integer.parseInt(getRentOffered().getValue()),
+                new Apartment( Integer.parseInt(getRentOffered().getValue()),
                         Integer.parseInt(getRoomsOffered().getValue())),
-                null, Integer.parseInt(getRentWanted().getValue()),
-                        Integer.parseInt(getRoomsWanted().getValue()),
-                        Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
+                pictures.getValue(),
+                Integer.parseInt(getRentWanted().getValue()),
+                Integer.parseInt(getRoomsWanted().getValue()),
+                Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
     }
 }

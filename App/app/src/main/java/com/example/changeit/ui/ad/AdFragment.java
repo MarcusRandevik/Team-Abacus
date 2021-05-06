@@ -31,13 +31,11 @@ public class AdFragment extends Fragment {
     private FragmentAdBinding binding;
 
     private AdViewModel adViewModel;
-    private List<Uri> pictures;
+
     ActivityResultLauncher<String> getPicture = registerForActivityResult(new ActivityResultContracts.GetMultipleContents(), new ActivityResultCallback<List<Uri>>() {
         @Override
         public void onActivityResult(List<Uri> result) {
-            Log.i("waaow", "onActivityResult: ");
-            result.stream().forEach(uri -> Log.i("tagged", String.format("image %s", uri.toString())));
-
+            adViewModel.setPictures(result);
             binding.apartmentImage.setImageURI(Uri.parse(result.get(0).toString()));
         }
     });
@@ -63,39 +61,23 @@ public class AdFragment extends Fragment {
          * to the next part of create ad.
          * @param v -
          */
-         binding.continueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(adViewModel.getDescriptionOffered().getValue() == null || adViewModel.getDescriptionOffered().getValue().equals("")  ||
-                        adViewModel.getRentOffered().getValue() == null  || adViewModel.getRentOffered().getValue().equals("") ||
-                adViewModel.getRoomsOffered().getValue() == null || adViewModel.getRoomsOffered().getValue().equals("") ||
-                adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals(""))
-                        {
-                    Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
-                            Toast.LENGTH_SHORT);
-                    toast.show();
-                }else {
-                    NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
-                    Navigation.findNavController(v).navigate(action);
-                }
-            }
-        });
+         binding.continueButton.setOnClickListener(v -> {
+             if(adViewModel.getDescriptionOffered().getValue() == null || adViewModel.getDescriptionOffered().getValue().equals("")  ||
+                     adViewModel.getRentOffered().getValue() == null  || adViewModel.getRentOffered().getValue().equals("") ||
+             adViewModel.getRoomsOffered().getValue() == null || adViewModel.getRoomsOffered().getValue().equals("") ||
+             adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals(""))
+                     {
+                 Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
+                         Toast.LENGTH_SHORT);
+                 toast.show();
+             }else {
+                 NavDirections action = AdFragmentDirections.actionAdToCreateAdP2Fragment();
+                 Navigation.findNavController(v).navigate(action);
+             }
+         });
 
-        binding.apartmentImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getPicture.launch("image/*");
-            }
-        });
+        binding.apartmentImage.setOnClickListener(v -> getPicture.launch("image/*"));
 
         return binding.getRoot();
     }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-
 }
