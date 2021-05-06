@@ -3,6 +3,7 @@ package com.example.changeit.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+
 public class Apartment implements Serializable {
     private int rent;
     private int rooms;
@@ -14,16 +15,16 @@ public class Apartment implements Serializable {
     private boolean electricity;
     private String description;
 
-    public Apartment(int rent, int rooms) {
+    public Apartment(int rent, int rooms, int sqm, boolean wifi, boolean pets, boolean balcony, boolean electricity, String description) {
         this.rent = rent;
         this.rooms = rooms;
-        this.balcony = true;
-        this.sqm=40;
-        this.address="Åke Falcks gata";
-        this.wifi = true;
-        this.pets = false;
-        this.electricity=false;
-        this.description = "Stor balkong! En lägenhet som ligger nära en sjö och en skog.";
+        this.balcony = balcony;
+        this.sqm = sqm;
+        this.address = "Åke Falcks gata";
+        this.wifi = wifi;
+        this.pets = pets;
+        this.electricity = electricity;
+        this.description = description;
     }
 
 

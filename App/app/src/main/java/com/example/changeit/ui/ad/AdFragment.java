@@ -25,11 +25,22 @@ import java.net.URI;
 import java.util.List;
 
 
+/**
+ * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
+ * @since 2020-04-20
+ * Fragment which is the first part of creating an advertisement. This includes what the user is offering.
+ */
 public class AdFragment extends Fragment {
 
     // Databinding motavarar allt vi ser i fragment_ad.xml
+    /**
+     * Data binding is used to combine the user input with the xml file.
+     */
     private FragmentAdBinding binding;
 
+    /**
+     * An instance of AdViewModel
+     */
     private AdViewModel adViewModel;
 
     ActivityResultLauncher<String> getPicture = registerForActivityResult(new ActivityResultContracts.GetMultipleContents(), new ActivityResultCallback<List<Uri>>() {
@@ -40,12 +51,18 @@ public class AdFragment extends Fragment {
         }
     });
 
+    /**
+     * Inflates the layout for this fragment, uses data binding and creates a new view
+     * model that is added to the xml file.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-        // Inflatea med databinding
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_ad, container, false);
 
         // Få en ny viewmodel som är vid "liv" så länge som detta fragment

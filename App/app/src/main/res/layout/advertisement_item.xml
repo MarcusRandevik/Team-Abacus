@@ -53,6 +53,16 @@
                 app:layout_constraintTop_toBottomOf="@id/apartment_image"
                 android:text="@{@string/apartment_list_rooms(advertisement.apartment.rooms)}"/>
 
+            <TextView
+                android:id="@+id/sqm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/rooms_text"
+                app:layout_constraintTop_toBottomOf="@id/apartment_image"
+                android:text="@{@string/apartment_list_sqm(advertisement.apartment.sqm)}"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

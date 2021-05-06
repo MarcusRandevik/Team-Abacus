@@ -7,12 +7,15 @@
     <string name="title_detailed_apartment">Apartment Details</string>
     <string name="apartment_list_rent">Rent: %d</string>
     <string name="apartment_list_rooms">Rooms: %d</string>
+    <string name="apartment_list_sqm">Sqm: %d</string>
     <string name="rooms_label"> Rooms </string>
     <string name="sqm_label"> Area (sqm) </string>
     <string name="rent_label"> Rent (SEK) </string>
     <string name="detailed_apartment_lookingFor"> I am looking for</string>
     <string name="apartment_image_description"> Apartment image </string>
-    <string name="filter_rent">Max number of rooms</string>
+    <string name="filter_room">Max number of rooms</string>
+    <string name="filter_rent">Max rent</string>
+    <string name="filter_sqm">Max sqm</string>
     <string name="detailed_apartment_balcony"> Balcony included </string>
     <string name="detailed_apartment_wifi"> Wifi included </string>
     <string name="detailed_apartment_pets"> Pets allowed </string>
@@ -29,6 +32,7 @@
     <string name="Continue_Button">Continue</string>
     <string name="Your_Apartment">Your apartment</string>
     <string name="Create_Ad">Create Ad</string>
+    <string name="Contact_the_owner">Contact the owner</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
