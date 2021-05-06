@@ -10,11 +10,16 @@ import androidx.lifecycle.SavedStateHandle;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
+import com.example.changeit.R;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.util.AppUtil;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
@@ -67,6 +72,8 @@ public class AdViewModel extends AndroidViewModel {
      * The number of sqm in the offered apartment.
      */
     private MutableLiveData<String> sqmOffered;
+
+    private MutableLiveData<List<Uri>> pictures;
 
     /**
      * The number of sqm in the wanted apartment.
@@ -121,6 +128,7 @@ public class AdViewModel extends AndroidViewModel {
         electricityOffered = new MutableLiveData<>(false);
         petsOffered = new MutableLiveData<>(false);
 
+        pictures = new MutableLiveData<>(Arrays.asList(AppUtil.uriFromResourceId(application.getResources(), R.drawable.apartment_example)));
 
     }
 
@@ -131,17 +139,23 @@ public class AdViewModel extends AndroidViewModel {
      */
 
     public void saveApartment() {
-        repository.addAdvertisement(new Advertisement(new Random().nextInt(),
-                new Apartment(Integer.parseInt(getRentOffered().getValue()),
-                        Integer.parseInt(getRoomsOffered().getValue()),
-                        Integer.parseInt(getSqmOffered().getValue()),
-                        getWifiOffered().getValue(),
-                        getPetsOffered().getValue(),
-                        getBalconyOffered().getValue(),
-                        getElectricityOffered().getValue(), getDescriptionOffered().getValue()),
-                Integer.parseInt(getRentWanted().getValue()),
-                Integer.parseInt(getRoomsWanted().getValue()),
-                Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
+        Apartment apartment = new Apartment(parseInt(rentOffered.getValue()),
+                parseInt(roomsOffered.getValue()),
+                parseInt(sqmOffered.getValue()),
+                wifiOffered.getValue(),
+                petsOffered.getValue(),
+                balconyOffered.getValue(),
+                electricityOffered.getValue(),
+                descriptionOffered.getValue());
+
+        Advertisement advertisement = new Advertisement(new Random().nextInt(),
+                apartment,
+                pictures.getValue(),
+                parseInt(rentWanted.getValue()),
+                parseInt(roomsWanted.getValue()),
+                parseInt(sqmWanted.getValue()));
+
+        repository.addAdvertisement(advertisement);
     }
 
 
@@ -224,15 +238,6 @@ public class AdViewModel extends AndroidViewModel {
 
     public MutableLiveData<Boolean> getElectricityOffered() {
         return electricityOffered;
-    public void saveApartment(){
-
-        repository.addAdvertisement(new Advertisement( new Random().nextInt(),
-                new Apartment( Integer.parseInt(getRentOffered().getValue()),
-                        Integer.parseInt(getRoomsOffered().getValue())),
-                pictures.getValue(),
-                Integer.parseInt(getRentWanted().getValue()),
-                Integer.parseInt(getRoomsWanted().getValue()),
-                Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
     }
 
     public MutableLiveData<Boolean> getPetsOffered() {
@@ -254,6 +259,4 @@ public class AdViewModel extends AndroidViewModel {
     public void setPetsOffered(MutableLiveData<Boolean> petsOffered) {
         this.petsOffered = petsOffered;
     }
-
-
 }
