@@ -89,6 +89,12 @@ public class AdViewModel extends AndroidViewModel {
     private MutableLiveData<Boolean> electricityOffered;
 
     /**
+     * The address of the offered apartment.
+     */
+
+    private MutableLiveData<String> addressOffered;
+
+    /**
      * True if pets are allowed in offered apartment, false otherwise.
      */
     private MutableLiveData<Boolean> petsOffered;
@@ -120,8 +126,17 @@ public class AdViewModel extends AndroidViewModel {
         wifiOffered = new MutableLiveData<>(false);
         electricityOffered = new MutableLiveData<>(false);
         petsOffered = new MutableLiveData<>(false);
+        addressOffered = new MutableLiveData<>();
 
 
+    }
+
+    public MutableLiveData<String> getAddressOffered() {
+        return addressOffered;
+    }
+
+    public void setAddressOffered(MutableLiveData<String> addressOffered) {
+        this.addressOffered = addressOffered;
     }
 
     //Listan krånglar (?) TODO - ?
@@ -138,10 +153,11 @@ public class AdViewModel extends AndroidViewModel {
                         getWifiOffered().getValue(),
                         getPetsOffered().getValue(),
                         getBalconyOffered().getValue(),
-                        getElectricityOffered().getValue(), getDescriptionOffered().getValue()),
-                Integer.parseInt(getRentWanted().getValue()),
-                Integer.parseInt(getRoomsWanted().getValue()),
-                Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
+                        getElectricityOffered().getValue(), getDescriptionOffered().getValue(),
+                        getAddressOffered().getValue()),
+                        Integer.parseInt(getRentWanted().getValue()),
+                        Integer.parseInt(getRoomsWanted().getValue()),
+                        Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
     }
 
 
@@ -240,6 +256,4 @@ public class AdViewModel extends AndroidViewModel {
     public void setPetsOffered(MutableLiveData<Boolean> petsOffered) {
         this.petsOffered = petsOffered;
     }
-
-
 }

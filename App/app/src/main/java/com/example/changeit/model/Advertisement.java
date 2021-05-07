@@ -39,6 +39,7 @@ public class Advertisement implements Serializable {
         this.seekingSqm = seekingSqm;
     }
 
+
     public int getId() {
         return id;
     }

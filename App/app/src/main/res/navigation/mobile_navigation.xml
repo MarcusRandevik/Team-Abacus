@@ -47,6 +47,10 @@
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" >
+    <argument
+            android:name="user"
+            app:argType="com.example.changeit.model.User"
+            app:nullable="true"/>
         <action
             android:id="@+id/action_navigation_profile_to_ad"
             app:destination="@id/advertisement" />
