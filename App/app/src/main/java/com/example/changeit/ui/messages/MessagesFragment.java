@@ -19,11 +19,23 @@ import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.User;
 import com.example.changeit.ui.home.DetailedApartmentFragment;
 
+/**
+ * logic for the message view
+ * @author Marcus Randevik, Moa Berglund, Izabell Arvidsson
+ * @since 2021-03-22
+ */
 public class MessagesFragment extends Fragment {
     public static MessagesFragment newInstance() {
         return new MessagesFragment();
     }
 
+    /**
+     * Sets the user to chat with to the user that is sent from the detailed apartment view (button contact owner)
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         User user = MessagesFragmentArgs.fromBundle(getArguments()).getUser();

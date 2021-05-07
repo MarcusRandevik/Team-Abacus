@@ -23,11 +23,13 @@ import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
 import com.example.changeit.ui.messages.MessagesFragmentArgs;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 /**
  * logic for the message view
  * @author Izabell Arvidsson, Amanda Styff, Kerstin Wadman, Moa Berglund, Lisa Samuelsson
  * @since 2021-04-13
  */
+
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;

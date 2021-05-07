@@ -15,8 +15,17 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+/**
+ * Start of the application
+ * @author Marcus Randevik, Izabell Arvidsson, Moa Berglund
+ * @since 2021-04-04
+ */
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * Sets up the application, with a menu and a user that is logged in
+     * If you have ran the application before, the data is saved and shows next time again
+     * @param savedInstanceState last runs settings/data
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

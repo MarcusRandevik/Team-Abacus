@@ -14,6 +14,12 @@ import com.example.changeit.model.Advertisement;
 
 import java.util.List;
 
+/**
+ * class for the logic connected to the advertisement list in the home page
+ * has a list of all saved advertisements
+ * @author Marcus Randevik
+ * @since 2021-04-12
+ */
 public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.ApartmentViewHolder> {
 
     List<Advertisement> advertisements;
@@ -24,6 +30,10 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
         this.clickCallback = clickCallback;
     }
 
+    /**
+     * updates the list of advertisements
+     * @param newAdvertisements the new accurate list of advertisements
+     */
     public void setAdvertisements(List<Advertisement> newAdvertisements) {
         if (this.advertisements == null) {
             this.advertisements = newAdvertisements;

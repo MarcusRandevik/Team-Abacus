@@ -9,10 +9,16 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
+import java.util.List;
 import com.example.changeit.R;
 
-import java.util.List;
+
+/**
+ * class to make it possible with several images for an advertisement
+ * @author Marcus Randevik
+ * @since 2021-04-26
+ */
+
 
 public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentImageViewAdapter.ApartmentImageViewHolder> {
 

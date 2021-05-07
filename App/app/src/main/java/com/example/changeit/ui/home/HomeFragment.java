@@ -15,6 +15,15 @@ import androidx.navigation.Navigation;
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentHomeBinding;
 
+/**
+ * logic for the start(home) page
+ * has a homeViewModel to be able to get all saved advertisements and to connect the filters
+ * has a apartmentAdapter for the logic connected to the advertisement list
+ * has a fragmentHomeBinding to connect to the xml file
+ * @author Marcus Randevik
+ * @since 2021-03-22
+ */
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -22,6 +31,15 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding fragmentHomeBinding;
 
     private ApartmentAdapter apartmentAdapter;
+
+    /**
+     * Shows a list of advertisements that is able to click on and navigate to a detailed information view
+     * The list is able to filter
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,11 +62,14 @@ public class HomeFragment extends Fragment {
         return fragmentHomeBinding.getRoot();
     }
 
+    /**
+     * Updates the list of advertisements when new ads is created
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         homeViewModel.getAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
             apartmentAdapter.setAdvertisements(advertisements);
             fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
