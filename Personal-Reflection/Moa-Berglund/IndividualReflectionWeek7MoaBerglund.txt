@@ -1,0 +1,49 @@
+What do I want to learn or understand better?
+	
+	Since I have reflected on learning time estimation for user stories earlier I want to mention that I realised this sprint that we now handle user stories with a faster velocity than before. 
+	This is probably because of that the group as a whole has a good understanding for the project now, and we do not start from a blank page with each task. This is really enjoyable to see, and it mirrors my own feeling about the programming.
+	This also connects to my first individual reflection, where I stated that I want to get a better understanding for andorid development, which I definitely feel that I have. 
+	There is still much to learn about andriod application development, but I guess that you can not do it all on a couple of weeks, and I am really proud of the work done so far since it also has been in a generally healthy environment. 
+	
+	I still find the database logic a little bit tricky, and I wish to understand it better since I believe it would have strengthened my ability to solve problems that occur in my code asscoiated with the database.
+	My plan is to ask Marcus for a little tour in the database code to understand how he thought when creating it.
+
+How can I help someone else, or the entire team, to learn something new?
+	
+	This sprint me, Izabell and Kerstin did some pair programming. Since Kerstin can not run the simulator on her computer, she contributes by screen share which works fine.
+	I asked her how she feels about git hub, since she dont push code to it, and she told that she do not feel so comfortable with the routines there, which is totaly understandning. 
+	Therefore I seized the opportunity to screen share while doing a pull request and explained about it to hopefully help her with her own understanding of github technicalities.
+
+	I also explained to Izabell and Lisa what I have learned about how to send arguments through different fragments since I have worked with it in the earlier sprints, when they did other user stories.
+	Based on this we could together figure out how to manipulate arguments needed for the user story that we took on this sprint.
+	I am happy about this since this is something that we definitley did not get in the beginning of this course, and now we solved it without greater problems.
+
+	I plan to keep on sharing my knowledge with the others, and to keep on asking when I do not understand.
+
+What is my contribution towards the team’s use of Scrum?
+
+	As mentioned last week, we had a comprehensive merge conflict last sprint. Me and Izabell solved it during the weekend when last sprint actually was ended, since the group agreed that it was impotant to fix it before this week to enable further parallell programming.
+	I also felt that is was a good opportunity for me to do something extra since I will not be able to participate at the ending half of next sprint.
+	I also asked the group how they want me to best compensate for next week, to not leave unnecessarily work on them. I felt much gratitude when they said that I have contributed much, so they find that I already have done enough.
+	Even though, I made sure to be extra active and assigned and finished a little more than I usually do this week to be able to leave next sprint without guilt for my kind team members.
+	Next sprint I plan to be active in the group chat even though I will not participate on the meetings at the end of the week.
+
+	In general I will keep on being an understanding team member, since I think it makes a big difference when working with people that wants to believe in your best.
+	The group has a good understanding for when something comes in the way for someone to participate in the project, and I believe this giving and taking means a lot for a healthy work style.
+	Of course, we have to be observant to keep and even workload, and I find that we do so far.
+
+	Durint the sprints I have also participated toward the use of scrum by always writing new user storys when new problems/desirable features emerge, to make sure that we do not forget to solve it. 
+	I always write "not prioritized" in the caption of these storys and then we can ask our client to help with prioritizing them.
+	I plan to keep doing this since I find it valuable to have everything needed to be done in the scrum board.
+
+	On this sprint review we came up with some new things that we believe we need to do before hand in, for example a document for design patters, powerpoint and maybe some uml diagrams and so on.
+	We decided to discuss this on our sprint planning meeting on monday rather than on the review, so I wrote a list of things we need to clear up by then.
+
+What is my contribution towards the team’s deliveries?
+	
+	This sprint, me, Kerstin and Izabell finished the user story "varning" in the WarningCreateAd-branch. Then, me and Iza finished "knapp för kontaktinfo i annons" in the contactinfo-branch. 
+	Me and Iza also wrote javadoc in a branch namned javadocIzaMoa, since we unfortunately realised that the group has not made sure the javadoc is up to date. 
+	Me, Lisa and Iza also finsihed "visa profil" and "lägenhetens address" in the profile branch.
+
+	I participated during the team review and were involved in discussions that resulted in the team reflection.
+ 
