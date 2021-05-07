@@ -72,7 +72,7 @@ public abstract class AppDatabase extends RoomDatabase {
                         executors.diskIO().execute(() -> {
                             AppDatabase appDatabase = AppDatabase.getInstance(applicationContext, executors);
 
-                            List<Advertisement> advertisements = DataGenerator.generateApartments();
+                            List<Advertisement> advertisements = DataGenerator.generateApartments(applicationContext);
 
                             appDatabase.runInTransaction(() -> {
                                 appDatabase.advertisementsDao().insertAll(advertisements);

@@ -1,10 +1,16 @@
 package com.example.changeit.model;
 
+import android.net.Uri;
+
 import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.example.changeit.db.DataConverter;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,11 +20,13 @@ import java.util.Objects;
  */
 
 @Entity(tableName = "advertisements")
+@TypeConverters({DataConverter.class})
 public class Advertisement implements Serializable {
     @PrimaryKey
     private int id;
     @Embedded
     private Apartment apartment;
+    private List<Uri> pictures;
     private int seekingRent;
     private int seekingRoom;
     private int seekingSqm;
@@ -31,9 +39,10 @@ public class Advertisement implements Serializable {
      * @param seekingRoom The amount of rooms the user is looking for
      * @param seekingSqm The amount of sqm the user is looking for
      */
-    public Advertisement(int id, Apartment apartment, int seekingRent, int seekingRoom, int seekingSqm) {
+    public Advertisement(int id, Apartment apartment, List<Uri> pictures, int seekingRent, int seekingRoom, int seekingSqm) {
         this.id = id;
         this.apartment = apartment;
+        this.pictures = pictures;
         this.seekingRent = seekingRent;
         this.seekingRoom = seekingRoom;
         this.seekingSqm = seekingSqm;
@@ -54,6 +63,14 @@ public class Advertisement implements Serializable {
 
     public void setApartment(Apartment apartment) {
         this.apartment = apartment;
+    }
+
+    public List<Uri> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<Uri> pictures) {
+        this.pictures = pictures;
     }
 
     public int getSeekingRent() {

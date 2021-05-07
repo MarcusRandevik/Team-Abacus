@@ -32,7 +32,7 @@
                     android:layout_width="302dp"
                     android:layout_height="230dp"
                     android:layout_marginTop="2dp"
-                    android:src="@drawable/apartment_example"
+                    android:src="@drawable/add_picture_picture"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.495"
                     app:layout_constraintStart_toStartOf="parent"

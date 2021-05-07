@@ -68,6 +68,7 @@ public class CreateAdP2Fragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+
                 if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
                         mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
                         mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
