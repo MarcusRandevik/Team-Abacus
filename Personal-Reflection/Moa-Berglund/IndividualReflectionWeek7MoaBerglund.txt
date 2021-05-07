@@ -12,7 +12,7 @@ How can I help someone else, or the entire team, to learn something new?
 	
 	This sprint me, Izabell and Kerstin did some pair programming. Since Kerstin can not run the simulator on her computer, she contributes by screen share which works fine.
 	I asked her how she feels about git hub, since she dont push code to it, and she told that she do not feel so comfortable with the routines there, which is totaly understandning. 
-	Therefore I seized the opportunity to screen share while doing a pull request and explained about it to hopefully help her with her own understanding of github technicalities.
+	Therefore I seized the opportunity to screen share while doing a pull request and explained about it to hopefully help her with her understanding of github technicalities.
 
 	I also explained to Izabell and Lisa what I have learned about how to send arguments through different fragments since I have worked with it in the earlier sprints, when they did other user stories.
 	Based on this we could together figure out how to manipulate arguments needed for the user story that we took on this sprint.
@@ -24,7 +24,7 @@ What is my contribution towards the team’s use of Scrum?
 
 	As mentioned last week, we had a comprehensive merge conflict last sprint. Me and Izabell solved it during the weekend when last sprint actually was ended, since the group agreed that it was impotant to fix it before this week to enable further parallell programming.
 	I also felt that is was a good opportunity for me to do something extra since I will not be able to participate at the ending half of next sprint.
-	I also asked the group how they want me to best compensate for next week, to not leave unnecessarily work on them. I felt much gratitude when they said that I have contributed much, so they find that I already have done enough.
+	I also asked the group how they want me to best compensate for next week, to not leave unnecessarily work on them. I felt much gratitude when they said that I have contributed well, so they find that I have done enough to be off some days.
 	Even though, I made sure to be extra active and assigned and finished a little more than I usually do this week to be able to leave next sprint without guilt for my kind team members.
 	Next sprint I plan to be active in the group chat even though I will not participate on the meetings at the end of the week.
 
