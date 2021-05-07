@@ -32,7 +32,7 @@
                     android:layout_width="302dp"
                     android:layout_height="230dp"
                     android:layout_marginTop="2dp"
-                    android:src="@drawable/apartment_example"
+                    android:src="@drawable/add_picture_picture"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.495"
                     app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +80,20 @@
                     app:layout_constraintHorizontal_bias="0.278"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sqmOffered" />
+
+                <EditText
+                    android:id="@+id/addressOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="Address"
+                    android:inputType="textMultiLine"
+                    android:text="@={viewModel.addressOffered}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.283"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rentOffered" />
 
                 <TextView
                     android:id="@+id/wifiTextView"
@@ -134,16 +148,16 @@
                     android:id="@+id/descriptionOffered"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:ems="10"
                     android:gravity="start|top"
                     android:hint="@string/Description"
-                    android:text="@={viewModel.descriptionOffered}"
                     android:inputType="textMultiLine"
+                    android:text="@={viewModel.descriptionOffered}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.278"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rentOffered" />
+                    app:layout_constraintTop_toBottomOf="@+id/addressOffered"
+                    tools:layout_editor_absoluteY="447dp" />
 
                 <ToggleButton
                     android:id="@+id/wifiToggleButton"

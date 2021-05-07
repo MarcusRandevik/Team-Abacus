@@ -1,5 +1,7 @@
 package com.example.changeit.model;
 
+import java.io.Serializable;
+
 /**
  * @author Lisa Samuelsson, Moa Berglund, Noa Tholén
  * @since 2021-04-13
@@ -9,7 +11,7 @@ package com.example.changeit.model;
  *
  */
 
-public class User {
+public class User implements Serializable {
     private String name;
     private String email;
     private String phoneNumber;

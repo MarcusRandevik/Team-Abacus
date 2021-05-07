@@ -1,5 +1,6 @@
 package com.example.changeit.ui.home;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +9,24 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
+import java.util.List;
 import com.example.changeit.R;
+
 
 /**
  * class to make it possible with several images for an advertisement
  * @author Marcus Randevik
  * @since 2021-04-26
  */
+
+
 public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentImageViewAdapter.ApartmentImageViewHolder> {
+
+    private final List<Uri> pictures;
+
+    public ApartmentImageViewAdapter(List<Uri> pictures) {
+        this.pictures = pictures;
+    }
 
     @NonNull
     @Override
@@ -26,12 +36,12 @@ public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentIma
 
     @Override
     public void onBindViewHolder(@NonNull ApartmentImageViewHolder holder, int position) {
-        holder.bind(position);
+        holder.bind(pictures.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return pictures.size();
     }
 
     protected class ApartmentImageViewHolder extends RecyclerView.ViewHolder {
@@ -43,8 +53,8 @@ public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentIma
             this.view = view;
         }
 
-        protected void bind(int position) {
-            view.bind(position);
+        protected void bind(Uri picture) {
+            view.bind(picture);
         }
 
     }
@@ -58,17 +68,8 @@ public class ApartmentImageViewAdapter extends RecyclerView.Adapter<ApartmentIma
             imageView = view.findViewById(R.id.apartment_image_view);
         }
 
-        protected void bind(int number) {
-            switch (number) {
-                case 0:     imageView.setImageResource(R.drawable.apartment_example);
-                            break;
-                case 1:     imageView.setImageResource(R.drawable.apartment_example_2);
-                            break;
-                case 2:     imageView.setImageResource(R.drawable.apartment_example_3);
-                            break;
-                default:    imageView.setImageResource(R.drawable.apartment_example_3);
-                            break;
-            }
+        protected void bind(Uri picture) {
+            imageView.setImageURI(picture);
         }
     }
 

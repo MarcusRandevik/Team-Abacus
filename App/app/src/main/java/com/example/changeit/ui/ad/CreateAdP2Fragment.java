@@ -28,13 +28,25 @@ import com.example.changeit.model.Apartment;
 import com.example.changeit.ui.profile.ProfileFragmentDirections;
 import com.example.changeit.ui.profile.ProfileViewModel;
 
+/**
+ * @author Noa Tholén, Izabell Arvidsson,  Amanda Styff
+ * @since 2020-04-26
+ * Fragment which is the second part of creating an advertisement. This includes what the user is searching for.
+ */
 public class CreateAdP2Fragment extends Fragment {
 
-
-
+    /**
+     * An instance of the AdViewModel.
+     */
     private AdViewModel mViewModel;
 
-
+    /**
+     * Inflates the layout for this fragment.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -56,6 +68,7 @@ public class CreateAdP2Fragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+
                 if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
                         mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
                         mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
@@ -76,6 +89,10 @@ public class CreateAdP2Fragment extends Fragment {
         return binding.getRoot();
     }
 
+    /**
+     * Makes sure that the view model is still active while being on this fragment.
+     * @param savedInstanceState
+     */
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

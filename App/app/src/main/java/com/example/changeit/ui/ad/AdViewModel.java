@@ -1,60 +1,181 @@
 package com.example.changeit.ui.ad;
 
 import android.app.Application;
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
-import androidx.lifecycle.ViewModel;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
+import com.example.changeit.R;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.util.AppUtil;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
+import static java.lang.Integer.parseInt;
+
+/**
+ * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
+ * @since 2020-04-20
+ *
+ * View model which is shared between AdFragment and CreateAdP2Fragment.
+ * This is because these fragments are connected and should be saved together in the advertisement.
+ *
+ */
 public class AdViewModel extends AndroidViewModel {
 
-    private MutableLiveData<String> descriptionOffered;
-    private MutableLiveData<String> descriptionWanted;
-    private MutableLiveData<Boolean> valid;
-    private MutableLiveData<String> rentOffered;
-    private MutableLiveData<String> roomsOffered;
-    private MutableLiveData<String> rentWanted;
-    private MutableLiveData<String> sqmWanted;
-    private MutableLiveData<String> sqmOffered;
-    private MutableLiveData<String> roomsWanted;
-    private MutableLiveData<Boolean> balconyOffered;
-    private MutableLiveData<Boolean> wifiOffered;
-    private MutableLiveData<Boolean> electricityOffered;
-    private MutableLiveData<Boolean> petsOffered;
-
+    /**
+     * An instance of the app repository,
+     */
     private AppRepository repository;
 
+    /**
+     * The description for the offered apartment.
+     */
+    private MutableLiveData<String> descriptionOffered;
 
+    /**
+     * The description for the wanted apartment.
+     */
+    private MutableLiveData<String> descriptionWanted;
+
+   // private MutableLiveData<Boolean> valid; TODO - remove?
+
+    /**
+     * The rent for the offered apartment.
+     */
+    private MutableLiveData<String> rentOffered;
+
+    /**
+     * The rent for the wanted apartment.
+     */
+    private MutableLiveData<String> rentWanted;
+
+    /**
+     * The number of rooms in the offered apartment.
+     */
+    private MutableLiveData<String> roomsOffered;
+
+    /**
+     * The number of rooms in the wanted apartment.
+     */
+    private MutableLiveData<String> roomsWanted;
+
+    /**
+     * The number of sqm in the offered apartment.
+     */
+    private MutableLiveData<String> sqmOffered;
+
+    private MutableLiveData<List<Uri>> pictures;
+
+    /**
+     * The number of sqm in the wanted apartment.
+     */
+    private MutableLiveData<String> sqmWanted;
+
+    /**
+     * True if balcony is included in offered apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> balconyOffered;
+
+    /**
+     * True if wifi is included in offered apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> wifiOffered;
+
+    /**
+     * True if electricity is included in offered apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> electricityOffered;
+
+    /**
+     * The address of the offered apartment.
+     */
+
+    private MutableLiveData<String> addressOffered;
+
+    /**
+     * True if pets are allowed in offered apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> petsOffered;
+
+
+    /**
+     * The constructor for AdViewModel
+     * @param application
+     * @param savedStateHandle
+     */
     public AdViewModel(@NonNull Application application,
                        @NonNull SavedStateHandle savedStateHandle) {
         super(application);
+        repository = ((ChangeItApp) application).getRepository();
+
         descriptionOffered = new MutableLiveData<>();
         descriptionWanted = new MutableLiveData<>();
-        rentOffered = new MutableLiveData<>();
-        roomsOffered = new MutableLiveData<>();
-        sqmOffered = new MutableLiveData<>();
 
+        rentOffered = new MutableLiveData<>();
         rentWanted = new MutableLiveData<>();
-        sqmWanted = new MutableLiveData<>();
+
+        roomsOffered = new MutableLiveData<>();
         roomsWanted = new MutableLiveData<>();
-        repository = ((ChangeItApp) application).getRepository();
+
+        sqmOffered = new MutableLiveData<>();
+        sqmWanted = new MutableLiveData<>();
+
         balconyOffered = new MutableLiveData<>(false);
         wifiOffered = new MutableLiveData<>(false);
         electricityOffered = new MutableLiveData<>(false);
         petsOffered = new MutableLiveData<>(false);
+        addressOffered = new MutableLiveData<>();
 
+        pictures = new MutableLiveData<>(Arrays.asList(AppUtil.uriFromResourceId(application.getResources(), R.drawable.apartment_example)));
 
     }
+
+    public MutableLiveData<String> getAddressOffered() {
+        return addressOffered;
+    }
+
+
+    public void setAddressOffered(MutableLiveData<String> addressOffered) {
+        this.addressOffered = addressOffered;
+    }
+
+    //Listan krånglar (?) TODO - ?
+    /**
+     * saveApartment() saves all specifics that are filled in when creating an ad and add the apartment
+     * to the list of apartments.
+     */
+
+    public void saveApartment() {
+        Apartment apartment = new Apartment(parseInt(rentOffered.getValue()),
+                parseInt(roomsOffered.getValue()),
+                parseInt(sqmOffered.getValue()),
+                wifiOffered.getValue(),
+                petsOffered.getValue(),
+                balconyOffered.getValue(),
+                electricityOffered.getValue(),
+                descriptionOffered.getValue()
+                addressOffered.getValue());
+
+        Advertisement advertisement = new Advertisement(new Random().nextInt(),
+                apartment,
+                pictures.getValue(),
+                parseInt(rentWanted.getValue()),
+                parseInt(roomsWanted.getValue()),
+                parseInt(sqmWanted.getValue()));
+
+        repository.addAdvertisement(advertisement);
+
+    }
+
 
     public MutableLiveData<String> getSqmOffered() {
         return sqmOffered;
@@ -123,6 +244,11 @@ public class AdViewModel extends AndroidViewModel {
     public MutableLiveData<Boolean> getBalconyOffered() {
         return balconyOffered;
     }
+    public void setPictures(List<Uri> pictures) {
+        this.pictures.setValue(pictures);
+    }
+
+    //Listan krånglar (?)
 
     public MutableLiveData<Boolean> getWifiOffered() {
         return wifiOffered;
@@ -150,26 +276,5 @@ public class AdViewModel extends AndroidViewModel {
 
     public void setPetsOffered(MutableLiveData<Boolean> petsOffered) {
         this.petsOffered = petsOffered;
-    }
-
-    //Listan krånglar (?)
-
-    /**
-     * saveApartment() saves all specifics that are filled in when creating an ad and add the apartment
-     * to the list of apartments.
-     */
-
-    public void saveApartment() {
-        repository.addAdvertisement(new Advertisement(new Random().nextInt(),
-                new Apartment(Integer.parseInt(getRentOffered().getValue()),
-                        Integer.parseInt(getRoomsOffered().getValue()),
-                        Integer.parseInt(getSqmOffered().getValue()),
-                        getWifiOffered().getValue(),
-                        getPetsOffered().getValue(),
-                        getBalconyOffered().getValue(),
-                        getElectricityOffered().getValue(), getDescriptionOffered().getValue()),
-                        Integer.parseInt(getRentWanted().getValue()),
-                        Integer.parseInt(getRoomsWanted().getValue()),
-                        Integer.parseInt(getSqmWanted().getValue()))); //Ej rum över 10
     }
 }

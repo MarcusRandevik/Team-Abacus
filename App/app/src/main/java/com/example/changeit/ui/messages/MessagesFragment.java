@@ -8,11 +8,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.changeit.R;
+import com.example.changeit.databinding.FragmentMessagesBinding;
+import com.example.changeit.model.Advertisement;
+import com.example.changeit.model.User;
+import com.example.changeit.ui.home.DetailedApartmentFragment;
 
 /**
  * logic for the message view
@@ -20,8 +25,9 @@ import com.example.changeit.R;
  * @since 2021-03-22
  */
 public class MessagesFragment extends Fragment {
-
-    private MessagesViewModel messagesViewModel;
+    public static MessagesFragment newInstance() {
+        return new MessagesFragment();
+    }
 
     /**
      * Sets the user to chat with to the user that is sent from the detailed apartment view (button contact owner)
@@ -32,16 +38,10 @@ public class MessagesFragment extends Fragment {
      */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        messagesViewModel =
-                new ViewModelProvider(this).get(MessagesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_messages, container, false);
-        final TextView textView = root.findViewById(R.id.text_messages);
-        messagesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        User user = MessagesFragmentArgs.fromBundle(getArguments()).getUser();
+        FragmentMessagesBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_messages, container, false);
+        binding.setUser(user);
+
+        return binding.getRoot();
     }
 }
