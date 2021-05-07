@@ -9,7 +9,10 @@ import java.util.Objects;
 
 /**
  * POJO class representing an ad.
+ * @author Marcus Randevik
+ * @since 2021-04-10
  */
+
 @Entity(tableName = "advertisements")
 public class Advertisement implements Serializable {
     @PrimaryKey
@@ -20,6 +23,14 @@ public class Advertisement implements Serializable {
     private int seekingRoom;
     private int seekingSqm;
 
+    /**
+     * Constructor for creating an advertisement
+     * @param id A random id-number to identify each advertisement as a unique one
+     * @param apartment The apartment that is advertised
+     * @param seekingRent The amount of rent the user is looking for
+     * @param seekingRoom The amount of rooms the user is looking for
+     * @param seekingSqm The amount of sqm the user is looking for
+     */
     public Advertisement(int id, Apartment apartment, int seekingRent, int seekingRoom, int seekingSqm) {
         this.id = id;
         this.apartment = apartment;
@@ -69,6 +80,11 @@ public class Advertisement implements Serializable {
         this.seekingSqm = seekingSqm;
     }
 
+    /**
+     * In order to compare different advertisements
+     * @param o The advertisement in question
+     * @return true if advertisements are the same, false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,6 +97,10 @@ public class Advertisement implements Serializable {
                 Objects.equals(apartment, that.apartment);
     }
 
+    /**
+     * Creates a hashcode for an apartment for the database to function
+     * @return hashcode
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, apartment, seekingRent, seekingRoom, seekingSqm);

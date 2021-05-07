@@ -3,6 +3,7 @@ package com.example.changeit.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+
 public class Apartment implements Serializable {
     private int rent;
     private int rooms;

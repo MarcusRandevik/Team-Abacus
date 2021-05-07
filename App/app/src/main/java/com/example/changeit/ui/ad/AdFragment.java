@@ -26,20 +26,30 @@ import com.example.changeit.model.Apartment;
 import com.example.changeit.ui.ad.AdFragmentDirections;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-
+/**
+ * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
+ * @since 2020-04-20
+ * Fragment which is the first part of creating an advertisement. This includes what the user is offering.
+ */
 public class AdFragment extends Fragment {
 
     // Databinding motavarar allt vi ser i fragment_ad.xml
+    /**
+     * Data binding is used to combine the user input with the xml file.
+     */
     private FragmentAdBinding binding;
 
+    /**
+     * An instance of AdViewModel
+     */
     private AdViewModel adViewModel;
 
     /**
-     * OnCreateView
      * @param inflater
      * @param container
      * @param savedInstanceState
      * @return
+
      * The onClick method checks if all the required fields are filled out. If not, a message will appear
      * asking the user to fill in all fields. If everything is filled out the user will be taken
      * to the next part of create ad.
@@ -48,9 +58,7 @@ public class AdFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-        // Inflatea med databinding
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_ad, container, false);
 
         // Få en ny viewmodel som är vid "liv" så länge som detta fragment

@@ -20,20 +20,50 @@ import com.example.changeit.model.Apartment;
 import java.util.List;
 
 /**
- * Java doc
+ * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
+ * @since 2020-04-04
+ *
+ * A view model for the starting page of the application.
+ *
  */
 
 public class HomeViewModel extends AndroidViewModel {
 
+    /**
+     * MutableLiveData used for filtering rooms. The number indicates the preset value of the slider.
+     */
     private MutableLiveData<Integer> maxRooms = new MutableLiveData<>(5);
+
+    /**
+     * MutableLiveData used for filtering rent. The number indicates the preset value of the slider.
+     */
     private MutableLiveData<Integer> maxRent = new MutableLiveData<>(5000);
+
+    /**
+     * MutableLiveData used for filtering sqm. The number indicates the preset value of the slider.
+     */
     private MutableLiveData<Integer> maxSqm = new MutableLiveData<>(45);
 
+    /**
+     * A list of advertisements.
+     */
     private LiveData<List<Advertisement>> advertisements;
+
+    /**
+     * A filter which combines all filters into one.
+     */
     private CustomLiveData filter = new CustomLiveData(maxRooms, maxRent, maxSqm);
 
+    /**
+     * An instance of the app repository.
+     */
     private AppRepository repository;
 
+    /**
+     * The constructor for the class. The switch map makes sure that the advertisements shown corresponds to the current filtration.
+     * @param application
+     * @param savedStateHandle
+     */
     public HomeViewModel(@NonNull Application application,
                          @NonNull SavedStateHandle savedStateHandle) {
         super(application);
@@ -73,7 +103,9 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
 
-
+    /**
+     * A class which allows us to combine multiple filter values into one.
+     */
     class CustomLiveData extends MediatorLiveData<FilterValues> {
         public CustomLiveData(LiveData<Integer> maxRooms, LiveData<Integer> maxRent, LiveData<Integer> maxSqm) {
             addSource(maxRooms, new Observer<Integer>() {
