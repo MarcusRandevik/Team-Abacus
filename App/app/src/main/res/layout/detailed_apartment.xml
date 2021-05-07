@@ -408,7 +408,7 @@
                         android:id="@+id/textLookingFor"
                         android:layout_width="339dp"
                         android:layout_height="39dp"
-                        android:layout_marginTop="49dp"
+                        android:layout_marginTop="60dp"
                         android:text="@string/detailed_apartment_lookingFor"
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
