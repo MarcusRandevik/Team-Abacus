@@ -52,13 +52,16 @@ public class AdFragment extends Fragment {
     });
 
     /**
-     * Inflates the layout for this fragment, uses data binding and creates a new view
-     * model that is added to the xml file.
      * @param inflater
      * @param container
      * @param savedInstanceState
      * @return
+
+     * The onClick method checks if all the required fields are filled out. If not, a message will appear
+     * asking the user to fill in all fields. If everything is filled out the user will be taken
+     * to the next part of create ad.
      */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,7 +74,6 @@ public class AdFragment extends Fragment {
         //Lägg till viewmodel i fragment_ad.xml
         binding.setViewModel(adViewModel);
 
-
         /**
          * Checks if all the required fields are filled out. If not, a message will appear
          * asking the user to fill in all fields. If everything is filled out the user will be taken
@@ -82,7 +84,8 @@ public class AdFragment extends Fragment {
              if(adViewModel.getDescriptionOffered().getValue() == null || adViewModel.getDescriptionOffered().getValue().equals("")  ||
                      adViewModel.getRentOffered().getValue() == null  || adViewModel.getRentOffered().getValue().equals("") ||
              adViewModel.getRoomsOffered().getValue() == null || adViewModel.getRoomsOffered().getValue().equals("") ||
-             adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals(""))
+             adViewModel.getSqmOffered().getValue() == null || adViewModel.getSqmOffered().getValue().equals("") ||
+             adViewModel.getAddressOffered().getValue() == null || adViewModel.getAddressOffered().equals(""))
                      {
                  Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
                          Toast.LENGTH_SHORT);

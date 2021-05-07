@@ -96,6 +96,12 @@ public class AdViewModel extends AndroidViewModel {
     private MutableLiveData<Boolean> electricityOffered;
 
     /**
+     * The address of the offered apartment.
+     */
+
+    private MutableLiveData<String> addressOffered;
+
+    /**
      * True if pets are allowed in offered apartment, false otherwise.
      */
     private MutableLiveData<Boolean> petsOffered;
@@ -127,9 +133,19 @@ public class AdViewModel extends AndroidViewModel {
         wifiOffered = new MutableLiveData<>(false);
         electricityOffered = new MutableLiveData<>(false);
         petsOffered = new MutableLiveData<>(false);
+        addressOffered = new MutableLiveData<>();
 
         pictures = new MutableLiveData<>(Arrays.asList(AppUtil.uriFromResourceId(application.getResources(), R.drawable.apartment_example)));
 
+    }
+
+    public MutableLiveData<String> getAddressOffered() {
+        return addressOffered;
+    }
+
+
+    public void setAddressOffered(MutableLiveData<String> addressOffered) {
+        this.addressOffered = addressOffered;
     }
 
     //Listan krånglar (?) TODO - ?
@@ -146,7 +162,8 @@ public class AdViewModel extends AndroidViewModel {
                 petsOffered.getValue(),
                 balconyOffered.getValue(),
                 electricityOffered.getValue(),
-                descriptionOffered.getValue());
+                descriptionOffered.getValue()
+                addressOffered.getValue());
 
         Advertisement advertisement = new Advertisement(new Random().nextInt(),
                 apartment,
@@ -156,6 +173,7 @@ public class AdViewModel extends AndroidViewModel {
                 parseInt(sqmWanted.getValue()));
 
         repository.addAdvertisement(advertisement);
+
     }
 
 

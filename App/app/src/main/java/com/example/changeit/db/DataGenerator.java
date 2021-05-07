@@ -40,7 +40,10 @@ public class DataGenerator {
             List<Uri> picturesInDifferentOrder = Arrays.asList(pictures.get((0 + i) % picturesSize), pictures.get((1 + i) % picturesSize), pictures.get((2 + i) % picturesSize));
 
             advertisements.add(new Advertisement(i, new Apartment(4000 + i,
-                    1 + random.nextInt(5), 15 + random.nextInt(90), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(), "Apartment Description"), picturesInDifferentOrder, 4000 + i, 3, 40));
+
+                    1 + random.nextInt(5), 15 + random.nextInt(90), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
+                                                                  random.nextBoolean(), "Apartment Description", "Address"), picturesInDifferentOrder, 4000 + i, 3, 40));
+
         }
 
         return advertisements;
