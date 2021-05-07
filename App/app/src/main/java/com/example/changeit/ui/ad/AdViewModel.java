@@ -162,7 +162,7 @@ public class AdViewModel extends AndroidViewModel {
                 petsOffered.getValue(),
                 balconyOffered.getValue(),
                 electricityOffered.getValue(),
-                descriptionOffered.getValue()
+                descriptionOffered.getValue(),
                 addressOffered.getValue());
 
         Advertisement advertisement = new Advertisement(new Random().nextInt(),
