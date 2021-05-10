@@ -44,7 +44,8 @@ public class DataGenerator {
 
                     1 + random.nextInt(5), 15 + random.nextInt(90), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
                                                                   random.nextBoolean(), "Apartment Description", "Address"), picturesInDifferentOrder,
-                    4000 + i, 3, 40, UserHandler.getInstance().getAllUsers().get(i)));
+                    4000 + i, 3, 40, UserHandler.getInstance().getAllUsers().get(i), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
+                    random.nextBoolean()));
 
         }
 

@@ -236,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="16dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.wifi)}"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.wifi)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
@@ -259,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.pets)}"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.pets)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewWifi" />
@@ -282,7 +282,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.electricity)}"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.electricity)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewPets" />
@@ -305,7 +305,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.balcony)}"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.balcony)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewElectricity" />
@@ -364,8 +364,8 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/Yes"
+                        android:layout_marginTop="20dp"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingWifi)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.501"
                         app:layout_constraintStart_toStartOf="parent"
@@ -377,7 +377,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/No"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingPets)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewWifiLooking" />
@@ -388,7 +388,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/No"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingElectricity)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewPetsLooking" />
@@ -399,7 +399,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/Yes"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingBalcony)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewElectricityLooking" />
