@@ -97,20 +97,7 @@ public class Apartment implements Serializable {
     public String toString() {
         return "Apartment with " + rooms + " rooms and a rent of " + rent + "kr";
     }
-/*
-    /**
-     * states if a specifik specifikation is fulfilled in a apartment
-     * @param specification the specifik specifikation
-     * @return yes or no if it is fulfilled
 
-    public String isIncluded(boolean specification) {
-        if(specification){
-            return "Yes";
-        } else {
-            return "No";
-        }
-    }
-*/
 
     @Override
     public boolean equals(Object o) {
