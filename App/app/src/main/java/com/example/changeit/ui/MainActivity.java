@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Sets up the application, with a menu and a user that is logged in
      * If you have ran the application before, the data is saved and shows next time again
+     * runs a startup package which creates hard coded users
      * @param savedInstanceState last runs settings/data
      */
     @Override

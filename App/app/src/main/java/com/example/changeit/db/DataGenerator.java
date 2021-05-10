@@ -31,7 +31,6 @@ public class DataGenerator {
     public static List<Advertisement> generateApartments(Context context) {
         int size = 10;
         ArrayList<Advertisement> advertisements = new ArrayList<>(10);
-        UserHandler userHandler=UserHandler.getInstance();
 
         Random random = new Random();
 
