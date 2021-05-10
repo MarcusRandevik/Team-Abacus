@@ -13,6 +13,7 @@ import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.model.UserHandler;
 import com.example.changeit.util.AppUtil;
 
 import java.util.Arrays;
@@ -30,7 +31,7 @@ import static java.lang.Integer.parseInt;
  *
  */
 public class AdViewModel extends AndroidViewModel {
-
+    UserHandler userhandler=UserHandler.getInstance();
     /**
      * An instance of the app repository,
      */
@@ -170,7 +171,8 @@ public class AdViewModel extends AndroidViewModel {
                 pictures.getValue(),
                 parseInt(rentWanted.getValue()),
                 parseInt(roomsWanted.getValue()),
-                parseInt(sqmWanted.getValue()));
+                parseInt(sqmWanted.getValue()),
+                userhandler.getCurrentUser());
 
         repository.addAdvertisement(advertisement);
 

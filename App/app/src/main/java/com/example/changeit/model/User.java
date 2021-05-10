@@ -10,12 +10,10 @@ import java.io.Serializable;
  * User represents a user of the system.
  *
  */
-
 public class User implements Serializable {
     private String name;
     private String email;
     private String phoneNumber;
-    private Apartment apartmentAd;
     private String password;
     // TODO en användare ska även ha profilbild
 
@@ -33,15 +31,9 @@ public class User implements Serializable {
         this.password= password;
     }
 
-
-    /**
-     * Method that connects an apartment to a user.
-     * @param apartmentAd The apartment that will be connected to the user, i.e. the user's apartment.
-     */
-    public void addApartmentAd(Apartment apartmentAd){
-        this.apartmentAd=apartmentAd;
+    public String getPassword() {
+        return password;
     }
-
 
     public String getName() {
        return name;

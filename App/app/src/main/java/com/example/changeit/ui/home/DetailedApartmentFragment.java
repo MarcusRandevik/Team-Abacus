@@ -62,7 +62,7 @@ public class DetailedApartmentFragment extends Fragment {
         binding.contactbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavDirections action = DetailedApartmentFragmentDirections.actionNavigationDetailedApartmentToNavigationMessages(UserHandler.getInstance().getCurrentUser()); //här ska inte currentuser skickas in (det är den inloggade) utan den usern som äger lägenheten du är inne på
+                NavDirections action = DetailedApartmentFragmentDirections.actionNavigationDetailedApartmentToNavigationMessages(advertisement.getUser());
                 Navigation.findNavController(v).navigate(action);
             }
         });

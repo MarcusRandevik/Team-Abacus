@@ -25,6 +25,8 @@ public class Advertisement implements Serializable {
     @PrimaryKey
     private int id;
     @Embedded
+    private User user;
+    @Embedded
     private Apartment apartment;
     private List<Uri> pictures;
     private int seekingRent;
@@ -38,16 +40,25 @@ public class Advertisement implements Serializable {
      * @param seekingRent The amount of rent the user is looking for
      * @param seekingRoom The amount of rooms the user is looking for
      * @param seekingSqm The amount of sqm the user is looking for
+     * @param user the user that posts the advertisement
      */
-    public Advertisement(int id, Apartment apartment, List<Uri> pictures, int seekingRent, int seekingRoom, int seekingSqm) {
+    public Advertisement(int id, Apartment apartment, List<Uri> pictures, int seekingRent, int seekingRoom, int seekingSqm, User user) {
         this.id = id;
         this.apartment = apartment;
         this.pictures = pictures;
         this.seekingRent = seekingRent;
         this.seekingRoom = seekingRoom;
         this.seekingSqm = seekingSqm;
+        this.user = user;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public int getId() {
         return id;

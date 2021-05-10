@@ -8,6 +8,7 @@ import android.net.Uri;
 import com.example.changeit.R;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.model.UserHandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +31,7 @@ public class DataGenerator {
     public static List<Advertisement> generateApartments(Context context) {
         int size = 10;
         ArrayList<Advertisement> advertisements = new ArrayList<>(10);
+        UserHandler userHandler=UserHandler.getInstance();
 
         Random random = new Random();
 
@@ -42,7 +44,7 @@ public class DataGenerator {
             advertisements.add(new Advertisement(i, new Apartment(4000 + i,
 
                     1 + random.nextInt(5), 15 + random.nextInt(90), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
-                                                                  random.nextBoolean(), "Apartment Description", "Address"), picturesInDifferentOrder, 4000 + i, 3, 40));
+                                                                  random.nextBoolean(), "Apartment Description", "Address"), picturesInDifferentOrder, 4000 + i, 3, 40, UserHandler.getInstance().getAllUsers().get(i)));
 
         }
 
