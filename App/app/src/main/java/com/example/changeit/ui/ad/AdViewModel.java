@@ -13,6 +13,7 @@ import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.model.UserHandler;
 import com.example.changeit.util.AppUtil;
 
 import java.util.Arrays;
@@ -30,7 +31,7 @@ import static java.lang.Integer.parseInt;
  *
  */
 public class AdViewModel extends AndroidViewModel {
-
+    UserHandler userhandler=UserHandler.getInstance();
     /**
      * An instance of the app repository,
      */
@@ -106,6 +107,27 @@ public class AdViewModel extends AndroidViewModel {
      */
     private MutableLiveData<Boolean> petsOffered;
 
+    /**
+     * True if wifi is included in wanted apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> wifiWanted;
+
+    /**
+     * True if electricity is included in wanted apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> electricityWanted;
+
+    /**
+     * True if pets are allowed in wanted apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> petsWanted;
+
+    /**
+     * True if balcony is included in wanted apartment, false otherwise.
+     */
+    private MutableLiveData<Boolean> balconyWanted;
+
+
 
     /**
      * The constructor for AdViewModel
@@ -133,7 +155,13 @@ public class AdViewModel extends AndroidViewModel {
         wifiOffered = new MutableLiveData<>(false);
         electricityOffered = new MutableLiveData<>(false);
         petsOffered = new MutableLiveData<>(false);
+
         addressOffered = new MutableLiveData<>();
+
+        balconyWanted = new MutableLiveData<>(false);
+        wifiWanted = new MutableLiveData<>(false);
+        electricityWanted = new MutableLiveData<>(false);
+        petsWanted = new MutableLiveData<>(false);
 
         pictures = new MutableLiveData<>(Arrays.asList(AppUtil.uriFromResourceId(application.getResources(), R.drawable.apartment_example)));
 
@@ -170,7 +198,11 @@ public class AdViewModel extends AndroidViewModel {
                 pictures.getValue(),
                 parseInt(rentWanted.getValue()),
                 parseInt(roomsWanted.getValue()),
-                parseInt(sqmWanted.getValue()));
+                parseInt(sqmWanted.getValue()),
+                userhandler.getCurrentUser(), balconyWanted.getValue(),
+                electricityWanted.getValue(),
+                wifiWanted.getValue(),
+                petsWanted.getValue());
 
         repository.addAdvertisement(advertisement);
 
@@ -276,5 +308,37 @@ public class AdViewModel extends AndroidViewModel {
 
     public void setPetsOffered(MutableLiveData<Boolean> petsOffered) {
         this.petsOffered = petsOffered;
+    }
+
+    public MutableLiveData<Boolean> getWifiWanted() {
+        return wifiWanted;
+    }
+
+    public void setWifiWanted(MutableLiveData<Boolean> wifiWanted) {
+        this.wifiWanted = wifiWanted;
+    }
+
+    public MutableLiveData<Boolean> getElectricityWanted() {
+        return electricityWanted;
+    }
+
+    public void setElectricityWanted(MutableLiveData<Boolean> electricityWanted) {
+        this.electricityWanted = electricityWanted;
+    }
+
+    public MutableLiveData<Boolean> getPetsWanted() {
+        return petsWanted;
+    }
+
+    public void setPetsWanted(MutableLiveData<Boolean> petsWanted) {
+        this.petsWanted = petsWanted;
+    }
+
+    public MutableLiveData<Boolean> getBalconyWanted() {
+        return balconyWanted;
+    }
+
+    public void setBalconyWanted(MutableLiveData<Boolean> balconyWanted) {
+        this.balconyWanted = balconyWanted;
     }
 }

@@ -5,6 +5,7 @@ import android.os.UserHandle;
 import android.view.MenuItem;
 
 import com.example.changeit.R;
+import com.example.changeit.model.StartUpService;
 import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Sets up the application, with a menu and a user that is logged in
      * If you have ran the application before, the data is saved and shows next time again
+     * runs a startup package which creates hard coded users
      * @param savedInstanceState last runs settings/data
      */
     @Override
@@ -41,10 +43,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-        UserHandler userHandler= UserHandler.getInstance();
-        userHandler.createUser("Moa", "moa@mail.com", "0707615552", "password123");
-        User user = userHandler.getUserByEmail("moa@mail.com");
-        userHandler.setCurrentUser(user);
+        StartUpService startup = StartUpService.getInstance();
+        startup.loadPackage();
     }
 
     @Override

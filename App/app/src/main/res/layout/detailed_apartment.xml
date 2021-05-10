@@ -219,11 +219,11 @@
                         app:layout_constraintTop_toBottomOf="@+id/textRoom" />
 
                     <TextView
-                        android:id="@+id/textBalcony"
+                        android:id="@+id/textWifi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/detailed_apartment_balcony"
+                        android:text="@string/detailed_apartment_wifi"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.136"
@@ -231,38 +231,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/textViewRooms" />
 
                     <TextView
-                        android:id="@+id/textViewBalcony"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginTop="16dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.balcony)}"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
-
-                    <TextView
-                        android:id="@+id/textWifi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="@string/detailed_apartment_wifi"
-                        android:textSize="18sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.122"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textBalcony" />
-
-                    <TextView
                         android:id="@+id/textViewWifi"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
-                        android:layout_marginTop="20dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.wifi)}"
+                        android:layout_marginTop="16dp"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.wifi)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewBalcony" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSqm" />
 
                     <TextView
                         android:id="@+id/textPets"
@@ -282,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.pets)}"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.pets)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewWifi" />
@@ -291,11 +268,11 @@
                         android:id="@+id/textElectricity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="15dp"
                         android:text="@string/detailed_apartment_electricity"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintHorizontal_bias="0.122"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textPets" />
 
@@ -305,34 +282,45 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{advertisement.apartment.isIncluded(advertisement.apartment.electricity)}"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.electricity)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewPets" />
 
                     <TextView
-                        android:id="@+id/textBalconyLooking"
+                        android:id="@+id/textBalcony"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="16dp"
                         android:text="@string/detailed_apartment_balcony"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.151"
+                        app:layout_constraintHorizontal_bias="0.143"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewRoomLookingFor" />
+                        app:layout_constraintTop_toBottomOf="@+id/textElectricity" />
+
+                    <TextView
+                        android:id="@+id/textViewBalcony"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{advertisement.isIncluded(advertisement.apartment.balcony)}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewElectricity" />
 
                     <TextView
                         android:id="@+id/textWifiLooking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/detailed_apartment_wifi"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.135"
+                        app:layout_constraintHorizontal_bias="0.151"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textBalconyLooking" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewRoomLookingFor" />
 
                     <TextView
                         android:id="@+id/textPetsLooking"
@@ -351,25 +339,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:paddingBottom="100dp"
                         android:text="@string/detailed_apartment_electricity"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintHorizontal_bias="0.135"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textPetsLooking" />
 
                     <TextView
-                        android:id="@+id/textViewBalconyLooking"
-                        android:layout_width="50dp"
+                        android:id="@+id/textBalconyLooking"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginTop="1dp"
-                        android:text="@string/Yes"
+                        android:layout_marginTop="15dp"
+                        android:paddingBottom="100dp"
+                        android:text="@string/detailed_apartment_balcony"
+                        android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.501"
+                        app:layout_constraintHorizontal_bias="0.16"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewSqmLookingFor" />
+                        app:layout_constraintTop_toBottomOf="@+id/textElectricityLook" />
 
                     <TextView
                         android:id="@+id/textViewWifiLooking"
@@ -377,10 +365,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/No"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingWifi)}"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.501"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewBalconyLooking" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSqmLookingFor" />
 
                     <TextView
                         android:id="@+id/textViewPetsLooking"
@@ -388,7 +377,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/No"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingPets)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewWifiLooking" />
@@ -399,10 +388,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/Yes"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingElectricity)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewPetsLooking" />
+
+                    <TextView
+                        android:id="@+id/textViewBalconyLooking"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@{advertisement.isIncluded(advertisement.seekingBalcony)}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewElectricityLooking" />
 
                     <TextView
                         android:id="@+id/textLookingFor"
@@ -413,7 +413,7 @@
                         android:textSize="30sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textElectricity" />
+                        app:layout_constraintTop_toBottomOf="@+id/textBalcony" />
 
                     <TextView
                         android:id="@+id/textViewDescription"
@@ -424,8 +424,9 @@
                         android:layout_marginEnd="35dp"
                         android:text="@{advertisement.apartment.description}"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textElectricity" />
+                        app:layout_constraintTop_toBottomOf="@+id/textBalcony" />
                     <!--
                                       <TextView
                                           android:id="@+id/textViewDescriptionLooking"
