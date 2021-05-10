@@ -24,6 +24,7 @@ public class StartUpService {
         userHandler.createUser("Moad", "moaå@mail.com", "07076155562", "password123");
         userHandler.createUser("Moah", "moax@mail.com", "07076155532", "password123");
         userHandler.createUser("Moap", "moal@mail.com", "07076155522", "password123");
+        userHandler.createUser("Moalp", "moall@mail.com", "070768155522", "password123");
         User user = userHandler.getUserByEmail("moa@mail.com");
         userHandler.setCurrentUser(user);
     }
