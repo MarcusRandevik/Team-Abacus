@@ -38,4 +38,8 @@ public class AppRepository {
         appDatabase.advertisementsDao().insert(advertisement);
     }
 
+    public void update(Advertisement advertisement) {
+        appDatabase.advertisementsDao().update(advertisement);
+    }
+
 }

@@ -37,6 +37,7 @@ public class Advertisement implements Serializable {
     private boolean seekingWifi;
     private boolean seekingElectricity;
     private boolean seekingPets;
+    private boolean favourite;
 
 
     /**
@@ -51,7 +52,8 @@ public class Advertisement implements Serializable {
      */
     public Advertisement(int id, Apartment apartment, List<Uri> pictures, int seekingRent,
                          int seekingRoom, int seekingSqm, User user, boolean seekingBalcony,
-                         boolean seekingElectricity, boolean seekingWifi, boolean seekingPets) {
+                         boolean seekingElectricity, boolean seekingWifi, boolean seekingPets,
+                         boolean favourite) {
         this.id = id;
         this.apartment = apartment;
         this.pictures = pictures;
@@ -63,6 +65,7 @@ public class Advertisement implements Serializable {
         this.seekingPets = seekingPets;
         this.seekingElectricity = seekingElectricity;
         this.user = user;
+        this.favourite = favourite;
     }
 
 
@@ -166,6 +169,14 @@ public class Advertisement implements Serializable {
 
     public void setSeekingPets(boolean seekingPets) {
         this.seekingPets = seekingPets;
+    }
+
+    public boolean isFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
     }
 
     /**

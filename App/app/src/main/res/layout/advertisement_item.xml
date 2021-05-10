@@ -9,6 +9,9 @@
         <variable
             name="callback"
             type="com.example.changeit.ui.home.AdvertisementClickCallback" />
+        <variable
+            name="favouriteCallBack"
+            type="com.example.changeit.ui.home.AdvertisementFavouriteClickCallback" />
     </data>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -62,6 +65,19 @@
                 app:layout_constraintStart_toEndOf="@id/rooms_text"
                 app:layout_constraintTop_toBottomOf="@id/apartment_image"
                 android:text="@{@string/apartment_list_sqm(advertisement.apartment.sqm)}"/>
+
+            <ToggleButton
+                android:id="@+id/favourite_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn=""
+                android:textOff=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/apartment_image"
+                android:onClick="@{() -> favouriteCallBack.onClick(advertisement)}"
+                android:checked="@{advertisement.favourite}"
+                android:background="@drawable/favourite_selector">
+            </ToggleButton>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
