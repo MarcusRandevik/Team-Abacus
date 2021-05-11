@@ -47,21 +47,25 @@
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" >
-    <argument
+        <argument
             android:name="user"
             app:argType="com.example.changeit.model.User"
             app:nullable="true"/>
+        <argument
+            android:name="advertisement"
+            app:argType="com.example.changeit.model.Advertisement"
+            app:nullable="true" />
         <action
             android:id="@+id/action_navigation_profile_to_ad"
             app:destination="@id/advertisement" />
         <action
             android:id="@+id/action_navigation_profile_to_navigation_detailedApartment"
             app:destination="@id/navigation_detailedApartment" >
-        <argument
-            android:name="advertisement"
-            app:argType="com.example.changeit.model.Advertisement"
-            app:nullable="true"/>
-    </action>
+            <argument
+               android:name="advertisement"
+                app:argType="com.example.changeit.model.Advertisement"
+                app:nullable="true"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/navigation_detailedApartment"
