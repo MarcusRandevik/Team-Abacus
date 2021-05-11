@@ -168,6 +168,9 @@ public class Advertisement implements Serializable {
         this.seekingPets = seekingPets;
     }
 
+
+
+
     /**
      * In order to compare different advertisements
      *

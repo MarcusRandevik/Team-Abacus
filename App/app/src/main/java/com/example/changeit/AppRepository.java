@@ -6,6 +6,7 @@ import com.example.changeit.db.AppDatabase;
 import com.example.changeit.db.FilterValues;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.model.User;
 
 import java.util.List;
 
@@ -32,6 +33,10 @@ public class AppRepository {
 
     public LiveData<List<Advertisement>> getAdvertisements(FilterValues values) {
         return appDatabase.advertisementsDao().getAllApartments(values.getRooms(), values.getRent(), values.getSqm());
+    }
+
+    public List<Advertisement> getUserAdvertisements(String currentUserEmail ) {
+        return appDatabase.advertisementsDao().getUserApartments(currentUserEmail);
     }
 
     public void addAdvertisement(Advertisement advertisement) {

@@ -54,6 +54,14 @@
         <action
             android:id="@+id/action_navigation_profile_to_ad"
             app:destination="@id/advertisement" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_detailedApartment"
+            app:destination="@id/navigation_detailedApartment" >
+        <argument
+            android:name="advertisement"
+            app:argType="com.example.changeit.model.Advertisement"
+            app:nullable="true"/>
+    </action>
     </fragment>
     <fragment
         android:id="@+id/navigation_detailedApartment"

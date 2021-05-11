@@ -17,10 +17,14 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.example.changeit.R;
+import com.example.changeit.databinding.FragmentHomeBinding;
 import com.example.changeit.databinding.FragmentMessagesBinding;
 import com.example.changeit.databinding.FragmentProfileBinding;
 import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
+import com.example.changeit.ui.home.ApartmentAdapter;
+import com.example.changeit.ui.home.HomeFragmentDirections;
+import com.example.changeit.ui.home.HomeViewModel;
 import com.example.changeit.ui.messages.MessagesFragmentArgs;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -34,6 +38,11 @@ public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
 
+    private ApartmentAdapter apartmentAdapter;
+
+    private FragmentProfileBinding binding;
+
+
     /**
      * Sets the inlogged user to be the one to be shown in the profile view
      * @param inflater
@@ -43,8 +52,20 @@ public class ProfileFragment extends Fragment {
      */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        FragmentProfileBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
+       // profileViewModel = new ViewModelProvider(requireActivity()).get(ProfileViewModel.class);
+        profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
+        binding.setAdvertisement(profileViewModel.getAdvertisements().get(0));
+
+        apartmentAdapter = new ApartmentAdapter(advertisement -> {
+
+            Navigation.findNavController(binding.getRoot())
+                    .navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement));
+        });
+
+
 
         FloatingActionButton button = binding.profilebutton;
         button.setOnClickListener(new View.OnClickListener() {
@@ -61,4 +82,6 @@ public class ProfileFragment extends Fragment {
         });
         return binding.getRoot();
     }
+
+
 }

@@ -30,6 +30,8 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
         this.clickCallback = clickCallback;
     }
 
+
+
     /**
      * updates the list of advertisements
      * @param newAdvertisements the new accurate list of advertisements
