@@ -48,4 +48,10 @@ public interface AdvertisementsDao {
 
     @Update
     void update(Advertisement advertisement);
+
+    @Query("UPDATE advertisements SET favourite = NOT favourite WHERE id == :id")
+    void changeFavourite(int id);
+
+    @Query("SELECT * FROM advertisements WHERE favourite == 1")
+    LiveData<List<Advertisement>> getFavourites();
 }

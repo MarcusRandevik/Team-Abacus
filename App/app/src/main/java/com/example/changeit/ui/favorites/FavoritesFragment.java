@@ -1,5 +1,6 @@
 package com.example.changeit.ui.favorites;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.changeit.R;
+import com.example.changeit.databinding.FragmentFavoritesBinding;
+import com.example.changeit.ui.home.ApartmentAdapter;
+
 /**
  * logic for the favorite view
  * @author Marcus Randevik
@@ -22,19 +28,35 @@ public class FavoritesFragment extends Fragment {
 
     private FavoritesViewModel favoritesViewModel;
 
+    private FragmentFavoritesBinding binding;
+
+    private ApartmentAdapter apartmentAdapter;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         favoritesViewModel =
                 new ViewModelProvider(this).get(FavoritesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_favorites, container, false);
-        final TextView textView = root.findViewById(R.id.text_favorites);
-        favoritesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorites, container, false);
+
+        apartmentAdapter = new ApartmentAdapter(advertisement -> {
+            Navigation.findNavController(binding.getRoot()).navigate(FavoritesFragmentDirections.actionNavigationFavoritesToNavigationDetailedApartment(advertisement));
+        }, advertisement -> {
+            AsyncTask.execute(() -> favoritesViewModel.changeFavourite(advertisement));
         });
-        return root;
+
+        binding.apartmentListFavourite.setAdapter(apartmentAdapter);
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        favoritesViewModel.getFavouriteAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
+            apartmentAdapter.setAdvertisements(advertisements);
+        });
     }
 }

@@ -103,8 +103,7 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
     public void changeFavourite(Advertisement advertisement) {
-        advertisement.setFavourite(!advertisement.isFavourite());
-        repository.update(advertisement);
+        repository.changeFavourite(advertisement);
     }
 
 

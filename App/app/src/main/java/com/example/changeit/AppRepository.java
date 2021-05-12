@@ -42,4 +42,12 @@ public class AppRepository {
         appDatabase.advertisementsDao().update(advertisement);
     }
 
+    public void changeFavourite(Advertisement advertisement) {
+        appDatabase.advertisementsDao().changeFavourite(advertisement.getId());
+    }
+
+    public LiveData<List<Advertisement>> getFavourites() {
+        return appDatabase.advertisementsDao().getFavourites();
+    }
+
 }

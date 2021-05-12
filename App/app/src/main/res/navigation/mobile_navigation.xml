@@ -11,9 +11,6 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_favorites" />
-        <action
             android:id="@+id/action_navigation_home_to_navigation_detailedApartment"
             app:destination="@id/navigation_detailedApartment">
             <argument
@@ -30,7 +27,11 @@
         android:id="@+id/navigation_favorites"
         android:name="com.example.changeit.ui.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_navigation_favorites_to_navigation_detailedApartment"
+            app:destination="@id/navigation_detailedApartment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_messages"

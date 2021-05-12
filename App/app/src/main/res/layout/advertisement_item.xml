@@ -68,8 +68,9 @@
 
             <ToggleButton
                 android:id="@+id/favourite_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
                 android:textOn=""
                 android:textOff=""
                 app:layout_constraintEnd_toEndOf="parent"

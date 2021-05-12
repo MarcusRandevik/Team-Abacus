@@ -57,7 +57,6 @@ public class HomeFragment extends Fragment {
             Navigation.findNavController(fragmentHomeBinding.getRoot())
                   .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(advertisement));
         }, advertisement -> {
-            Log.i("hero", "was here");
             AsyncTask.execute(() -> homeViewModel.changeFavourite(advertisement));
         });
 
@@ -80,7 +79,6 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         homeViewModel.getAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
             apartmentAdapter.setAdvertisements(advertisements);
-            fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
         });
     }
 }
