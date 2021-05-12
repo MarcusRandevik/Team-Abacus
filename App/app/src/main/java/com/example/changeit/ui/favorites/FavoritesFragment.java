@@ -59,4 +59,5 @@ public class FavoritesFragment extends Fragment {
             apartmentAdapter.setAdvertisements(advertisements);
         });
     }
+
 }

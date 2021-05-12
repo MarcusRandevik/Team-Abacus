@@ -80,7 +80,6 @@
                 android:background="@drawable/favourite_selector">
             </ToggleButton>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
