@@ -34,7 +34,7 @@ public interface AdvertisementsDao {
     LiveData<List<Advertisement>> getAllApartments(int maxRooms, int maxRent, int maxSqm);
 
     @Query("SELECT * FROM advertisements WHERE email == :currentUserEmail")
-    List<Advertisement> getUserApartments(String currentUserEmail);
+    LiveData<List<Advertisement>> getUserApartments(String currentUserEmail);
 
 
     /**

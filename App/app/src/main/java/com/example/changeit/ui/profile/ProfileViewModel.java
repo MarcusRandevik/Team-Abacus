@@ -1,6 +1,7 @@
 package com.example.changeit.ui.profile;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -14,6 +15,7 @@ import com.example.changeit.ChangeItApp;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
+import com.example.changeit.ui.home.HomeViewModel;
 
 import java.util.List;
 
@@ -21,8 +23,7 @@ public class ProfileViewModel extends AndroidViewModel {
     private MutableLiveData<String> mText;
 
 
-    private List<Advertisement> userAdvertisements;
-
+    private LiveData<List<Advertisement>> userAdvertisements;
 
 
     /**
@@ -35,15 +36,20 @@ public class ProfileViewModel extends AndroidViewModel {
 
         repository = ((ChangeItApp) application).getRepository();
 
-        User currentUser = UserHandler.getInstance().getCurrentUser();
+        UserHandler userHandler = UserHandler.getInstance();
+        User currentUser = userHandler.getCurrentUser();
+        String userEmail = currentUser.getEmail();
 
-        userAdvertisements =  repository.getUserAdvertisements(currentUser.getEmail());
+        userAdvertisements =  repository.getUserAdvertisements(userEmail);
+
+        // userAdvertisements = Transformations.switchMap(userEmail, email -> repository.getUserAdvertisements(email));
+
 
     }
 
 
 
-    public List<Advertisement> getAdvertisements() {
+    public LiveData<List<Advertisement>> getAdvertisements() {
         return userAdvertisements;
     }
 

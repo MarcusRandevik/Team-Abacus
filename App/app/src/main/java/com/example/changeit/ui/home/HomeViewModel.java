@@ -106,7 +106,7 @@ public class HomeViewModel extends AndroidViewModel {
     /**
      * A class which allows us to combine multiple filter values into one.
      */
-    class CustomLiveData extends MediatorLiveData<FilterValues> {
+    public class CustomLiveData extends MediatorLiveData<FilterValues> {
         public CustomLiveData(LiveData<Integer> maxRooms, LiveData<Integer> maxRent, LiveData<Integer> maxSqm) {
             addSource(maxRooms, new Observer<Integer>() {
                 @Override

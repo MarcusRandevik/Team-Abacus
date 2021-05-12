@@ -20,6 +20,7 @@ import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentHomeBinding;
 import com.example.changeit.databinding.FragmentMessagesBinding;
 import com.example.changeit.databinding.FragmentProfileBinding;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
 import com.example.changeit.ui.home.ApartmentAdapter;
@@ -57,7 +58,7 @@ public class ProfileFragment extends Fragment {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
-        binding.setAdvertisement(profileViewModel.getAdvertisements().get(0));
+        binding.setAdvertisement(profileViewModel.getAdvertisements().getValue().get(0));
 
         apartmentAdapter = new ApartmentAdapter(advertisement -> {
 
