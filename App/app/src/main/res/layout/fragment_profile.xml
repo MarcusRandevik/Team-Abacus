@@ -11,6 +11,15 @@
         <variable
             name="user"
             type="com.example.changeit.model.User" />
+            <variable
+                name="callback"
+                type="com.example.changeit.ui.home.AdvertisementClickCallback" />
+            <variable
+                name="favouriteCallBack"
+                type="com.example.changeit.ui.home.AdvertisementFavouriteClickCallback" />
+            <variable
+            name="profileCallBack"
+            type="com.example.changeit.ui.profile.ProfileClickCallback" />
         </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -109,10 +118,82 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <include
-                layout="@layout/advertisement_item"
-                bind:advertisement="@{advertisement}"
-                tools:layout_editor_absoluteX="16dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="250dp"
+                android:background="@color/cardview_dark_background"
+                android:minHeight="100dp"
+                android:onClick="@{() -> callback.onClick(advertisement)}"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/apartment_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                    <TextView
+                        android:id="@+id/rent_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@{@string/apartment_list_rent(advertisement.apartment.rent)}"
+                        app:layout_constraintStart_toStartOf="@id/apartment_image"
+                        app:layout_constraintTop_toBottomOf="@id/apartment_image" />
+
+                    <TextView
+                        android:id="@+id/rooms_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@{@string/apartment_list_rooms(advertisement.apartment.rooms)}"
+                        app:layout_constraintStart_toEndOf="@id/rent_text"
+                        app:layout_constraintTop_toBottomOf="@id/apartment_image" />
+
+                    <TextView
+                        android:id="@+id/sqm_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@{@string/apartment_list_sqm(advertisement.apartment.sqm)}"
+                        app:layout_constraintStart_toEndOf="@id/rooms_text"
+                        app:layout_constraintTop_toBottomOf="@id/apartment_image" />
+
+                    <ToggleButton
+                        android:id="@+id/favourite_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/favourite_selector"
+                        android:checked="@{advertisement.favourite}"
+                        android:onClick="@{() -> favouriteCallBack.onClick(advertisement)}"
+                        android:textOff=""
+                        android:textOn=""
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/apartment_image" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

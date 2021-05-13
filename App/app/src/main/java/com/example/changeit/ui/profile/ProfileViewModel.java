@@ -22,9 +22,7 @@ import java.util.List;
 public class ProfileViewModel extends AndroidViewModel {
     private MutableLiveData<String> mText;
 
-
-    private LiveData<List<Advertisement>> userAdvertisements;
-
+    private String userEmail;
 
     /**
      * An instance of the app repository.
@@ -38,20 +36,16 @@ public class ProfileViewModel extends AndroidViewModel {
 
         UserHandler userHandler = UserHandler.getInstance();
         User currentUser = userHandler.getCurrentUser();
-        String userEmail = currentUser.getEmail();
-
-        userAdvertisements =  repository.getUserAdvertisements(userEmail);
-
-        // userAdvertisements = Transformations.switchMap(userEmail, email -> repository.getUserAdvertisements(email));
-
+        userEmail = currentUser.getEmail();
 
     }
-
 
 
     public LiveData<List<Advertisement>> getAdvertisements() {
-        return userAdvertisements;
+        return repository.getUserAdvertisements(userEmail);
     }
 
-
+    public void changeFavourite(Advertisement advertisement) {
+        repository.changeFavourite(advertisement);
+    }
 }

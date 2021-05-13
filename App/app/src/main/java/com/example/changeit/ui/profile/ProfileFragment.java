@@ -1,5 +1,6 @@
 package com.example.changeit.ui.profile;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.example.changeit.databinding.FragmentProfileBinding;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
+import com.example.changeit.ui.home.AdvertisementClickCallback;
 import com.example.changeit.ui.home.ApartmentAdapter;
 import com.example.changeit.ui.home.HomeFragmentDirections;
 import com.example.changeit.ui.home.HomeViewModel;
@@ -41,6 +43,8 @@ public class ProfileFragment extends Fragment {
 
     private ApartmentAdapter apartmentAdapter;
 
+   // private final ProfileClickCallback profileClickCallback;
+
     private FragmentProfileBinding binding;
 
 
@@ -53,23 +57,31 @@ public class ProfileFragment extends Fragment {
      */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-       // profileViewModel = new ViewModelProvider(requireActivity()).get(ProfileViewModel.class);
+
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
-        binding.setAdvertisement(profileViewModel.getAdvertisements().getValue().get(0));
+       // binding.setProfileCallBack(profileClickCallback); //TODO
+
 
         apartmentAdapter = new ApartmentAdapter(advertisement -> {
-
-            Navigation.findNavController(binding.getRoot())
-                    .navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement));
+            Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement));}
+                ,advertisement -> {
+            AsyncTask.execute(() -> profileViewModel.changeFavourite(advertisement));
         });
 
+        profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
+            binding.setAdvertisement(advertisements.get(0));
+            Advertisement advertisement = advertisements.get(0);
+            binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
+        });
 
 
         FloatingActionButton button = binding.profilebutton;
         button.setOnClickListener(new View.OnClickListener() {
+
+
 
             /**
              * Navigates to the ad fragment when a user clicks on the button on the profile page.
@@ -81,6 +93,7 @@ public class ProfileFragment extends Fragment {
                 Navigation.findNavController(v).navigate(action);
             }
         });
+
         return binding.getRoot();
     }
 
