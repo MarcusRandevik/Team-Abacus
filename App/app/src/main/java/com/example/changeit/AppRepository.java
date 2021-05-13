@@ -50,4 +50,8 @@ public class AppRepository {
         return appDatabase.advertisementsDao().getFavourites();
     }
 
+    public Advertisement getAdvertisementFromId(int id) {
+        return appDatabase.advertisementsDao().getAdvertisementFromId(id);
+    }
+
 }

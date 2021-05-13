@@ -15,8 +15,7 @@
             app:destination="@id/navigation_detailedApartment">
             <argument
                 android:name="advertisement"
-                app:argType="com.example.changeit.model.Advertisement"
-                app:nullable="true"/>
+                app:argType="integer"/>
         </action>
         <action
             android:id="@+id/action_navigation_home_to_listFilterFragment"
@@ -30,7 +29,12 @@
         tools:layout="@layout/fragment_favorites" >
         <action
             android:id="@+id/action_navigation_favorites_to_navigation_detailedApartment"
-            app:destination="@id/navigation_detailedApartment" />
+            app:destination="@id/navigation_detailedApartment">
+            <argument
+                android:name="advertisement"
+                app:argType="integer">
+            </argument>
+        </action>
     </fragment>
 
     <fragment
@@ -63,8 +67,8 @@
         tools:layout="@layout/detailed_apartment">
         <argument
             android:name="advertisement"
-            app:argType="com.example.changeit.model.Advertisement"
-            app:nullable="true" />
+            app:argType="integer"
+            android:defaultValue="-1" />
         <action
             android:id="@+id/action_navigation_detailedApartment_to_navigation_messages"
             app:destination="@id/navigation_messages">
@@ -73,6 +77,7 @@
                 app:argType="com.example.changeit.model.User"
                 app:nullable="true"/>
         </action>
+        <deepLink app:uri="www.changeit.com/advertisement/{advertisement}" />
     </fragment>
     <dialog
         android:id="@+id/navigation_filter"
