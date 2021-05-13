@@ -202,7 +202,8 @@ public class AdViewModel extends AndroidViewModel {
                 userhandler.getCurrentUser(), balconyWanted.getValue(),
                 electricityWanted.getValue(),
                 wifiWanted.getValue(),
-                petsWanted.getValue());
+                petsWanted.getValue(),
+                false);
 
         repository.addAdvertisement(advertisement);
 

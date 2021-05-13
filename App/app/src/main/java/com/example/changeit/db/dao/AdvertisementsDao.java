@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
@@ -44,4 +45,13 @@ public interface AdvertisementsDao {
      */
     @Insert()
     void insert(Advertisement advertisement);
+
+    @Update
+    void update(Advertisement advertisement);
+
+    @Query("UPDATE advertisements SET favourite = NOT favourite WHERE id == :id")
+    void changeFavourite(int id);
+
+    @Query("SELECT * FROM advertisements WHERE favourite == 1")
+    LiveData<List<Advertisement>> getFavourites();
 }

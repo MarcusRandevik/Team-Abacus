@@ -25,9 +25,11 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
     List<Advertisement> advertisements;
 
     private final AdvertisementClickCallback clickCallback;
+    private final AdvertisementFavouriteClickCallback favouriteClickCallback;
 
-    public ApartmentAdapter(AdvertisementClickCallback clickCallback) {
+    public ApartmentAdapter(AdvertisementClickCallback clickCallback, AdvertisementFavouriteClickCallback favouriteClickCallback) {
         this.clickCallback = clickCallback;
+        this.favouriteClickCallback = favouriteClickCallback;
     }
 
     /**
@@ -70,6 +72,7 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
         AdvertisementItemBinding binding = DataBindingUtil
                 .inflate(LayoutInflater.from(parent.getContext()), R.layout.advertisement_item, parent, false);
         binding.setCallback(clickCallback);
+        binding.setFavouriteCallBack(favouriteClickCallback);
         return new ApartmentViewHolder(binding);
     }
 

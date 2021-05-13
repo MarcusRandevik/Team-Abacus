@@ -1,6 +1,8 @@
 package com.example.changeit.ui.home;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.example.changeit.AppRepository;
+import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentHomeBinding;
 
@@ -43,14 +48,16 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        AppRepository repository = ((ChangeItApp) getActivity().getApplication()).getRepository();
         homeViewModel =
                 new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         apartmentAdapter = new ApartmentAdapter(advertisement -> {
-
             Navigation.findNavController(fragmentHomeBinding.getRoot())
                   .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(advertisement));
+        }, advertisement -> {
+            AsyncTask.execute(() -> homeViewModel.changeFavourite(advertisement));
         });
 
         fragmentHomeBinding.floatingActionButton.setOnClickListener(view -> {
@@ -72,7 +79,6 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         homeViewModel.getAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
             apartmentAdapter.setAdvertisements(advertisements);
-            fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
         });
     }
 }

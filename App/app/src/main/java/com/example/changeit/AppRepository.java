@@ -38,4 +38,16 @@ public class AppRepository {
         appDatabase.advertisementsDao().insert(advertisement);
     }
 
+    public void update(Advertisement advertisement) {
+        appDatabase.advertisementsDao().update(advertisement);
+    }
+
+    public void changeFavourite(Advertisement advertisement) {
+        appDatabase.advertisementsDao().changeFavourite(advertisement.getId());
+    }
+
+    public LiveData<List<Advertisement>> getFavourites() {
+        return appDatabase.advertisementsDao().getFavourites();
+    }
+
 }
