@@ -4,7 +4,7 @@ import com.example.changeit.model.Advertisement;
 
 /**
  * @author
- * @since 2021-04-12
+ * @since 2021-05-13
  */
 @FunctionalInterface
 public interface ProfileClickCallback {
