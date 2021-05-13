@@ -102,6 +102,10 @@ public class HomeViewModel extends AndroidViewModel {
         this.maxSqm.setValue(maxSqm);
     }
 
+    public void changeFavourite(Advertisement advertisement) {
+        repository.changeFavourite(advertisement);
+    }
+
 
     /**
      * A class which allows us to combine multiple filter values into one.

@@ -1,19 +1,36 @@
 package com.example.changeit.ui.favorites;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class FavoritesViewModel extends ViewModel {
+import com.example.changeit.AppRepository;
+import com.example.changeit.ChangeItApp;
+import com.example.changeit.model.Advertisement;
 
-    private MutableLiveData<String> mText;
+import java.util.List;
 
-    public FavoritesViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is favorites fragment");
+public class FavoritesViewModel extends AndroidViewModel {
+
+
+    private AppRepository repository;
+
+    public FavoritesViewModel(@NonNull Application application) {
+        super(application);
+
+        repository = ((ChangeItApp)application).getRepository();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<Advertisement>> getFavouriteAdvertisements() {
+        return repository.getFavourites();
     }
+
+    public void changeFavourite(Advertisement advertisement) {
+        repository.changeFavourite(advertisement);
+    }
+
 }
