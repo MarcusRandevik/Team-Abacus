@@ -1,0 +1,29 @@
+What do I want to learn or understand better?
+	
+	Same as last week, I still find the database tricky to understand, probably since I have never implemented/ studied databases before.
+	But, in this sprint I have at least learned a bit more about it since a user story that me, Lisa and Kerstin assigned involved implementing methods to search the database for a specific parameter, and they had a more deep understanding of this which they shared with me.  
+	Since I have not participated so much live this sprint I did not prioritize time to ask Marcus about the database implementation, so that plan is still left to carry out.
+
+How can I help someone else, or the entire team, to learn something new?
+	
+	This sprint I stuctured our scrum board even more than we already had, by writing epics and connecting our already written user storys to them. To be able to understand how to do this I watched videos on youtube and believe that I got a overall good understanding of it.
+	Since not everyone in the team has worked with scrumboards/epics/user storys before I hope that my research and result can help them get the idea about epics as well. 
+	On monday when we begin our next sprint I will again participate live as usual again, and then I plan to check with the others if they have any questions about the structure of the scrumboard or if they find something unmotivated that we can discuss.  
+
+What is my contribution towards the team’s use of Scrum?
+
+	Like I stated last sprint, I have been of from the ordinary meetings from wednesday to friday. As my plan was to have an extra eye on the group chat, I have done this.
+	Also, I took on a user story ("fixa trello epics")by my self this week that I could finish even though I could not participate in the ordinary sessions. 
+	
+	I believe that our new scrumboard layout will help the team with our use of Scrum, since it is now easier to see how we keep up with each epic.
+	
+	This week there were a bit more frustration shown in the Niko-Niko KPI than ususal. This probably came from that some of the tasks were pretty advanced. Therefore I made sure to tell that there is no need to feel time pressure and spend way much more hours a week than we have decided. 
+	We are at the bottom of our clients priority list of user storys, so it is okay if some tasks hang on to next week. I believe that it is important that we raise situations like this, since it is easy to get obsessed with solving the problem no matter the time, and that is not sustainable in the long run.
+
+	In connection to my last reflection, we have now decided more about what handins we should focus on, and when.
+
+What is my contribution towards the team’s deliveries?
+	
+	This sprint, me, Noa and Amanda finished the user story "koppling mellan apartment och user" and "Toggles info i detailed apartment" in the advertisementUser-branch. This went well and I felt once again impressed about how much we have learned in such a short time. 
+	Then, me, Lisa and Kerstin beginned with "visa användarens lägenheter på profilsidan", but I did not participate finishing it due to my different scheduele this week. Instead I wrote epics and structured the scrumboard. 
+	This week we have been writing javadoc before merging the code to main, which I am happy about since this is an improvement of our documentation.
