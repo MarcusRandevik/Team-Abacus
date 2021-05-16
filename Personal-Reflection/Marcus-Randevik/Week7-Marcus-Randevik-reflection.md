@@ -1,4 +1,4 @@
-# Marcus Randevik Week 6 reflection
+# Marcus Randevik Week 7 reflection
 This was the forth week which involved programming tasks. The team have now greatly improved our velocity and have thus finished more tasks compared to previous weeks. 
 
 ## What do I want to learn or understand better?
