@@ -68,8 +68,7 @@
             app:destination="@id/navigation_detailedApartment" >
             <argument
                android:name="advertisement"
-                app:argType="com.example.changeit.model.Advertisement"
-                app:nullable="true"/>
+                app:argType="integer"/>
         </action>
     </fragment>
     <fragment

@@ -62,19 +62,17 @@ public class ProfileFragment extends Fragment {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
-       // binding.setProfileCallBack(profileClickCallback); //TODO
-
-
-        apartmentAdapter = new ApartmentAdapter(advertisement -> {
-            Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement));}
-                ,advertisement -> {
-            AsyncTask.execute(() -> profileViewModel.changeFavourite(advertisement));
-        });
 
         profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
             binding.setAdvertisement(advertisements.get(0));
             Advertisement advertisement = advertisements.get(0);
             binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
+
+            binding.setCallback(advertisement1 -> {
+                Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
+            });
+
+            binding.setFavouriteCallBack(advertisement1 -> profileViewModel.changeFavourite(advertisement1));
         });
 
 
