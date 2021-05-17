@@ -18,3 +18,5 @@ Our stakeholder is a student named Lisa, who wanted to find a better solution fo
 Scrum board: https://trello.com/b/HXAi7nDr/sgs
 
 Team reflections: https://drive.google.com/drive/folders/1667BmL4INOtnAechYg0oBLwg9UqHS3yh?usp=sharing
+
+KPI's: https://drive.google.com/drive/folders/10u9iXjdUpiXT_y2W-XOoDItGx4GC-FSt?usp=sharing
