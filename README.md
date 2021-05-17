@@ -11,8 +11,7 @@ The platform gathers all exchange possibilities, and contact can then be made be
 The purpose of the app is to make it easier for students looking for a switch in accomodation, and to make the process smoother by gathering all options in one place. 
 
 
-Our stakeholder is Lisa, a student who wanted to find a solution for switching SGS apartments in a better way.
-
+Our stakeholder is a student named Lisa, who wanted to find a better solution for switching SGS apartments.
 
 
 # Links
