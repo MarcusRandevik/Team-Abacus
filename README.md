@@ -1,5 +1,5 @@
 # DAT257 Team Abacus - ChangeIt
-Welcome to Team Abacus's project - ChangeIt
+Welcome to Team Abacus's project - ChangeIt 
 
 # About
 ChangeIt is an Android-app aimed at students living in SGS student accomodation that wants to change apartments with another student.
@@ -11,9 +11,12 @@ The platform gathers all exchange possibilities, and contact can then be made be
 
 The purpose of the app is to make it easier for students looking for a switch in accomodation, and to make the process smoother by gathering all options in one place. 
 
-
 Our stakeholder is a student named Lisa, who wanted to find a better solution for switching SGS apartments.
 
+# Installation
+* Clone the project.
+* Open the project using Android Studio.
+* Run the project!
 
 # Links
 Scrum board: https://trello.com/b/HXAi7nDr/sgs
