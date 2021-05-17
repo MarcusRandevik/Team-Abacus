@@ -1,6 +1,8 @@
 package com.example.changeit.ui.home;
 
 import androidx.databinding.DataBindingUtil;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,19 +11,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.DetailedApartmentBinding;
 import com.example.changeit.model.Advertisement;
-import com.example.changeit.model.Apartment;
-import com.example.changeit.model.User;
-import com.example.changeit.model.UserHandler;
-import com.example.changeit.ui.ad.AdFragmentDirections;
-import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 /**
@@ -32,9 +29,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
  */
 public class DetailedApartmentFragment extends Fragment {
 
-    public static DetailedApartmentFragment newInstance() {
-        return new DetailedApartmentFragment();
-    }
+    private DetailedApartmentBinding binding;
 
     /**
      * sets the advertisement to show detailed information about to the one that is sent from the home page list
@@ -47,10 +42,19 @@ public class DetailedApartmentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Advertisement advertisement = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getAdvertisement();
+        binding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
+
+        AsyncTask.execute(() -> setupBindings());
+
+        return binding.getRoot();
+    }
+
+    private void setupBindings() {
+        int advertisementId = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getAdvertisement();
+
+        Advertisement advertisement = ((ChangeItApp)getActivity().getApplication()).getRepository().getAdvertisementFromId(advertisementId);
 
         // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
-        DetailedApartmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
 
         binding.setAdvertisement(advertisement);
 
@@ -66,7 +70,6 @@ public class DetailedApartmentFragment extends Fragment {
                 Navigation.findNavController(v).navigate(action);
             }
         });
-        return binding.getRoot();
     }
 
 }
