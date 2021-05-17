@@ -60,4 +60,7 @@ public interface AdvertisementsDao {
 
     @Query("SELECT * FROM advertisements WHERE favourite == 1")
     LiveData<List<Advertisement>> getFavourites();
+
+    @Query("SELECT * FROM advertisements WHERE id == :id")
+    Advertisement getAdvertisementFromId(int id);
 }

@@ -41,9 +41,7 @@ public class FavoritesFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorites, container, false);
 
         apartmentAdapter = new ApartmentAdapter(advertisement -> {
-            Navigation.findNavController(binding.getRoot()).navigate
-                    (FavoritesFragmentDirections.actionNavigationFavoritesToNavigationDetailedApartment(advertisement)
-                    );
+            Navigation.findNavController(binding.getRoot()).navigate(FavoritesFragmentDirections.actionNavigationFavoritesToNavigationDetailedApartment(advertisement.getId()));
         }, advertisement -> {
             AsyncTask.execute(() -> favoritesViewModel.changeFavourite(advertisement));
         });

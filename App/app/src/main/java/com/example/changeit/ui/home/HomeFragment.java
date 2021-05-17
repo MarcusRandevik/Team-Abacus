@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         apartmentAdapter = new ApartmentAdapter(advertisement -> {
             Navigation.findNavController(fragmentHomeBinding.getRoot())
-                  .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(advertisement));
+                  .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(advertisement.getId()));
         }, advertisement -> {
             AsyncTask.execute(() -> homeViewModel.changeFavourite(advertisement));
         });
