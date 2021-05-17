@@ -2,6 +2,9 @@ package com.example.changeit.ui.home;
 
 import androidx.databinding.DataBindingUtil;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -14,6 +17,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
@@ -23,13 +27,18 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 /**
  * Represents the view that shows detailed information about an advertisement
- *   @author Izabell Arvidsson, Marcus Randevik, Moa Berglund, Amanda Styff
+ *   @author Izabell Arvidsson, Marcus Randevik, Moa Berglund, Amanda Styff, Noa Tholén
  *   @since 2021-04-20
  *
  */
 public class DetailedApartmentFragment extends Fragment {
 
     private DetailedApartmentBinding binding;
+
+    private ClipData clipData;
+
+    private ClipboardManager clipboardManager;
+
 
     /**
      * sets the advertisement to show detailed information about to the one that is sent from the home page list
@@ -49,10 +58,19 @@ public class DetailedApartmentFragment extends Fragment {
         return binding.getRoot();
     }
 
+    /**
+     *
+     * binding.contactbutton takes the user to where contact info about the owner
+     *
+     * binding.shareLinkFloatingButton copies the URL link
+     *
+     */
     private void setupBindings() {
         int advertisementId = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getAdvertisement();
 
         Advertisement advertisement = ((ChangeItApp)getActivity().getApplication()).getRepository().getAdvertisementFromId(advertisementId);
+
+        clipboardManager = (ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
 
         // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
 
@@ -70,6 +88,16 @@ public class DetailedApartmentFragment extends Fragment {
                 Navigation.findNavController(v).navigate(action);
             }
         });
-    }
 
+        binding.shareLinkFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String txtcopy = "https://www.changeit.com/advertisement/"+advertisementId;
+                clipData = ClipData.newPlainText("text", txtcopy);
+                clipboardManager.setPrimaryClip(clipData);
+                Toast.makeText(getContext(), "Link copied", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 }
