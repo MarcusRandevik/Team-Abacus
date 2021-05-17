@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.fragment.app.Fragment;
@@ -31,6 +32,8 @@ import com.example.changeit.ui.home.HomeFragmentDirections;
 import com.example.changeit.ui.home.HomeViewModel;
 import com.example.changeit.ui.messages.MessagesFragmentArgs;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 /**
  * logic for the message view
@@ -100,8 +103,16 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        binding.deletebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
+                 advertisements.remove(0);
+                });
+            }
+        });
+
+
         return binding.getRoot();
     }
-
-
 }
