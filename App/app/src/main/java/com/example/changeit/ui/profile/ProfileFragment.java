@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -78,17 +79,24 @@ public class ProfileFragment extends Fragment {
 
         FloatingActionButton button = binding.profilebutton;
         button.setOnClickListener(new View.OnClickListener() {
-
-
-
             /**
              * Navigates to the ad fragment when a user clicks on the button on the profile page.
              * @param v
              */
             @Override
             public void onClick(View v) {
-                NavDirections action = ProfileFragmentDirections.actionNavigationProfileToAd();
-                Navigation.findNavController(v).navigate(action);
+                profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
+                    if(advertisements.get(0) == null){
+                        NavDirections action = ProfileFragmentDirections.actionNavigationProfileToAd();
+                        Navigation.findNavController(v).navigate(action);
+                    }
+                    else {
+                        Toast toast = Toast.makeText(getContext(),"You already have one advertisement",
+                                Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+
             }
         });
 
