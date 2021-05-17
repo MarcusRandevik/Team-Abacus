@@ -9,6 +9,8 @@ import androidx.room.Update;
 
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.model.User;
+import com.example.changeit.model.UserHandler;
 
 import java.util.List;
 
@@ -31,6 +33,10 @@ public interface AdvertisementsDao {
      */
     @Query("SELECT * FROM advertisements WHERE rooms <= :maxRooms AND rent <= :maxRent AND sqm <= :maxSqm")
     LiveData<List<Advertisement>> getAllApartments(int maxRooms, int maxRent, int maxSqm);
+
+    @Query("SELECT * FROM advertisements WHERE email == :currentUserEmail LIMIT 1")
+    LiveData<List<Advertisement>> getUserApartments(String currentUserEmail);
+
 
     /**
      * Replaces previous database if there is a conflict.
