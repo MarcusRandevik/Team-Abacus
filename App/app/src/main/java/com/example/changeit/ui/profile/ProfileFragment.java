@@ -68,18 +68,26 @@ public class ProfileFragment extends Fragment {
         binding.setUser(UserHandler.getInstance().getCurrentUser());
 
         profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
-            binding.setAdvertisement(advertisements.get(0));
-            Advertisement advertisement = advertisements.get(0);
-            binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
+            if(advertisements.size() > 0) {
+                binding.setAdvertisement(advertisements.get(0));
+                Advertisement advertisement = advertisements.get(0);
+                binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
 
-            binding.setCallback(advertisement1 -> {
-                Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
-            });
+                binding.setCallback(advertisement1 -> {
+                    Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
+                });
 
             binding.setFavouriteCallBack(advertisement1 -> profileViewModel.changeFavourite(advertisement1));
+        }
         });
 
 
+
+        AsyncTask.execute(() -> setUpBindings());
+        return binding.getRoot();
+    }
+
+    public void setUpBindings(){
         FloatingActionButton button = binding.profilebutton;
         button.setOnClickListener(new View.OnClickListener() {
             /**
@@ -101,18 +109,15 @@ public class ProfileFragment extends Fragment {
                 });
 
             }
+
         });
 
         binding.deletebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
-                 advertisements.remove(0);
-                });
+                AsyncTask.execute(()->profileViewModel.deleteUserAdvertisement());
             }
         });
-
-
-        return binding.getRoot();
     }
+
 }

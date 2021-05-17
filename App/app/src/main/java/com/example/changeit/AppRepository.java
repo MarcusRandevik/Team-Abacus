@@ -59,4 +59,8 @@ public class AppRepository {
         return appDatabase.advertisementsDao().getAdvertisementFromId(id);
     }
 
+    public void deleteUserAdvertisement (String currentUserEmail) {
+        appDatabase.advertisementsDao().deleteUserAdvertisement(currentUserEmail);
+    }
+
 }

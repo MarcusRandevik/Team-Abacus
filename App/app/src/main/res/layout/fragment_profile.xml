@@ -42,6 +42,7 @@
             android:id="@+id/profilebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
             android:backgroundTint="@color/SGSorange"
             android:clickable="true"
             android:contentDescription="@string/Create_Ad"
@@ -50,8 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.805" />
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
         <TextView
             android:id="@+id/myProfile"
@@ -110,6 +110,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profileNumber" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="300dp"
@@ -144,7 +145,7 @@
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/rent_text"

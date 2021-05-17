@@ -48,4 +48,8 @@ public class ProfileViewModel extends AndroidViewModel {
     public void changeFavourite(Advertisement advertisement) {
         repository.changeFavourite(advertisement);
     }
+
+    public void deleteUserAdvertisement (){
+        repository.deleteUserAdvertisement(userEmail);
+    }
 }
