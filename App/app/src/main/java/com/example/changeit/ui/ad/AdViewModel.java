@@ -176,7 +176,6 @@ public class AdViewModel extends AndroidViewModel {
         this.addressOffered = addressOffered;
     }
 
-    //Listan krånglar (?) TODO - ?
     /**
      * saveApartment() saves all specifics that are filled in when creating an ad and add the apartment
      * to the list of apartments.
