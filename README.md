@@ -16,6 +16,13 @@ The purpose of the app is to make it easier for students looking for a switch in
 Our stakeholder is a student named Lisa, who wanted to find a better solution for switching SGS apartments.
 
 # Installation
+
+Clone the repo
+
+```console
+git clone https://github.com/MarcusRandevik/Team-Aba
+```
+
 * Clone the project.
 * Open the project using Android Studio.
 * Run the project!
