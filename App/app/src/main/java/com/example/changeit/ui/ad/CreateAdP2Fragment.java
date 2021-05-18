@@ -71,8 +71,21 @@ public class CreateAdP2Fragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                AsyncTask.execute(() -> setupBinding(v));
-
+                if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
+                        mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
+                        mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
+                    Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                }else {
+                    AsyncTask.execute(() -> {
+                        mViewModel.saveApartment();
+                    });
+                    NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationProfile();
+                    Navigation.findNavController(v).navigate(action);
+                    Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
 
@@ -88,27 +101,4 @@ public class CreateAdP2Fragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(requireActivity()).get(AdViewModel.class);
     }
-
-    public void setupBinding( View view){
-        int advertisementId = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getAdvertisement();
-
-        Advertisement advertisement = ((ChangeItApp)getActivity().getApplication()).getRepository().getAdvertisementFromId(advertisementId);
-
-        if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
-                mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
-                mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
-            Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
-                    Toast.LENGTH_SHORT);
-            toast.show();
-        }else {
-            AsyncTask.execute(() -> {
-                mViewModel.saveApartment();
-            });
-            NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationProfile(advertisement.getUser(), advertisement);
-            Navigation.findNavController(view).navigate(action);
-            Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-    }
-
 }
