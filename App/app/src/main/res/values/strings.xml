@@ -38,6 +38,7 @@
     <string name="hint_number">phonenumber</string>
     <string name="hint_mail">mail</string>
     <string name="delete"> Delete advertisement</string>
+    <string name="deletequestion"> Are you sure you want to delete your ad?</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

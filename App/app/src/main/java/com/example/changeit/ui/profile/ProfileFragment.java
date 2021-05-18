@@ -76,7 +76,8 @@ public class ProfileFragment extends Fragment {
                     Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
                 });
 
-            binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(()->profileViewModel.changeFavourite(advertisement1)));
+                binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(() -> profileViewModel.changeFavourite(advertisement1)));
+            }
         });
 
 
@@ -110,7 +111,6 @@ public class ProfileFragment extends Fragment {
                     }
                 });
 
-        return binding.getRoot();
     }
 
         });
@@ -118,9 +118,25 @@ public class ProfileFragment extends Fragment {
         binding.deletebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.deleteno.setVisibility(View.VISIBLE);
+                binding.deleteyes.setVisibility(View.VISIBLE);
+            }
+        });
+        binding.deleteyes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 AsyncTask.execute(()->profileViewModel.deleteUserAdvertisement());
+                binding.deleteno.setVisibility(View.INVISIBLE);
+                binding.deleteyes.setVisibility(View.INVISIBLE);
                 binding.materialCardView.setVisibility(View.INVISIBLE);
                 binding.deletebutton.setVisibility(View.INVISIBLE);
+            }
+        });
+        binding.deleteno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.deleteno.setVisibility(View.INVISIBLE);
+                binding.deleteyes.setVisibility(View.INVISIBLE);
             }
         });
     }
