@@ -89,7 +89,8 @@ public class DetailedApartmentFragment extends Fragment {
             }
         });
 
-        binding.shareLinkFloatingButton.setOnClickListener(new View.OnClickListener() {
+            binding.shareLinkFloatingButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 String txtcopy = "https://www.changeit.com/advertisement/"+advertisementId;
@@ -98,6 +99,5 @@ public class DetailedApartmentFragment extends Fragment {
                 Toast.makeText(getContext(), "Link copied", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

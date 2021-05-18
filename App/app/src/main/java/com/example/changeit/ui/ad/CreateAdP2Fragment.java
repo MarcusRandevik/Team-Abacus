@@ -24,12 +24,14 @@ import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.CreateAdP2FragmentBinding;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.ui.home.DetailedApartmentFragmentArgs;
 import com.example.changeit.ui.profile.ProfileFragmentDirections;
 import com.example.changeit.ui.profile.ProfileViewModel;
 
 /**
- * @author Noa Tholén, Izabell Arvidsson,  Amanda Styff
+ * @author Noa Tholén, Izabell Arvidsson,  Amanda Styff, Lisa Samuelsson
  * @since 2020-04-26
  * Fragment which is the second part of creating an advertisement. This includes what the user is searching for.
  */
@@ -78,9 +80,10 @@ public class CreateAdP2Fragment extends Fragment {
                 }else {
                     AsyncTask.execute(() -> {
                         mViewModel.saveApartment();
-
                     });
-                    Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_SHORT);
+                    NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationProfile();
+                    Navigation.findNavController(v).navigate(action);
+                    Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_LONG);
                     toast.show();
                 }
             }
@@ -98,5 +101,4 @@ public class CreateAdP2Fragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(requireActivity()).get(AdViewModel.class);
     }
-
 }
