@@ -1,6 +1,8 @@
 # DAT257 Team Abacus - ChangeIt
 Welcome to Team Abacus's project - ChangeIt 
 
+![Logo](Images/sgs_logo.png "ChangeIt Logo")
+
 # About
 ChangeIt is an Android-app aimed at students living in SGS student accomodation that wants to change apartments with another student.
 
