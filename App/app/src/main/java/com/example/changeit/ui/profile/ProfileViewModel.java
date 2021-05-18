@@ -41,11 +41,15 @@ public class ProfileViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<List<Advertisement>> getAdvertisements() {
+    public LiveData<Advertisement> getAdvertisement() {
         return repository.getUserAdvertisements(userEmail);
     }
 
     public void changeFavourite(Advertisement advertisement) {
         repository.changeFavourite(advertisement);
+    }
+
+    public void deleteUserAdvertisement (){
+        repository.deleteUserAdvertisement(userEmail);
     }
 }

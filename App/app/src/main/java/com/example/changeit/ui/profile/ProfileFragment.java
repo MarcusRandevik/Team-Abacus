@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.fragment.app.Fragment;
@@ -31,6 +33,8 @@ import com.example.changeit.ui.home.HomeViewModel;
 import com.example.changeit.ui.messages.MessagesFragmentArgs;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
+
 /**
  * logic for the message view
  * @author Izabell Arvidsson, Amanda Styff, Kerstin Wadman, Moa Berglund, Lisa Samuelsson
@@ -43,7 +47,7 @@ public class ProfileFragment extends Fragment {
 
     private ApartmentAdapter apartmentAdapter;
 
-   // private final ProfileClickCallback profileClickCallback;
+    //private final ProfileClickCallback profileClickCallback;
 
     private FragmentProfileBinding binding;
 
@@ -63,19 +67,26 @@ public class ProfileFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
 
-        profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
-            binding.setAdvertisement(advertisements.get(0));
-            Advertisement advertisement = advertisements.get(0);
-            binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
+        profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisement -> {
+            if(advertisement!=null) {
+                binding.materialCardView.setVisibility(View.VISIBLE);
+                binding.setAdvertisement(advertisement);
+                binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
+                binding.deletebutton.setVisibility(View.VISIBLE);
+                binding.setCallback(advertisement1 -> {
+                    Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
+                });
 
-            binding.setCallback(advertisement1 -> {
-                Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
-            });
-
-            binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(()->profileViewModel.changeFavourite(advertisement1)));
+                binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(() -> profileViewModel.changeFavourite(advertisement1)));
+            }
         });
 
 
+        AsyncTask.execute(() -> setUpBindings());
+        return binding.getRoot();
+    }
+
+    public void setUpBindings(){
         FloatingActionButton button = binding.profilebutton;
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -87,13 +98,53 @@ public class ProfileFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                NavDirections action = ProfileFragmentDirections.actionNavigationProfileToAd();
-                Navigation.findNavController(v).navigate(action);
-            }
-        });
+                profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisements -> {
+                    if(advertisements == null){
+                        NavDirections action = ProfileFragmentDirections.actionNavigationProfileToAd();
+                        Navigation.findNavController(v).navigate(action);
+                        binding.materialCardView.setVisibility(View.VISIBLE);
+                        binding.deletebutton.setVisibility(View.VISIBLE);
+                    }
+                    else {
+                        Toast toast = Toast.makeText(getContext(),"You already have one advertisement",
+                                Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
 
-        return binding.getRoot();
     }
 
+        });
+
+        binding.deletebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.deleteno.setVisibility(View.VISIBLE);
+                binding.deleteyes.setVisibility(View.VISIBLE);
+                binding.deleteQuestion.setVisibility(View.VISIBLE);
+
+            }
+        });
+        binding.deleteyes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AsyncTask.execute(()->profileViewModel.deleteUserAdvertisement());
+                binding.deleteno.setVisibility(View.INVISIBLE);
+                binding.deleteyes.setVisibility(View.INVISIBLE);
+                binding.materialCardView.setVisibility(View.INVISIBLE);
+                binding.deletebutton.setVisibility(View.INVISIBLE);
+                binding.deleteQuestion.setVisibility(View.INVISIBLE);
+
+            }
+        });
+        binding.deleteno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.deleteno.setVisibility(View.INVISIBLE);
+                binding.deleteyes.setVisibility(View.INVISIBLE);
+                binding.deleteQuestion.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
 
 }

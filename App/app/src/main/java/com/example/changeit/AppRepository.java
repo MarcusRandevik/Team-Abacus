@@ -35,7 +35,7 @@ public class AppRepository {
         return appDatabase.advertisementsDao().getAllApartments(values.getRooms(), values.getRent(), values.getSqm());
     }
 
-    public LiveData<List<Advertisement>> getUserAdvertisements(String currentUserEmail ) {
+    public LiveData<Advertisement> getUserAdvertisements(String currentUserEmail ) {
         return appDatabase.advertisementsDao().getUserApartments(currentUserEmail);
     }
 
@@ -57,6 +57,10 @@ public class AppRepository {
 
     public Advertisement getAdvertisementFromId(int id) {
         return appDatabase.advertisementsDao().getAdvertisementFromId(id);
+    }
+
+    public void deleteUserAdvertisement (String currentUserEmail) {
+        appDatabase.advertisementsDao().deleteUserAdvertisement(currentUserEmail);
     }
 
 }

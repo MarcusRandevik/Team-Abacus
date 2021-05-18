@@ -2,6 +2,7 @@ package com.example.changeit.db.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -35,7 +36,7 @@ public interface AdvertisementsDao {
     LiveData<List<Advertisement>> getAllApartments(int maxRooms, int maxRent, int maxSqm);
 
     @Query("SELECT * FROM advertisements WHERE email == :currentUserEmail LIMIT 1")
-    LiveData<List<Advertisement>> getUserApartments(String currentUserEmail);
+    LiveData<Advertisement> getUserApartments(String currentUserEmail);
 
 
     /**
@@ -63,4 +64,8 @@ public interface AdvertisementsDao {
 
     @Query("SELECT * FROM advertisements WHERE id == :id")
     Advertisement getAdvertisementFromId(int id);
+
+    @Query("DELETE FROM advertisements WHERE email == :userEmail")
+    void deleteUserAdvertisement(String userEmail);
+
 }
