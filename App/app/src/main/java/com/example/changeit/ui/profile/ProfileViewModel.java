@@ -41,7 +41,7 @@ public class ProfileViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<List<Advertisement>> getAdvertisements() {
+    public LiveData<Advertisement> getAdvertisement() {
         return repository.getUserAdvertisements(userEmail);
     }
 

@@ -67,20 +67,18 @@ public class ProfileFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
 
-        profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
-            if(advertisements.size() > 0) {
-                binding.setAdvertisement(advertisements.get(0));
-                Advertisement advertisement = advertisements.get(0);
+        profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisement -> {
+            if(advertisement!=null) {//returnerar databasen null om den inte hittar något som matchar?
+                binding.setAdvertisement(advertisement);
                 binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
 
                 binding.setCallback(advertisement1 -> {
                     Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
                 });
 
-            binding.setFavouriteCallBack(advertisement1 -> profileViewModel.changeFavourite(advertisement1));
-        }
+                binding.setFavouriteCallBack(advertisement1 -> profileViewModel.changeFavourite(advertisement1));
+            }
         });
-
 
 
         AsyncTask.execute(() -> setUpBindings());
@@ -96,10 +94,12 @@ public class ProfileFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                profileViewModel.getAdvertisements().observe(getViewLifecycleOwner(),advertisements -> {
-                    if(advertisements.get(0) == null){
+                profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisements -> {
+                    if(advertisements == null){
                         NavDirections action = ProfileFragmentDirections.actionNavigationProfileToAd();
                         Navigation.findNavController(v).navigate(action);
+                        binding.materialCardView.setVisibility(View.VISIBLE);
+                        binding.deletebutton.setVisibility(View.VISIBLE);
                     }
                     else {
                         Toast toast = Toast.makeText(getContext(),"You already have one advertisement",
@@ -116,6 +116,8 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AsyncTask.execute(()->profileViewModel.deleteUserAdvertisement());
+                binding.materialCardView.setVisibility(View.INVISIBLE);
+                binding.deletebutton.setVisibility(View.INVISIBLE);
             }
         });
     }

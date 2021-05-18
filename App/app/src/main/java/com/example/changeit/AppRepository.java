@@ -35,7 +35,7 @@ public class AppRepository {
         return appDatabase.advertisementsDao().getAllApartments(values.getRooms(), values.getRent(), values.getSqm());
     }
 
-    public LiveData<List<Advertisement>> getUserAdvertisements(String currentUserEmail ) {
+    public LiveData<Advertisement> getUserAdvertisements(String currentUserEmail ) {
         return appDatabase.advertisementsDao().getUserApartments(currentUserEmail);
     }
 
