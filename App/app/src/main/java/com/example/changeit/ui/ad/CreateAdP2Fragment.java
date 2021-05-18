@@ -24,12 +24,14 @@ import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.CreateAdP2FragmentBinding;
+import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.ui.home.DetailedApartmentFragmentArgs;
 import com.example.changeit.ui.profile.ProfileFragmentDirections;
 import com.example.changeit.ui.profile.ProfileViewModel;
 
 /**
- * @author Noa Tholén, Izabell Arvidsson,  Amanda Styff
+ * @author Noa Tholén, Izabell Arvidsson,  Amanda Styff, Lisa Samuelsson
  * @since 2020-04-26
  * Fragment which is the second part of creating an advertisement. This includes what the user is searching for.
  */
@@ -69,24 +71,8 @@ public class CreateAdP2Fragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
-                        mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
-                        mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
-                    Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
-                            Toast.LENGTH_SHORT);
-                    toast.show();
-                }else {
-                    AsyncTask.execute(() -> {
-                        mViewModel.saveApartment();
+                AsyncTask.execute(() -> setupBinding(v));
 
-                    });
-                    Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_SHORT);
-                    toast.show();
-                   /* NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationHome();
-                    Navigation.findNavController(v).navigate(action);
-
-                    */
-                }
             }
         });
 
@@ -101,6 +87,28 @@ public class CreateAdP2Fragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(requireActivity()).get(AdViewModel.class);
+    }
+
+    public void setupBinding( View view){
+        int advertisementId = DetailedApartmentFragmentArgs.fromBundle(getArguments()).getAdvertisement();
+
+        Advertisement advertisement = ((ChangeItApp)getActivity().getApplication()).getRepository().getAdvertisementFromId(advertisementId);
+
+        if(mViewModel.getRentWanted().getValue() == null || mViewModel.getRentWanted().getValue().equals("") ||
+                mViewModel.getRoomsWanted().getValue() == null || mViewModel.getRoomsWanted().getValue().equals("")||
+                mViewModel.getSqmWanted().getValue() == null || mViewModel.getSqmWanted().getValue().equals("")){
+            Toast toast = Toast.makeText(getContext(),"Fill out all text fields to continue",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+        }else {
+            AsyncTask.execute(() -> {
+                mViewModel.saveApartment();
+            });
+            NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationProfile(advertisement.getUser(), advertisement);
+            Navigation.findNavController(view).navigate(action);
+            Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
 }

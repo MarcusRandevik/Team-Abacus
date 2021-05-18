@@ -48,7 +48,7 @@
                     android:inputType="number"
                     android:text="@={viewModel.roomsOffered}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.283"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/apartmentImage" />
 
@@ -56,44 +56,59 @@
                     android:id="@+id/sqmOffered"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:autoText="false"
-                    android:text="@={viewModel.sqmOffered}"
                     android:ems="10"
                     android:hint="@string/sqm_label"
                     android:inputType="number"
+                    android:text="@={viewModel.sqmOffered}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.283"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/roomsOffered" />
-
-                <EditText
-                    android:id="@+id/rentOffered"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="@string/rent_label"
-                    android:inputType="number"
-                    android:text="@={viewModel.rentOffered}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.278"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sqmOffered" />
 
                 <EditText
                     android:id="@+id/addressOffered"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:ems="10"
                     android:hint="Address"
                     android:inputType="textMultiLine"
                     android:text="@={viewModel.addressOffered}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.283"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rentOffered" />
+
+                <EditText
+                    android:id="@+id/rentOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="@string/rent_label"
+                    android:inputType="number"
+                    android:text="@={viewModel.rentOffered}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sqmOffered" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionOffered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/Description"
+                    android:inputType="textMultiLine"
+                    android:text="@={viewModel.descriptionOffered}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addressOffered" />
 
                 <TextView
                     android:id="@+id/wifiTextView"
@@ -144,20 +159,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/electricityTextView" />
 
                 <!--Binda texten till viewmodels description-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/descriptionOffered"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint="@string/Description"
-                    android:inputType="textMultiLine"
-                    android:text="@={viewModel.descriptionOffered}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.278"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/addressOffered"
-                    tools:layout_editor_absoluteY="447dp" />
 
                 <ToggleButton
                     android:id="@+id/wifiToggleButton"
@@ -206,10 +207,10 @@
                     android:layout_width="50dp"
                     android:layout_height="36dp"
                     android:layout_marginTop="6dp"
+                    android:checked="@={viewModel.getBalconyOffered}"
                     android:text="@string/Toggle_button"
                     android:textOff="@string/No"
                     android:textOn="@string/Yes"
-                    android:checked="@={viewModel.getBalconyOffered}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.61"
                     app:layout_constraintStart_toStartOf="parent"
@@ -231,14 +232,14 @@
                     android:id="@+id/continueButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="20dp"
                     android:text="@string/Continue_Button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.956"
-                    app:layout_constraintStart_toStartOf="parent"
 
-                   />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/balconyToggleButton" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

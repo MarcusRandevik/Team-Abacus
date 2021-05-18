@@ -118,7 +118,7 @@
             android:id="@+id/action_createAdP2Fragment_to_advertisement"
             app:destination="@id/advertisement" />
         <action
-            android:id="@+id/action_createAdP2Fragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_createAdP2Fragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
     </fragment>
 </navigation>
