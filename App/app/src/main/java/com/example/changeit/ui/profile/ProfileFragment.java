@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
 
     private ApartmentAdapter apartmentAdapter;
 
-   // private final ProfileClickCallback profileClickCallback;
+    //private final ProfileClickCallback profileClickCallback;
 
     private FragmentProfileBinding binding;
 
