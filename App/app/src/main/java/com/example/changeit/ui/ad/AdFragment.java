@@ -43,7 +43,8 @@ public class AdFragment extends Fragment {
      */
     private AdViewModel adViewModel;
 
-    ActivityResultLauncher<String> getPicture = registerForActivityResult(new ActivityResultContracts.GetMultipleContents(), new ActivityResultCallback<List<Uri>>() {
+    ActivityResultLauncher<String> getPicture = registerForActivityResult(new ActivityResultContracts.GetMultipleContents(),
+            new ActivityResultCallback<List<Uri>>() {
         @Override
         public void onActivityResult(List<Uri> result) {
             adViewModel.setPictures(result);

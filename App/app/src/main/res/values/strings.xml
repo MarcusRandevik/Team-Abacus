@@ -16,10 +16,10 @@
     <string name="filter_room">Max number of rooms</string>
     <string name="filter_rent">Max rent</string>
     <string name="filter_sqm">Max sqm</string>
-    <string name="detailed_apartment_balcony"> Balcony included </string>
-    <string name="detailed_apartment_wifi"> Wifi included </string>
-    <string name="detailed_apartment_pets"> Pets allowed </string>
-    <string name="detailed_apartment_electricity"> Electricity included </string>
+    <string name="detailed_apartment_balcony"> Balcony included? </string>
+    <string name="detailed_apartment_wifi"> Wifi included? </string>
+    <string name="detailed_apartment_pets"> Pets allowed? </string>
+    <string name="detailed_apartment_electricity"> Electricity included? </string>
     <string name="Yes">Yes</string>
     <string name="No">No</string>
     <string name="Toggle_button">Toggle Button</string>
@@ -37,6 +37,7 @@
     <string name="hint_name">name</string>
     <string name="hint_number">phonenumber</string>
     <string name="hint_mail">mail</string>
+
     <string name="delete"> Delete advertisement</string>
     <string name="deletequestion"> Are you sure you want to delete your ad?</string>
 
