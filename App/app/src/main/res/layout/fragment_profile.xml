@@ -46,6 +46,7 @@
             android:clickable="true"
             android:contentDescription="@string/Create_Ad"
             android:src="@android:drawable/ic_menu_add"
+            app:backgroundTint="@color/SGSorange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

@@ -82,6 +82,10 @@ public class CreateAdP2Fragment extends Fragment {
                     });
                     Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_SHORT);
                     toast.show();
+                   /* NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationHome();
+                    Navigation.findNavController(v).navigate(action);
+
+                    */
                 }
             }
         });
