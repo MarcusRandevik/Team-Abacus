@@ -35,11 +35,11 @@ public class DetailedApartmentFragment extends Fragment {
 
     private DetailedApartmentBinding binding;
 
-   /* private ClipData clipData;
+    private ClipData clipData;
 
     private ClipboardManager clipboardManager;
 
-    */
+
     /**
      * sets the advertisement to show detailed information about to the one that is sent from the home page list
      * @param inflater
@@ -70,7 +70,7 @@ public class DetailedApartmentFragment extends Fragment {
 
         Advertisement advertisement = ((ChangeItApp)getActivity().getApplication()).getRepository().getAdvertisementFromId(advertisementId);
 
-        //clipboardManager = (ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboardManager = (ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
 
         // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
 
@@ -89,7 +89,7 @@ public class DetailedApartmentFragment extends Fragment {
             }
         });
 
-       /* binding.shareLinkFloatingButton.setOnClickListener(new View.OnClickListener() {
+        binding.shareLinkFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txtcopy = "https://www.changeit.com/advertisement/"+advertisementId;
@@ -98,7 +98,6 @@ public class DetailedApartmentFragment extends Fragment {
                 Toast.makeText(getContext(), "Link copied", Toast.LENGTH_SHORT).show();
             }
         });
-        */
 
     }
 }

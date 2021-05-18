@@ -76,8 +76,7 @@ public class ProfileFragment extends Fragment {
                     Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
                 });
 
-                binding.setFavouriteCallBack(advertisement1 -> profileViewModel.changeFavourite(advertisement1));
-            }
+            binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(()->profileViewModel.changeFavourite(advertisement1)));
         });
 
 
@@ -88,6 +87,9 @@ public class ProfileFragment extends Fragment {
     public void setUpBindings(){
         FloatingActionButton button = binding.profilebutton;
         button.setOnClickListener(new View.OnClickListener() {
+
+
+
             /**
              * Navigates to the ad fragment when a user clicks on the button on the profile page.
              * @param v
@@ -108,7 +110,8 @@ public class ProfileFragment extends Fragment {
                     }
                 });
 
-            }
+        return binding.getRoot();
+    }
 
         });
 
