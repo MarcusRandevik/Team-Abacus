@@ -53,7 +53,8 @@ public class DetailedApartmentFragment extends Fragment {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
 
-        AsyncTask.execute(() -> setupBindings());
+        // We need to make database calls on a non-ui thread
+        AsyncTask.execute(this::setupBindings);
 
         return binding.getRoot();
     }
@@ -70,8 +71,6 @@ public class DetailedApartmentFragment extends Fragment {
 
         Advertisement advertisement = ((ChangeItApp)getActivity().getApplication()).getRepository().getAdvertisementFromId(advertisementId);
 
-        clipboardManager = (ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-
         // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
 
         binding.setAdvertisement(advertisement);
@@ -81,23 +80,20 @@ public class DetailedApartmentFragment extends Fragment {
             // We don't need to do anything, just need to link viewpager with tablayout
         });
         mediator.attach();
-        binding.contactbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavDirections action = DetailedApartmentFragmentDirections.actionNavigationDetailedApartmentToNavigationMessages(advertisement.getUser());
-                Navigation.findNavController(v).navigate(action);
-            }
+        binding.contactbutton.setOnClickListener(v -> {
+            NavDirections action = DetailedApartmentFragmentDirections.actionNavigationDetailedApartmentToNavigationMessages(advertisement.getUser());
+            Navigation.findNavController(v).navigate(action);
         });
 
-            binding.shareLinkFloatingButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
+        // Clipboardmanager cannot be created on a non-ui thread therefore we need this somewhat ugly fix
+        getActivity().runOnUiThread(() -> {
+            clipboardManager = (ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+            binding.shareLinkFloatingButton.setOnClickListener(v -> {
                 String txtcopy = "https://www.changeit.com/advertisement/"+advertisementId;
                 clipData = ClipData.newPlainText("text", txtcopy);
                 clipboardManager.setPrimaryClip(clipData);
                 Toast.makeText(getContext(), "Link copied", Toast.LENGTH_SHORT).show();
-            }
+            });
         });
     }
 }
