@@ -68,7 +68,7 @@ public class ProfileFragment extends Fragment {
         binding.setUser(UserHandler.getInstance().getCurrentUser());
 
         profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisement -> {
-            if(advertisement!=null) {//returnerar databasen null om den inte hittar något som matchar?
+            if(advertisement!=null) {
                 binding.setAdvertisement(advertisement);
                 binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
 
