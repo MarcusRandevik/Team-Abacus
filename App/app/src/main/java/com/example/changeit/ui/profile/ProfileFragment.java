@@ -69,9 +69,10 @@ public class ProfileFragment extends Fragment {
 
         profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisement -> {
             if(advertisement!=null) {
+                binding.materialCardView.setVisibility(View.VISIBLE);
                 binding.setAdvertisement(advertisement);
                 binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
-
+                binding.deletebutton.setVisibility(View.VISIBLE);
                 binding.setCallback(advertisement1 -> {
                     Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
                 });
