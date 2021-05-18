@@ -17,16 +17,19 @@ Our stakeholder is a student named Lisa, who wanted to find a better solution fo
 
 # Installation
 
-Clone the repo
+> Important, if you don't have access to an Android Phone, please also install the [android emulator](https://developer.android.com/studio/run/emulator#install).
 
-```console
-git clone https://github.com/MarcusRandevik/Team-Aba
+1. Download and install [Android Studio](https://developer.android.com/studio)
+
+
+2. Clone the repo:
+
+```shell
+git clone https://github.com/MarcusRandevik/Team-Abacus.git
 ```
 
-* Clone the project.
-* Open the project using Android Studio.
-* Run the project!
-
+4. Using Android studio, open an existing project at the folder `<repo_location>/Team-Abascus/App`
+5. Run the app using the green play button at the top of Android Studio
 # Links
 Scrum board: https://trello.com/b/HXAi7nDr/sgs
 
