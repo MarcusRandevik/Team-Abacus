@@ -72,7 +72,7 @@ public class ProfileFragment extends Fragment {
                 Navigation.findNavController(binding.getRoot()).navigate(ProfileFragmentDirections.actionNavigationProfileToNavigationDetailedApartment(advertisement1.getId()));
             });
 
-            binding.setFavouriteCallBack(advertisement1 -> profileViewModel.changeFavourite(advertisement1));
+            binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(()->profileViewModel.changeFavourite(advertisement1)));
         });
 
 
