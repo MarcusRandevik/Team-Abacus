@@ -120,6 +120,8 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 binding.deleteno.setVisibility(View.VISIBLE);
                 binding.deleteyes.setVisibility(View.VISIBLE);
+                binding.deleteQuestion.setVisibility(View.VISIBLE);
+
             }
         });
         binding.deleteyes.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +132,8 @@ public class ProfileFragment extends Fragment {
                 binding.deleteyes.setVisibility(View.INVISIBLE);
                 binding.materialCardView.setVisibility(View.INVISIBLE);
                 binding.deletebutton.setVisibility(View.INVISIBLE);
+                binding.deleteQuestion.setVisibility(View.INVISIBLE);
+
             }
         });
         binding.deleteno.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +141,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 binding.deleteno.setVisibility(View.INVISIBLE);
                 binding.deleteyes.setVisibility(View.INVISIBLE);
+                binding.deleteQuestion.setVisibility(View.INVISIBLE);
             }
         });
     }
