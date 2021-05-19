@@ -1,15 +1,10 @@
 package com.example.changeit.ui;
 
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.view.MenuItem;
 
 import com.example.changeit.R;
 import com.example.changeit.model.StartUpService;
-import com.example.changeit.model.User;
-import com.example.changeit.model.UserHandler;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;

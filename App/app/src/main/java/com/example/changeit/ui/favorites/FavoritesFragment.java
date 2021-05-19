@@ -21,7 +21,8 @@ import com.example.changeit.ui.home.ApartmentAdapter;
 
 /**
  * logic for the favorite view
- * @author Marcus Randevik
+ *
+ * @author Marcus Randevik. Also edited by Izabell Arvidsson, Amanda Styff och Kerstin Wadman.
  * @since 2021-03-22
  */
 public class FavoritesFragment extends Fragment {

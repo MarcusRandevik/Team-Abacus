@@ -32,8 +32,6 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
         this.favouriteClickCallback = favouriteClickCallback;
     }
 
-
-
     /**
      * updates the list of advertisements
      * @param newAdvertisements the new accurate list of advertisements

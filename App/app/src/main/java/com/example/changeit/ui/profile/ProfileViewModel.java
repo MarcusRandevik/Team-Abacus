@@ -1,26 +1,23 @@
 package com.example.changeit.ui.profile;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
-import androidx.lifecycle.ViewModel;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.User;
 import com.example.changeit.model.UserHandler;
-import com.example.changeit.ui.home.HomeViewModel;
 
-import java.util.List;
-
+/**
+        * logic for the profile view
+        * @author Izabell Arvidsson, Amanda Styff, Kerstin Wadman. Edited by Moa Berglund, Lisa Samuelsson
+        * @since 2021-04-13
+        */
 public class ProfileViewModel extends AndroidViewModel {
-    private MutableLiveData<String> mText;
 
     private String userEmail;
 

@@ -39,21 +39,9 @@ import com.example.changeit.ui.profile.ProfileViewModel;
  */
 public class CreateAdP2Fragment extends Fragment {
 
-    /**
-     * An instance of the AdViewModel.
-     */
     private AdViewModel mViewModel;
-
     private FragmentProfileBinding profileBinding;
 
-
-    /**
-     * Inflates the layout for this fragment.
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
-     */
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -74,7 +62,6 @@ public class CreateAdP2Fragment extends Fragment {
              * list of apartments
              * @param v
              */
-
             @Override
             public void onClick(View v) {
 
@@ -87,7 +74,6 @@ public class CreateAdP2Fragment extends Fragment {
                 }else {
                     AsyncTask.execute(() -> {
                         mViewModel.saveApartment();
-
                     });
                     NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationProfile();
                     profileBinding.materialCardView.setVisibility(View.VISIBLE);

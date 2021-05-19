@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * A static class that handles the users. Has a list of users
+ * Uses user
+ *
  * @author Moa Berglund, Noa Tholén, Lisa Samuelsson
- * Uses User
- * A class that handles the users. Has a list of users
  * @since 2020-04-13
  */
 
 public class UserHandler {
     private static UserHandler single_instance=null;
-    private List<User> allUsers; //final?
+    private List<User> allUsers;
     private User currentUser;
 
     /**
@@ -40,9 +41,6 @@ public class UserHandler {
        if(!checkDuplicates(email, phoneNumber)) {
            User newUser = new User(name, email, phoneNumber, password);
            addUser(newUser);
-       }
-       else{
-           //inte ok att skapa användare TODO
        }
     }
 
@@ -88,7 +86,6 @@ public class UserHandler {
      */
     // kan användas vid inloggning, när användaren har skrivit in sin email
     public User getUserByEmail(String email) {
-
         for (User u : allUsers ) {
             if(email.equals(u.getEmail())) {
                 return u;

@@ -3,19 +3,16 @@ package com.example.changeit.model;
 import java.io.Serializable;
 
 /**
- * @author Lisa Samuelsson, Moa Berglund, Noa Tholén
- * @since 2021-04-13
- *
- *
  * User represents a user of the system.
  *
+ * @author Lisa Samuelsson, Moa Berglund, Noa Tholén
+ * @since 2021-04-13
  */
 public class User implements Serializable {
     private String name;
     private String email;
     private String phoneNumber;
     private String password;
-    // TODO en användare ska även ha profilbild
 
     /**
      * The constructor for the User class.
@@ -46,7 +43,5 @@ public class User implements Serializable {
     public String getEmail(){
        return email;
     }
-
-    //setters,getters, ändra namn osv.... TODO
 
 }

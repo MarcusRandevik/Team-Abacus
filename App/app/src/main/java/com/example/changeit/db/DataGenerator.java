@@ -19,7 +19,7 @@ import java.util.Random;
 import static com.example.changeit.util.AppUtil.convertResourcePictures;
 
 /**
- * @author Marcus Randevik
+ * @author Marcus Randevik. Also edited by Lisa Samuelsson, Amanda Styff, Moa Berglund, Izabell Arvidsson and Noa Tholén
  * @since 2021-04-04
  */
 public class DataGenerator {

@@ -25,7 +25,8 @@ import com.example.changeit.databinding.FragmentHomeBinding;
  * has a homeViewModel to be able to get all saved advertisements and to connect the filters
  * has a apartmentAdapter for the logic connected to the advertisement list
  * has a fragmentHomeBinding to connect to the xml file
- * @author Marcus Randevik
+ *
+ * @author Marcus Randevik. Edited by Izabell Arvidsson, Moa Berglund
  * @since 2021-03-22
  */
 
@@ -45,10 +46,8 @@ public class HomeFragment extends Fragment {
      * @param savedInstanceState
      * @return
      */
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        AppRepository repository = ((ChangeItApp) getActivity().getApplication()).getRepository();
         homeViewModel =
                 new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
@@ -69,14 +68,10 @@ public class HomeFragment extends Fragment {
         return fragmentHomeBinding.getRoot();
     }
 
-    /**
-     * Updates the list of advertisements when new ads is created
-     * @param view
-     * @param savedInstanceState
-     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Updates the list of advertisements when new ads is created
         homeViewModel.getAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
             apartmentAdapter.setAdvertisements(advertisements);
         });

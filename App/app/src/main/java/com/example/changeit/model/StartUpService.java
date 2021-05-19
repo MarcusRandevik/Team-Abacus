@@ -1,8 +1,10 @@
 package com.example.changeit.model;
 /**
- * @author Moa Berglund, Noa Tholén, Lisa Samuelsson
+ *
+ * Represents a start up service for the application. Initializes hard coded users to the application and sets one as default logged in
  * Uses UserHandler
- * Represents an start up service for the application. Initializes hard coded values to the application
+ *
+ * @author Moa Berglund, Noa Tholén, Lisa Samuelsson, Amanda Styff
  * @since 2020-04-13
  */
 public class StartUpService {

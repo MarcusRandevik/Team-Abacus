@@ -3,7 +3,12 @@ package com.example.changeit.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-
+/**
+ * Represents an apartment
+ *
+ * @author Marcus Randevik. Also edited by Moa Berglund, Lisa Samuelsson, Kerstin Wadman and Amanda Styff
+ * @since 2021-04-12
+ */
 public class Apartment implements Serializable {
     private int rent;
     private int rooms;

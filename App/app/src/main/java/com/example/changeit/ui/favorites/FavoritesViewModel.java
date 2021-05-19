@@ -14,8 +14,13 @@ import com.example.changeit.model.Advertisement;
 
 import java.util.List;
 
+/**
+ * view model for the favorite view
+ *
+ * @author Marcus Randevik
+ * @since 2021-03-22
+ */
 public class FavoritesViewModel extends AndroidViewModel {
-
 
     private AppRepository repository;
 

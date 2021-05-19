@@ -26,31 +26,27 @@ import java.util.Random;
 import static java.lang.Integer.parseInt;
 
 /**
- * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
- * @since 2020-04-20
- *
  * View model which is shared between AdFragment and CreateAdP2Fragment.
  * This is because these fragments are connected and should be saved together in the advertisement.
  *
+ * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
+ * @since 2020-04-20
+ *
  */
 public class AdViewModel extends AndroidViewModel {
+    /**
+     * The one and only (singleton) userhandler
+     */
     UserHandler userhandler=UserHandler.getInstance();
     /**
      * An instance of the app repository,
      */
-    private AppRepository repository;
+    private final AppRepository repository;
 
     /**
      * The description for the offered apartment.
      */
     private MutableLiveData<String> descriptionOffered;
-
-    /**
-     * The description for the wanted apartment.
-     */
-    private MutableLiveData<String> descriptionWanted;
-
-   // private MutableLiveData<Boolean> valid; TODO - remove?
 
     /**
      * The rent for the offered apartment.
@@ -77,6 +73,9 @@ public class AdViewModel extends AndroidViewModel {
      */
     private MutableLiveData<String> sqmOffered;
 
+    /**
+     * List of pictures of the offered apartment
+     */
     private MutableLiveData<List<Uri>> pictures;
 
     /**
@@ -87,12 +86,12 @@ public class AdViewModel extends AndroidViewModel {
     /**
      * True if balcony is included in offered apartment, false otherwise.
      */
-    private MutableLiveData<Boolean> balconyOffered;
+    private final MutableLiveData<Boolean> balconyOffered;
 
     /**
      * True if wifi is included in offered apartment, false otherwise.
      */
-    private MutableLiveData<Boolean> wifiOffered;
+    private final MutableLiveData<Boolean> wifiOffered;
 
     /**
      * True if electricity is included in offered apartment, false otherwise.
@@ -108,7 +107,7 @@ public class AdViewModel extends AndroidViewModel {
     /**
      * True if pets are allowed in offered apartment, false otherwise.
      */
-    private MutableLiveData<Boolean> petsOffered;
+    private final MutableLiveData<Boolean> petsOffered;
 
     /**
      * True if wifi is included in wanted apartment, false otherwise.
@@ -130,9 +129,6 @@ public class AdViewModel extends AndroidViewModel {
      */
     private MutableLiveData<Boolean> balconyWanted;
 
-
-
-
     /**
      * The constructor for AdViewModel
      * @param application
@@ -144,7 +140,6 @@ public class AdViewModel extends AndroidViewModel {
         repository = ((ChangeItApp) application).getRepository();
 
         descriptionOffered = new MutableLiveData<>();
-        descriptionWanted = new MutableLiveData<>();
 
         rentOffered = new MutableLiveData<>();
         rentWanted = new MutableLiveData<>();
@@ -184,7 +179,6 @@ public class AdViewModel extends AndroidViewModel {
      * saveApartment() saves all specifics that are filled in when creating an ad and add the apartment
      * to the list of apartments.
      */
-
     public void saveApartment() {
         Apartment apartment = new Apartment(parseInt(rentOffered.getValue()),
                 parseInt(roomsOffered.getValue()),
@@ -207,10 +201,7 @@ public class AdViewModel extends AndroidViewModel {
                 wifiWanted.getValue(),
                 petsWanted.getValue(),
                 false);
-
         repository.addAdvertisement(advertisement);
-
-
     }
 
 
@@ -254,14 +245,6 @@ public class AdViewModel extends AndroidViewModel {
         this.roomsWanted = roomsWanted;
     }
 
-    public MutableLiveData<String> getDescriptionWanted() {
-        return descriptionWanted;
-    }
-
-    public void setDescriptionWanted(MutableLiveData<String> descriptionWanted) {
-        this.descriptionWanted = descriptionWanted;
-    }
-
     public MutableLiveData<String> getRentWanted() {
         return rentWanted;
     }
@@ -281,11 +264,10 @@ public class AdViewModel extends AndroidViewModel {
     public MutableLiveData<Boolean> getBalconyOffered() {
         return balconyOffered;
     }
+
     public void setPictures(List<Uri> pictures) {
         this.pictures.setValue(pictures);
     }
-
-    //Listan krånglar (?)
 
     public MutableLiveData<Boolean> getWifiOffered() {
         return wifiOffered;
@@ -299,20 +281,8 @@ public class AdViewModel extends AndroidViewModel {
         return petsOffered;
     }
 
-    public void setBalconyOffered(MutableLiveData<Boolean> balconyOffered) {
-        this.balconyOffered = balconyOffered;
-    }
-
-    public void setWifiOffered(MutableLiveData<Boolean> wifiOffered) {
-        this.wifiOffered = wifiOffered;
-    }
-
     public void setElectricityOffered(MutableLiveData<Boolean> electricityOffered) {
         this.electricityOffered = electricityOffered;
-    }
-
-    public void setPetsOffered(MutableLiveData<Boolean> petsOffered) {
-        this.petsOffered = petsOffered;
     }
 
     public MutableLiveData<Boolean> getWifiWanted() {
