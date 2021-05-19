@@ -24,8 +24,10 @@ import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.CreateAdP2FragmentBinding;
+import com.example.changeit.databinding.FragmentProfileBinding;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
+import com.example.changeit.model.UserHandler;
 import com.example.changeit.ui.home.DetailedApartmentFragmentArgs;
 import com.example.changeit.ui.profile.ProfileFragmentDirections;
 import com.example.changeit.ui.profile.ProfileViewModel;
@@ -42,6 +44,9 @@ public class CreateAdP2Fragment extends Fragment {
      */
     private AdViewModel mViewModel;
 
+    private FragmentProfileBinding profileBinding;
+
+
     /**
      * Inflates the layout for this fragment.
      * @param inflater
@@ -56,6 +61,8 @@ public class CreateAdP2Fragment extends Fragment {
                 mViewModel =
                 new ViewModelProvider(requireActivity()).get(AdViewModel.class);
         CreateAdP2FragmentBinding binding = DataBindingUtil.inflate(inflater,R.layout.create_ad_p2_fragment, container, false);
+
+        profileBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
 
         binding.setViewModel(mViewModel);
         Button publishButton =  binding.publishButton;
@@ -80,8 +87,11 @@ public class CreateAdP2Fragment extends Fragment {
                 }else {
                     AsyncTask.execute(() -> {
                         mViewModel.saveApartment();
+
                     });
                     NavDirections action = CreateAdP2FragmentDirections.actionCreateAdP2FragmentToNavigationProfile();
+                    profileBinding.materialCardView.setVisibility(View.VISIBLE);
+                    profileBinding.deletebutton.setVisibility(View.VISIBLE);
                     Navigation.findNavController(v).navigate(action);
                     Toast toast = Toast.makeText(getContext(), "Apartment saved", Toast.LENGTH_LONG);
                     toast.show();

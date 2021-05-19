@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
@@ -129,8 +130,6 @@ public class AdViewModel extends AndroidViewModel {
      */
     private MutableLiveData<Boolean> balconyWanted;
 
-    private FragmentProfileBinding binding;
-
 
 
 
@@ -210,8 +209,7 @@ public class AdViewModel extends AndroidViewModel {
                 false);
 
         repository.addAdvertisement(advertisement);
-        binding.materialCardView.setVisibility(View.VISIBLE);
-        binding.deletebutton.setVisibility(View.VISIBLE);
+
 
     }
 
