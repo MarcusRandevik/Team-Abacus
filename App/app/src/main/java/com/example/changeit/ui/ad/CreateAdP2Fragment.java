@@ -1,7 +1,6 @@
 package com.example.changeit.ui.ad;
 
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.AsyncTask;
@@ -17,20 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.changeit.AppRepository;
-import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.CreateAdP2FragmentBinding;
 import com.example.changeit.databinding.FragmentProfileBinding;
-import com.example.changeit.model.Advertisement;
-import com.example.changeit.model.Apartment;
-import com.example.changeit.model.UserHandler;
-import com.example.changeit.ui.home.DetailedApartmentFragmentArgs;
-import com.example.changeit.ui.profile.ProfileFragmentDirections;
-import com.example.changeit.ui.profile.ProfileViewModel;
 
 /**
  * @author Noa Tholén, Izabell Arvidsson,  Amanda Styff, Lisa Samuelsson
@@ -56,11 +46,10 @@ public class CreateAdP2Fragment extends Fragment {
         Button publishButton =  binding.publishButton;
         publishButton.setOnClickListener(new View.OnClickListener(){
 
-            /**
-             * Checks if all the required fields are filled out. If not, a message will appear
-             * asking the user to fill in all fields. If everything is filled out the ad is saved and added to the
-             * list of apartments
-             * @param v
+
+            /* Checks if all the required fields are filled out. If not, a message will appear
+             asking the user to fill in all fields. If everything is filled out the ad is saved and added to the
+             list of apartments
              */
             @Override
             public void onClick(View v) {
@@ -88,10 +77,7 @@ public class CreateAdP2Fragment extends Fragment {
         return binding.getRoot();
     }
 
-    /**
-     * Makes sure that the view model is still active while being on this fragment.
-     * @param savedInstanceState
-     */
+    //Makes sure that the view model is still active while being on this fragment.
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

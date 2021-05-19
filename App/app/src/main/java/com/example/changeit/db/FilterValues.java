@@ -1,11 +1,12 @@
 package com.example.changeit.db;
 
+/**
+ * Represents the three parameters that you can filter the home page by
+ *
+ * @author Marcus Randevik, Lisa Samuelsson, Amanda Styff, Noa Tholén
+ * @since 2021-05-04
+ */
 public class FilterValues {
-    /**
-     * @author Marcus Randevik, Lisa Samuelsson, Amanda Styff, Noa Tholén
-     * @since 2021-05-04
-     */
-
     private int rooms;
     private int rent;
     private int sqm;

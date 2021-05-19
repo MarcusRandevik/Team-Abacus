@@ -8,14 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.MediatorLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentFilterBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.google.android.material.slider.Slider;
 
 /**
  * A fragment which opens up for filtration of advertisements.

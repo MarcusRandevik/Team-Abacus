@@ -2,7 +2,6 @@ package com.example.changeit.ui.home;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.example.changeit.AppRepository;
-import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentHomeBinding;
 

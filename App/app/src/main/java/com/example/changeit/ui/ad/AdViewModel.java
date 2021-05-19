@@ -2,10 +2,8 @@ package com.example.changeit.ui.ad;
 
 import android.app.Application;
 import android.net.Uri;
-import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
@@ -13,7 +11,6 @@ import androidx.lifecycle.SavedStateHandle;
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
-import com.example.changeit.databinding.FragmentProfileBinding;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 import com.example.changeit.model.UserHandler;
@@ -129,11 +126,6 @@ public class AdViewModel extends AndroidViewModel {
      */
     private MutableLiveData<Boolean> balconyWanted;
 
-    /**
-     * The constructor for AdViewModel
-     * @param application
-     * @param savedStateHandle
-     */
     public AdViewModel(@NonNull Application application,
                        @NonNull SavedStateHandle savedStateHandle) {
         super(application);

@@ -93,7 +93,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.377"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myProfile" />
+            app:layout_constraintTop_toBottomOf="@+id/myProfile"
+            android:contentDescription="@string/profile_picture" />
+
 
         <TextView
             android:id="@+id/profileNumber"
@@ -154,7 +156,8 @@
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/apartment_image_description" />
 
                     <TextView
                         android:id="@+id/rent_text"
@@ -272,7 +275,9 @@
             app:layout_constraintEnd_toStartOf="@+id/profileMail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneImageView"
-            bind:srcCompat="@android:drawable/ic_dialog_email" />
+            bind:srcCompat="@android:drawable/ic_dialog_email"
+            android:contentDescription="@string/mail_icon" />
+
 
         <ImageView
             android:id="@+id/phoneImageView"
@@ -285,6 +290,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileName"
             app:tint="@color/SGSorange"
+            android:contentDescription="@string/number_icon"
             bind:srcCompat="@android:drawable/stat_sys_phone_call" />
 
         <ImageView
@@ -296,7 +302,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/SGSorange"
-            bind:srcCompat="@drawable/profile" />
+            bind:srcCompat="@drawable/profile"
+            android:contentDescription="@string/name_icon" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

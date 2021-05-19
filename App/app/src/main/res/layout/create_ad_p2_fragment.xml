@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="Autofill">
-<!--Vad innebär autofill?-->
 
     <data>
         <variable
@@ -41,13 +40,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleCreateAdP2TextView" />
 
-            <!--Varför är autoText överstryken? android:autoText="false" behövs denna i nedre EditText?-->
-
             <EditText
                 android:id="@+id/sqmWanted"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="@string/maximum_sqm"
@@ -110,37 +106,6 @@
                 app:layout_constraintHorizontal_bias="0.353"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/electricityTextViewWanted" />
-
-            <!--Binda texten till viewmodels description-->
-            <!--
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/descriptionWanted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/Description"
-                android:inputType="textMultiLine"
-                android:text="@={viewModel.descriptionWanted}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rentWanted" />
-                -->
-            <!--
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/areaWanted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/Wanted_Area"
-                android:inputType="textMultiLine"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="221dp" />
-                -->
 
             <TextView
                 android:id="@+id/wifiTextViewWanted"
@@ -243,5 +208,5 @@
     </FrameLayout>
 
     </ScrollView>
-    </layout>
+</layout>
 

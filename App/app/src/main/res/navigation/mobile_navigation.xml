@@ -40,7 +40,7 @@
     <fragment
         android:id="@+id/navigation_messages"
         android:name="com.example.changeit.ui.messages.MessagesFragment"
-        android:label="@string/title_messages"
+        android:label="@string/title_contact_info"
         tools:layout="@layout/fragment_messages" >
     <argument
         android:name="user"
@@ -52,14 +52,6 @@
         android:name="com.example.changeit.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" >
-        <!--<argument
-            android:name="user"
-            app:argType="com.example.changeit.model.User"
-            app:nullable="true"/>
-        <argument
-            android:name="advertisement"
-            app:argType="com.example.changeit.model.Advertisement"
-            app:nullable="true" />-->
         <action
             android:id="@+id/action_navigation_profile_to_ad"
             app:destination="@id/advertisement" />

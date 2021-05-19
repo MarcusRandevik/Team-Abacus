@@ -5,11 +5,15 @@ import androidx.lifecycle.LiveData;
 import com.example.changeit.db.AppDatabase;
 import com.example.changeit.db.FilterValues;
 import com.example.changeit.model.Advertisement;
-import com.example.changeit.model.Apartment;
-import com.example.changeit.model.User;
 
 import java.util.List;
 
+/**
+ * Represents a static repository that all database management goes through
+ *
+ * @author Marcus Randevik. Also edited by Moa Berglund, Lisa Samuelsson, Kerstin Wadman
+ * @since 2021-04-12
+ */
 public class AppRepository {
 
     private static AppRepository instance;
@@ -41,10 +45,6 @@ public class AppRepository {
 
     public void addAdvertisement(Advertisement advertisement) {
         appDatabase.advertisementsDao().insert(advertisement);
-    }
-
-    public void update(Advertisement advertisement) {
-        appDatabase.advertisementsDao().update(advertisement);
     }
 
     public void changeFavourite(Advertisement advertisement) {
