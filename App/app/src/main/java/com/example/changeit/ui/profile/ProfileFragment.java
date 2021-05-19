@@ -45,13 +45,6 @@ public class ProfileFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         binding.setUser(UserHandler.getInstance().getCurrentUser());
 
-
-        AsyncTask.execute(() -> setUpBindings());
-        return binding.getRoot();
-    }
-
-    public void setUpBindings(){
-        //shows the advertisement card created by the logged in user in his profile
         profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(),advertisement -> {
             if(advertisement!=null) {
                 binding.materialCardView.setVisibility(View.VISIBLE);
@@ -65,6 +58,14 @@ public class ProfileFragment extends Fragment {
                 binding.setFavouriteCallBack(advertisement1 -> AsyncTask.execute(() -> profileViewModel.changeFavourite(advertisement1)));
             }
         });
+
+
+        AsyncTask.execute(() -> setUpBindings());
+        return binding.getRoot();
+    }
+
+    public void setUpBindings(){
+        //shows the advertisement card created by the logged in user in his profile
 
         //Navigates to the ad fragment when a user clicks on the "+" button on the profile page, only if the user does not already has an advertisement.
         binding.profilebutton.setOnClickListener(v -> profileViewModel.getAdvertisement().observe(getViewLifecycleOwner(), advertisements -> {
