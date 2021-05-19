@@ -19,7 +19,7 @@ import com.example.changeit.databinding.FragmentHomeBinding;
 /**
  * logic for the start(home) page
  * has a homeViewModel to be able to get all saved advertisements and to connect the filters
- * has a apartmentAdapter for the logic connected to the advertisement list
+ * has a advertisementAdapter for the logic connected to the advertisement list
  * has a fragmentHomeBinding to connect to the xml file
  *
  * @author Marcus Randevik. Edited by Izabell Arvidsson, Moa Berglund
@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding fragmentHomeBinding;
 
-    private ApartmentAdapter apartmentAdapter;
+    private AdvertisementAdapter advertisementAdapter;
 
     /**
      * Shows a list of advertisements that is able to click on and navigate to a detailed information view
@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
-        apartmentAdapter = new ApartmentAdapter(advertisement -> {
+        advertisementAdapter = new AdvertisementAdapter(advertisement -> {
             Navigation.findNavController(fragmentHomeBinding.getRoot())
                   .navigate(HomeFragmentDirections.actionNavigationHomeToNavigationDetailedApartment(advertisement.getId()));
         }, advertisement -> {
@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
             Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToListFilterFragment());
         });
 
-        fragmentHomeBinding.apartmentList.setAdapter(apartmentAdapter);
+        fragmentHomeBinding.apartmentList.setAdapter(advertisementAdapter);
 
         return fragmentHomeBinding.getRoot();
     }
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // Updates the list of advertisements when new ads is created
         homeViewModel.getAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
-            apartmentAdapter.setAdvertisements(advertisements);
+            advertisementAdapter.setAdvertisements(advertisements);
         });
     }
 }

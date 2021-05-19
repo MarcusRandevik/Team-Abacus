@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.R;
-import com.example.changeit.databinding.DetailedApartmentBinding;
+import com.example.changeit.databinding.DetailedAdvertisementBinding;
 import com.example.changeit.model.Advertisement;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -33,7 +33,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
  */
 public class DetailedApartmentFragment extends Fragment {
 
-    private DetailedApartmentBinding binding;
+    private DetailedAdvertisementBinding binding;
 
     private ClipData clipData;
 
@@ -43,8 +43,8 @@ public class DetailedApartmentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        // Denna bindingklassen motsvarar allt som finns i detailed_apartment.xml
-        binding = DataBindingUtil.inflate(inflater, R.layout.detailed_apartment, container, false);
+        // Denna bindingklassen motsvarar allt som finns i detailed_advertisement.xml
+        binding = DataBindingUtil.inflate(inflater, R.layout.detailed_advertisement, container, false);
 
         // We need to make database calls on a non-ui thread
         AsyncTask.execute(this::setupBindings);

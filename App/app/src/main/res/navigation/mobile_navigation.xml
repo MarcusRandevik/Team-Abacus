@@ -39,9 +39,9 @@
 
     <fragment
         android:id="@+id/navigation_messages"
-        android:name="com.example.changeit.ui.messages.MessagesFragment"
+        android:name="com.example.changeit.ui.contactinfo.ContactInfoFragment"
         android:label="@string/title_contact_info"
-        tools:layout="@layout/fragment_messages" >
+        tools:layout="@layout/fragment_contactinfo" >
     <argument
         android:name="user"
         app:argType="com.example.changeit.model.User"
@@ -67,7 +67,7 @@
         android:id="@+id/navigation_detailedApartment"
         android:name="com.example.changeit.ui.home.DetailedApartmentFragment"
         android:label="@string/title_detailed_apartment"
-        tools:layout="@layout/detailed_apartment">
+        tools:layout="@layout/detailed_advertisement">
         <argument
             android:name="advertisement"
             app:argType="integer"
