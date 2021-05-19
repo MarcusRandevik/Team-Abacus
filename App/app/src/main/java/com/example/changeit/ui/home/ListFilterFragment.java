@@ -8,20 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.MediatorLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentFilterBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.google.android.material.slider.Slider;
 
 /**
+ * A fragment which opens up for filtration of advertisements.
+ *
  * @author Noa Tholén, Lisa Samuelsson, Marcus Randevik, Amanda Styff, Izabell Arvidsson
  * @since 2020-04-19
- *
- * A fragment which opens up for filtration of advertisements.
  *
  */
 public class ListFilterFragment extends BottomSheetDialogFragment {
@@ -32,13 +29,7 @@ public class ListFilterFragment extends BottomSheetDialogFragment {
      */
     private HomeViewModel homeViewModel;
 
-    /**
-     * Takes values from the sliders to show accurate list of apartments.
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
-     */
+    //Takes values from the sliders to show accurate list of apartments.
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,7 +55,6 @@ public class ListFilterFragment extends BottomSheetDialogFragment {
         fragmentFilterBinding.sliderSqm.addOnChangeListener((slider, value, fromUser) -> {
             homeViewModel.setMaxSqm(Math.round(value));
         });
-
 
         return fragmentFilterBinding.getRoot();
     }

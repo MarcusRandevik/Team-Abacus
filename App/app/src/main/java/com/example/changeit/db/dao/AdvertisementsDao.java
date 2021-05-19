@@ -16,7 +16,7 @@ import com.example.changeit.model.UserHandler;
 import java.util.List;
 
 /**
- * @author Marcus Randevik. Also edited by Lisa Samuelsson, Amanda Styff and Noa Tholén.
+ * @author Marcus Randevik. Also edited by Lisa Samuelsson, Amanda Styff, Kerstin Wadman, Moa Berglund and Noa Tholén.
  * @since 2021-04-04
  */
 
@@ -35,9 +35,13 @@ public interface AdvertisementsDao {
     @Query("SELECT * FROM advertisements WHERE rooms <= :maxRooms AND rent <= :maxRent AND sqm <= :maxSqm")
     LiveData<List<Advertisement>> getAllApartments(int maxRooms, int maxRent, int maxSqm);
 
+    /**
+     * Gives the advertisement created by a chosen user
+     * @param currentUserEmail the chosen user's email
+     * @return the advertisement created by the user
+     */
     @Query("SELECT * FROM advertisements WHERE email == :currentUserEmail LIMIT 1")
     LiveData<Advertisement> getUserApartments(String currentUserEmail);
-
 
     /**
      * Replaces previous database if there is a conflict.
@@ -65,6 +69,10 @@ public interface AdvertisementsDao {
     @Query("SELECT * FROM advertisements WHERE id == :id")
     Advertisement getAdvertisementFromId(int id);
 
+    /**
+     * Deletes advertisement created by a chosen user
+     * @param userEmail the chosen user's email
+     */
     @Query("DELETE FROM advertisements WHERE email == :userEmail")
     void deleteUserAdvertisement(String userEmail);
 

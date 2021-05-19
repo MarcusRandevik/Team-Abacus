@@ -149,8 +149,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/electricityTextView" />
 
-                <!--Binda texten till viewmodels description-->
-
                 <TextView
                     android:id="@+id/electricityTextView"
                     android:layout_width="130dp"
@@ -241,7 +239,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.86"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/balconyToggleButton"
                     app:layout_constraintVertical_bias="0.0" />

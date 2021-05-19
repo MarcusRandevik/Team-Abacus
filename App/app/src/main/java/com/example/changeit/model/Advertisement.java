@@ -16,7 +16,7 @@ import java.util.Objects;
 /**
  * POJO class representing an ad.
  *
- * @author Marcus Randevik
+ * @author Marcus Randevik. Also edited by Moa Berglund, Amanda Styff and Noa Tholén.
  * @since 2021-04-10
  */
 
@@ -48,7 +48,7 @@ public class Advertisement implements Serializable {
      * @param seekingRent The amount of rent the user is looking for
      * @param seekingRoom The amount of rooms the user is looking for
      * @param seekingSqm  The amount of sqm the user is looking for
-     * @param user        the user that posts the advertisement
+     * @param user        the user that creates the advertisement
      */
     public Advertisement(int id, Apartment apartment, List<Uri> pictures, int seekingRent,
                          int seekingRoom, int seekingSqm, User user, boolean seekingBalcony,

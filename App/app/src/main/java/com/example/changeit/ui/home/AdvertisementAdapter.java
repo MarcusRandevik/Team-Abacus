@@ -20,19 +20,17 @@ import java.util.List;
  * @author Marcus Randevik
  * @since 2021-04-12
  */
-public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.ApartmentViewHolder> {
+public class AdvertisementAdapter extends RecyclerView.Adapter<AdvertisementAdapter.AdvertisementViewHolder> {
 
     List<Advertisement> advertisements;
 
     private final AdvertisementClickCallback clickCallback;
     private final AdvertisementFavouriteClickCallback favouriteClickCallback;
 
-    public ApartmentAdapter(AdvertisementClickCallback clickCallback, AdvertisementFavouriteClickCallback favouriteClickCallback) {
+    public AdvertisementAdapter(AdvertisementClickCallback clickCallback, AdvertisementFavouriteClickCallback favouriteClickCallback) {
         this.clickCallback = clickCallback;
         this.favouriteClickCallback = favouriteClickCallback;
     }
-
-
 
     /**
      * updates the list of advertisements
@@ -70,16 +68,16 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
     }
     @NonNull
     @Override
-    public ApartmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdvertisementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         AdvertisementItemBinding binding = DataBindingUtil
                 .inflate(LayoutInflater.from(parent.getContext()), R.layout.advertisement_item, parent, false);
         binding.setCallback(clickCallback);
         binding.setFavouriteCallBack(favouriteClickCallback);
-        return new ApartmentViewHolder(binding);
+        return new AdvertisementViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ApartmentViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdvertisementViewHolder holder, int position) {
         Advertisement advertisement = advertisements.get(position);
         holder.binding.setAdvertisement(advertisement);
         holder.binding.apartmentImage.setImageURI(advertisement.getPictures().get(0));
@@ -91,10 +89,10 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
         return advertisements == null ? 0 : advertisements.size();
     }
 
-    static class ApartmentViewHolder extends RecyclerView.ViewHolder {
+    static class AdvertisementViewHolder extends RecyclerView.ViewHolder {
         final AdvertisementItemBinding binding;
 
-        public ApartmentViewHolder(AdvertisementItemBinding binding) {
+        public AdvertisementViewHolder(AdvertisementItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

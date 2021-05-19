@@ -1,25 +1,22 @@
 package com.example.changeit.db;
 
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.Resources;
 import android.net.Uri;
 
-import com.example.changeit.R;
 import com.example.changeit.model.Advertisement;
 import com.example.changeit.model.Apartment;
 import com.example.changeit.model.UserHandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 import static com.example.changeit.util.AppUtil.convertResourcePictures;
 
 /**
- * @author Marcus Randevik
+ * Class that generates advertisements for the initial start up
+ * @author Marcus Randevik. Also edited by Lisa Samuelsson, Amanda Styff, Moa Berglund, Izabell Arvidsson and Noa Tholén
  * @since 2021-04-04
  */
 public class DataGenerator {
@@ -46,7 +43,6 @@ public class DataGenerator {
                                                                   random.nextBoolean(), "This apartment is spacious and bright with big windows. The building is close to a grocery store and to Chalmers.", "Gibraltargatan "+(random.nextInt(96)+1)), picturesInDifferentOrder,
                     4000 + i, 3, 40, UserHandler.getInstance().getAllUsers().get(i), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
                     random.nextBoolean(), false));
-
         }
 
         return advertisements;

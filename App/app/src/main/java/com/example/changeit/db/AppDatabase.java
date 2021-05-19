@@ -11,18 +11,15 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.example.changeit.AppExecutors;
 import com.example.changeit.db.dao.AdvertisementsDao;
 import com.example.changeit.model.Advertisement;
-import com.example.changeit.model.Apartment;
 
 import java.util.List;
 
 /**
+ * This class creates the database itself, where the information is stored
+ *
  * @author Marcus Randevik
  * @since 2021-04-04
  */
-
-    /**
-    * This class creates the database itself, where the information is stored
-    */
 @Database(entities = Advertisement.class, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
         /**

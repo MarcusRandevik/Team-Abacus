@@ -7,26 +7,22 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.Transformations;
 
 import com.example.changeit.AppRepository;
 import com.example.changeit.ChangeItApp;
 import com.example.changeit.db.FilterValues;
 import com.example.changeit.model.Advertisement;
-import com.example.changeit.model.Apartment;
 
 import java.util.List;
 
 /**
+ * A view model for the start(home) page of the application.
+ *
  * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
  * @since 2020-04-04
  *
- * A view model for the starting page of the application.
- *
  */
-
 public class HomeViewModel extends AndroidViewModel {
 
     /**
@@ -57,19 +53,13 @@ public class HomeViewModel extends AndroidViewModel {
     /**
      * An instance of the app repository.
      */
-    private AppRepository repository;
+    private final AppRepository repository;
 
-    /**
-     * The constructor for the class. The switch map makes sure that the advertisements shown corresponds to the current filtration.
-     * @param application
-     * @param savedStateHandle
-     */
-    public HomeViewModel(@NonNull Application application,
-                         @NonNull SavedStateHandle savedStateHandle) {
+    public HomeViewModel(@NonNull Application application) {
         super(application);
-
         repository = ((ChangeItApp) application).getRepository();
 
+        // The switch map makes sure that the advertisements shown corresponds to the current filtration
         advertisements = Transformations.switchMap(filter, filterValues -> repository.getAdvertisements(filterValues));
 
     }
@@ -112,24 +102,11 @@ public class HomeViewModel extends AndroidViewModel {
      */
     public class CustomLiveData extends MediatorLiveData<FilterValues> {
         public CustomLiveData(LiveData<Integer> maxRooms, LiveData<Integer> maxRent, LiveData<Integer> maxSqm) {
-            addSource(maxRooms, new Observer<Integer>() {
-                @Override
-                public void onChanged(Integer newMaxRooms) {
-                    setValue(new FilterValues(newMaxRooms, maxRent.getValue(), maxSqm.getValue()));
-                }
-            });
-            addSource(maxRent, new Observer<Integer>() {
-                @Override
-                public void onChanged(Integer newMaxRent) {
-                    setValue(new FilterValues(maxRooms.getValue(), newMaxRent, maxSqm.getValue()));
-                }
-            });
-            addSource(maxSqm, new Observer<Integer>() {
-                @Override
-                public void onChanged(Integer newMaxSqm) {
-                    setValue(new FilterValues(maxRooms.getValue(), maxRent.getValue(), newMaxSqm));
-                }
-            });
+
+            addSource(maxRooms, newMaxRooms -> setValue(new FilterValues(newMaxRooms, maxRent.getValue(), maxSqm.getValue())));
+            addSource(maxRent, newMaxRent -> setValue(new FilterValues(maxRooms.getValue(), newMaxRent, maxSqm.getValue())));
+            addSource(maxSqm, newMaxSqm -> setValue(new FilterValues(maxRooms.getValue(), maxRent.getValue(), newMaxSqm)));
+
         }
     }
 }

@@ -2,8 +2,8 @@
     <string name="app_name">ChangeIT</string>
     <string name="title_home">Home</string>
     <string name="title_favorites">Favorites</string>
-    <string name="title_messages">Messages</string>
     <string name="title_profile">Profile</string>
+    <string name="title_contact_info">Contact info</string>
     <string name="title_detailed_apartment">Apartment Details</string>
     <string name="apartment_list_rent">Rent: %d</string>
     <string name="apartment_list_rooms">Rooms: %d</string>
@@ -16,6 +16,7 @@
     <string name="filter_room">Max number of rooms</string>
     <string name="filter_rent">Max rent</string>
     <string name="filter_sqm">Max sqm</string>
+    <string name="filter">Filter button</string>
     <string name="detailed_apartment_balcony"> Balcony included? </string>
     <string name="detailed_apartment_wifi"> Wifi included? </string>
     <string name="detailed_apartment_pets"> Pets allowed? </string>
@@ -37,10 +38,11 @@
     <string name="hint_name">name</string>
     <string name="hint_number">phonenumber</string>
     <string name="hint_mail">mail</string>
-
     <string name="delete"> Delete advertisement</string>
     <string name="deletequestion"> Are you sure you want to delete your ad?</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_icon">profile icon</string>
+    <string name="number_icon">phonenumber icon</string>
+    <string name="mail_icon">mail icon</string>
+    <string name="profile_picture">profile picture</string>
+    <string name="share_link">Share link</string>
 </resources>

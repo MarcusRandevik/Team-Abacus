@@ -10,36 +10,23 @@ import java.util.concurrent.Executors;
 
 /**
  * Class maintaining exectuors for different tasks. Ensures diskIO won't prevent UI from loading
+ * @since 2021-04-12
  */
 public class AppExecutors {
 
     private final Executor mDiskIO;
 
-    private final Executor mNetworkIO;
 
-    private final Executor mMainThread;
-
-    private AppExecutors(Executor diskIO, Executor networkIO, Executor mainThread) {
+    private AppExecutors(Executor diskIO) {
         this.mDiskIO = diskIO;
-        this.mNetworkIO = networkIO;
-        this.mMainThread = mainThread;
     }
 
     public AppExecutors() {
-        this(Executors.newSingleThreadExecutor(), Executors.newFixedThreadPool(3),
-                new MainThreadExecutor());
+        this(Executors.newSingleThreadExecutor());
     }
 
     public Executor diskIO() {
         return mDiskIO;
-    }
-
-    public Executor networkIO() {
-        return mNetworkIO;
-    }
-
-    public Executor mainThread() {
-        return mMainThread;
     }
 
     private static class MainThreadExecutor implements Executor {

@@ -2,7 +2,6 @@ package com.example.changeit.ui.ad;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -21,18 +19,14 @@ import androidx.navigation.Navigation;
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentAdBinding;
 
-import java.net.URI;
 import java.util.List;
-
-
 /**
+ * Fragment which is the first part of creating an advertisement. This includes what the user is offering
+ *
  * @author Kerstin Wadman, Noa Tholén, Lisa Samuelsson, Moa Berglund, Izabell Arvidsson, Marcus Randevik, Amanda Styff
  * @since 2020-04-20
- * Fragment which is the first part of creating an advertisement. This includes what the user is offering.
  */
 public class AdFragment extends Fragment {
-
-    // Databinding motavarar allt vi ser i fragment_ad.xml
     /**
      * Data binding is used to combine the user input with the xml file.
      */
@@ -52,17 +46,6 @@ public class AdFragment extends Fragment {
         }
     });
 
-    /**
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
-
-     * The onClick method checks if all the required fields are filled out. If not, a message will appear
-     * asking the user to fill in all fields. If everything is filled out the user will be taken
-     * to the next part of create ad.
-     */
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,11 +58,9 @@ public class AdFragment extends Fragment {
         //Lägg till viewmodel i fragment_ad.xml
         binding.setViewModel(adViewModel);
 
-        /**
-         * Checks if all the required fields are filled out. If not, a message will appear
+         /* Checks if all the required fields are filled out. If not, a message will appear
          * asking the user to fill in all fields. If everything is filled out the user will be taken
          * to the next part of create ad.
-         * @param v -
          */
          binding.continueButton.setOnClickListener(v -> {
              if(adViewModel.getDescriptionOffered().getValue() == null || adViewModel.getDescriptionOffered().getValue().equals("")  ||

@@ -5,23 +5,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.changeit.R;
 import com.example.changeit.databinding.FragmentFavoritesBinding;
-import com.example.changeit.ui.home.ApartmentAdapter;
+import com.example.changeit.ui.home.AdvertisementAdapter;
 
 /**
  * logic for the favorite view
- * @author Marcus Randevik
+ *
+ * @author Marcus Randevik. Also edited by Izabell Arvidsson, Amanda Styff och Kerstin Wadman.
  * @since 2021-03-22
  */
 public class FavoritesFragment extends Fragment {
@@ -30,7 +29,7 @@ public class FavoritesFragment extends Fragment {
 
     private FragmentFavoritesBinding binding;
 
-    private ApartmentAdapter apartmentAdapter;
+    private AdvertisementAdapter advertisementAdapter;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,13 +39,13 @@ public class FavoritesFragment extends Fragment {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorites, container, false);
 
-        apartmentAdapter = new ApartmentAdapter(advertisement -> {
+        advertisementAdapter = new AdvertisementAdapter(advertisement -> {
             Navigation.findNavController(binding.getRoot()).navigate(FavoritesFragmentDirections.actionNavigationFavoritesToNavigationDetailedApartment(advertisement.getId()));
         }, advertisement -> {
             AsyncTask.execute(() -> favoritesViewModel.changeFavourite(advertisement));
         });
 
-        binding.apartmentListFavourite.setAdapter(apartmentAdapter);
+        binding.apartmentListFavourite.setAdapter(advertisementAdapter);
 
         return binding.getRoot();
     }
@@ -56,7 +55,7 @@ public class FavoritesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         favoritesViewModel.getFavouriteAdvertisements().observe(getViewLifecycleOwner(), advertisements -> {
-            apartmentAdapter.setAdvertisements(advertisements);
+            advertisementAdapter.setAdvertisements(advertisements);
         });
     }
 
