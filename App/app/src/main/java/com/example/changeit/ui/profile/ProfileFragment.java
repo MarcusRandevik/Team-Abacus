@@ -102,8 +102,6 @@ public class ProfileFragment extends Fragment {
                     if(advertisements == null){
                         NavDirections action = ProfileFragmentDirections.actionNavigationProfileToAd();
                         Navigation.findNavController(v).navigate(action);
-                        binding.materialCardView.setVisibility(View.VISIBLE);
-                        binding.deletebutton.setVisibility(View.VISIBLE);
                     }
                     else {
                         Toast toast = Toast.makeText(getContext(),"You already have one advertisement",
