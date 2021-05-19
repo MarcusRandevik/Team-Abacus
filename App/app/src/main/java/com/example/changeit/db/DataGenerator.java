@@ -43,7 +43,7 @@ public class DataGenerator {
             advertisements.add(new Advertisement(i, new Apartment(4000 + i,
 
                     1 + random.nextInt(5), 15 + random.nextInt(90), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
-                                                                  random.nextBoolean(), "Apartment Description", "Gibraltargatan "+(random.nextInt(96)+1)), picturesInDifferentOrder,
+                                                                  random.nextBoolean(), "This apartment is spacious and bright with big windows. The building is close to a grocery store and to Chalmers.", "Gibraltargatan "+(random.nextInt(96)+1)), picturesInDifferentOrder,
                     4000 + i, 3, 40, UserHandler.getInstance().getAllUsers().get(i), random.nextBoolean(), random.nextBoolean(), random.nextBoolean(),
                     random.nextBoolean(), false));
 
