@@ -5,9 +5,9 @@
     <application
         android:name=".ChangeItApp"
         android:allowBackup="true"
-        android:icon="@drawable/sgs_logo"
+        android:icon="@mipmap/sgs_app_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/sgs_app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChangeIT">
         <activity
