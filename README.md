@@ -31,7 +31,7 @@ git clone https://github.com/MarcusRandevik/Team-Abacus.git
 4. Using Android studio, open an existing project at the folder `<repo_location>/Team-Abascus/App`
 5. Run the app using the green play button at the top of Android Studio
 # Links
-Scrum board: https://trello.com/b/HXAi7nDr/sgs
+Scrum board: https://trello.com/invite/b/HXAi7nDr/501a748c495fa9ab723183720eb9280c/sgs
 
 Team reflections: https://drive.google.com/drive/folders/1667BmL4INOtnAechYg0oBLwg9UqHS3yh?usp=sharing
 
