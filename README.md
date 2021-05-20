@@ -5,11 +5,9 @@ Welcome to Team Abacus's project - ChangeIt
 
 ## Directory structure
 ```bash
-44
 .
 ├── App
-│   ├── ap
-p
+│   ├── app
 │   └── gradle
 ├── Images
 ├── Personal-Reflection
