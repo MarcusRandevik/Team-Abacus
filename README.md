@@ -3,7 +3,28 @@ Welcome to Team Abacus's project - ChangeIt
 
 ![Logo](Images/sgs_logo.png "ChangeIt Logo")
 
-# About
+## Directory structure
+```bash
+44
+.
+├── App
+│   ├── ap
+p
+│   └── gradle
+├── Images
+├── Personal-Reflection
+│   ├── Amanda-Styff
+│   ├── Izabell-Arvidsson
+│   ├── Kerstin-Wadman
+│   ├── Lisa-Samuelsson
+│   ├── Marcus-Randevik
+│   ├── Moa-Berglund
+│   └── Noa-Tholen
+├── Project\ Scope
+└── Protocol
+```
+
+## About
 ChangeIt is an Android-app aimed at students living in SGS student accomodation that wants to change apartments with another student.
 
 In the app, one student can find another student to switch apartments with, if they both live in a SGS student accommodation.
@@ -15,7 +36,7 @@ The purpose of the app is to make it easier for students looking for a switch in
 
 Our stakeholder is a student named Lisa, who wanted to find a better solution for switching SGS apartments.
 
-# Installation
+## Installation
 
 > Important, if you don't have access to an Android Phone, please also install the [android emulator](https://developer.android.com/studio/run/emulator#install).
 
@@ -29,16 +50,46 @@ git clone https://github.com/MarcusRandevik/Team-Abacus.git
 ```
 
 4. Using Android studio, open an existing project at the folder `<repo_location>/Team-Abascus/App`
-5. Run the app using the green play button at the top of Android Studio
-# Links
-Scrum board: https://trello.com/invite/b/HXAi7nDr/501a748c495fa9ab723183720eb9280c/sgs
+   
+6. Run the app using the green play button at the top of Android Studio
+
+The app has primarily been developed and tested with devices using API 26 and higher, thus that is the recomended minimun API level. Though it should work on devices as old as API 21.
+
+## Main Features
+Below follows a brief description of the main features of the app.
+
+### List of available apartments
+Upon opening the app users will see a list of apartsments that have been submitted by other users. On this page, users can click on a specific apartment to see more details, such as more images and what the owner is looking to switch to. 
+
+![home](Images/hem.gif)
+
+### Detailed apartment view
+Once and owner have click on an apartment from the list view, their able to see more details about a specific apartment. A user may also see the contact details of the owner in order to be able to make initiate an exchange of apartments and may also get a shareable link that, when click, will guide another user to this apartment.
+
+![detailed](Images/detaljerad.gif)
+
+### Profile
+On the profile page, a user can see their own contact details as well as a profile picture. From this page, a user may also create an advertisement for their own apartment and when no longer needed, the ad can be deleted.
+
+![profile](Images/profil.gif)
+
+### Sharable links 
+As mentioned before, a user can get a sharable link from the detailed view of an apartment. This can be sent to other so that they may easily navigate to a specific apartment.
+
+![links](Images/deeplink.gif)
+
+## Architecture
+See [Architecture document](App/architecture.md)
+
+## Links
+Scrum board: https://trello.com/b/HXAi7nDr/sgs
 
 Team reflections: https://drive.google.com/drive/folders/1667BmL4INOtnAechYg0oBLwg9UqHS3yh?usp=sharing
 
 KPI's: https://drive.google.com/drive/folders/10u9iXjdUpiXT_y2W-XOoDItGx4GC-FSt?usp=sharing
 
 
-# Team members
+## Team members
 [amandastyff](https://github.com/amandastyff) - Amanda Styff
 
 [IzabellArvidsson](https://github.com/IzabellArvidsson) - Izabell Arvidsson
