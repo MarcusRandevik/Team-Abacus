@@ -62,7 +62,7 @@ Upon opening the app users will see a list of apartsments that have been submitt
 ![home](Images/hem.gif)
 
 ### Detailed apartment view
-Once and owner have click on an apartment from the list view, their able to see more details about a specific apartment. A user may also see the contact details of the owner in order to be able to make initiate an exchange of apartments and may also get a shareable link that, when click, will guide another user to this apartment.
+Once an owner have click on an apartment from the list view, thy're able to see more details about a specific apartment. A user may also see the contact details of the owner in order to be able to initiate an exchange of apartments and may also get a shareable link that, when clicked, will guide another user to this apartment.
 
 ![detailed](Images/detaljerad.gif)
 
@@ -72,7 +72,7 @@ On the profile page, a user can see their own contact details as well as a profi
 ![profile](Images/profil.gif)
 
 ### Sharable links 
-As mentioned before, a user can get a sharable link from the detailed view of an apartment. This can be sent to other so that they may easily navigate to a specific apartment.
+As mentioned before, a user can get a sharable link from the detailed view of an apartment. This can be sent to others so that they may easily navigate to a specific apartment.
 
 ![links](Images/deeplink.gif)
 
