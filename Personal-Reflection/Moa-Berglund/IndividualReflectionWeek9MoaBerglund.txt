@@ -1,0 +1,44 @@
+ What do I want to learn or understand better?
+
+	This was the last planned programming sprint. I have again worked with user storys that connects to the database, which have helped me getting a better understandning of it. So now I fint that I do not need to ask Marcus for explanation. 
+	I believe me learning by working can be applied to a bigger picture. Sometimes, when I come across something that I do not understand, especially in school, I feel stressed and want to know much about it straight away. 
+	But as shown, if I just let the learnings come by working with it for a while I can reach the same outcome without so much stress. I feel that this is a much more comfortable way to gather knowledge.
+
+	To reflect on the whole programming phase, I definitely feel that I have learned the two main wished outcomes that I wrote under this question week 1. 
+	I have gathered techniqes and experiences to know how to conduct a healthy working environment, and I think it is a great proof of good work that I feel that I happily could have worked with this project full time from now on.
+	One big learning is also how important it is to not skip what a project work is beside of the final product. One personal consequens of us focusing as much on the working environemt as the product is that I have felt much less stressed than usual.
+  	
+	I also stated in week 1 that I wanted to learn how to implement an andorid application. I definitely feel that I have learned much about this. 
+	Last weeks I have had trouble with running the app on my computer, since the phone I have used is too old for our new feautres and my laptop does not make it. This sprint I suprised myself with my learnings when I completed some techniqual programming tasks by myself without getting any problems even though I could not test when implementing. 
+	I believe this confirms that I have acutally reached a good understanding of our project.
+
+	Something that I wish to learn in the future is how to set up an android framwork. Marcus did a lot of it in this project since we wanted to focus on delivering features to our client.  
+	Without Marcus start I would not have had as much time to learn how to work with our android app, and now it feels good to not have done all in once since I guess it would not have resulting in the confidence that I now feel in the programming, if also focusing much on learning how to set up the environment.
+	
+	It would also be interesting to learn a bit more about group dynamics. I believe this is one big contributing factor that made our process so free from hassle, and partly I believe this is because that we all had somewhat the same ambition and were respectful towards each other. 
+	But I am sure there is much more to it as well that would benefint to know when creating new groups later on.
+ 
+How can I help someone else, or the entire team, to learn something new?
+	
+	I believe that the friendly, open and forgiving approach that we have applied during the whole programming phase has encouraged much learnings. In discussions with our team we have several times stated that this makes a lot of difference in comparision to earlier projects were one have not dared to ask questions or felt somewhat afraid to do wrong.
+	These feelings results in that you do not try or experiment much, and thereby lose a lot of learning possibilites. Also, I believe our great structure contributes to not being stressed, which also encourages daring to try new things.
+	We have learned much by giving and taking from our different knowledges, by screen sharing, sharing links, showing earlier works, discussing and testing.
+	
+	In connection to my last reflection, we discussed my work in trello and made changes were needed.
+
+	Now for the last weeks I will make sure to enourage reading what team members write in the report, to be able to give each other advice in how to improve. 
+ 
+What is my contribution towards the team’s use of Scrum?
+	
+	This week I was the scrum master. I actually does not feel that this made such a big difference on how I worked than before. Since everyone in the group takes repsonisbility and is active, I just made sure that we did not forget anything and that the meetings were meaningful. 
+	To get a grip around the things we need to do before the final handin I made a shared "to-do" list beside of the scrum board, since the list only concerned school dutys and not value to the customer, and made sure that all topics we wrote were assigned to a team member.
+	
+	In general, working with a scrum board and with clear tasks is something I find very pleasing. I will take this with me for further works.
+	This was the first project were I worked with scrum poker, and that as well is something I find very helpful when splitting up assignments. I will for sure use it in more projects.
+	I feel that our application of Scrum has worked well from start.
+
+What is my contribution towards the team’s deliveries?
+	
+	This sprint, me and Izabel assigned the user storys "ta bort annons" och "ej skapa ny annons". Since she had some tasks left from last sprint, we decided that I would begin by myself. I finished "ta bort annons" and beginned on the next, and then we completed it together. 
+	I also made the overall clean up in our code, were I deleted unnecessary parts, changed some class names to more relevant ones, updated comments etc. 
+	Since we have decided that the scrum master always write the team reflection, based on our group discussion of course, I did so. 
