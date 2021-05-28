@@ -1,0 +1,3 @@
+We tested by running the app on android studios simualtor. Some of us have andorid mobile phones and could therefore try it on the mobile as well.
+In the beginning of the project we believed we needed more JUnit tests, so there are some early created one of those as well. 
+You can read more about our thoughts about testing and the JUnit tests in our weekly team reflections.
