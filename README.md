@@ -34,6 +34,16 @@ The purpose of the app is to make it easier for students looking for a switch in
 
 Our stakeholder is a student named Lisa, who wanted to find a better solution for switching SGS apartments.
 
+## Links
+Scrum board: https://trello.com/b/HXAi7nDr/sgs
+
+Team reflections: https://drive.google.com/drive/folders/1667BmL4INOtnAechYg0oBLwg9UqHS3yh?usp=sharing
+
+KPI's: https://drive.google.com/drive/folders/10u9iXjdUpiXT_y2W-XOoDItGx4GC-FSt?usp=sharing
+
+App demo: https://drive.google.com/file/d/1ljGpcUbhs_tiMVV2zbd0i-phjuprAISS/view?usp=sharing
+
+
 ## Installation
 
 > Important, if you don't have access to an Android Phone, please also install the [android emulator](https://developer.android.com/studio/run/emulator#install).
@@ -79,14 +89,6 @@ As mentioned before, a user can get a sharable link from the detailed view of an
 ## Architecture
 See [Architecture document](App/architecture.md)
 
-## Links
-Scrum board: https://trello.com/b/HXAi7nDr/sgs
-
-Team reflections: https://drive.google.com/drive/folders/1667BmL4INOtnAechYg0oBLwg9UqHS3yh?usp=sharing
-
-KPI's: https://drive.google.com/drive/folders/10u9iXjdUpiXT_y2W-XOoDItGx4GC-FSt?usp=sharing
-
-App demo: https://drive.google.com/file/d/1ljGpcUbhs_tiMVV2zbd0i-phjuprAISS/view?usp=sharing
 
 ## Team members
 [amandastyff](https://github.com/amandastyff) - Amanda Styff
