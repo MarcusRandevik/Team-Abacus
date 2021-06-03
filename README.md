@@ -7,9 +7,9 @@ Welcome to Team Abacus's project - ChangeIt
 ```bash
 .
 ├── App
-│   ├── app
+│   ├── app <-- the app itself
 │   └── gradle
-├── Images
+├── Images <-- images used for readme
 ├── Personal-Reflection
 │   ├── Amanda-Styff
 │   ├── Izabell-Arvidsson
@@ -18,8 +18,8 @@ Welcome to Team Abacus's project - ChangeIt
 │   ├── Marcus-Randevik
 │   ├── Moa-Berglund
 │   └── Noa-Tholen
-├── Project\ Scope
-└── Protocol
+├── Project\ Scope <--- files related to project scope
+└── Protocol <-- Protocols for various meeting
 ```
 
 ## About
