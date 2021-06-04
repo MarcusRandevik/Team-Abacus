@@ -104,3 +104,5 @@ See [Architecture document](App/architecture.md)
 [moa114](https://github.com/moa114) - Moa Berglund
 
 [noatholen](https://github.com/noatholen) - Noa Tholén
+
+Please note that several teammembers did not have access to either an android phone or a computer that could run the android emulator. In these cases members were paired when programming so that at least one could test the app. This explains why some members have very few lines of code.
